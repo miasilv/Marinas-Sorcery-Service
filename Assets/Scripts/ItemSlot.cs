@@ -29,7 +29,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
     public bool thisItemSelected;
     private InventoryManager inventoryManager;
     [SerializeField] public int maxNumberOfItems;
-
+    
     private void Awake() {
         inventoryManager = GameObject.Find("NotebookCanvas").GetComponent<InventoryManager>();
     }
@@ -93,5 +93,25 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
 
     public void OnRightClick() {
 
+    }
+  
+    public void EquipItem() {
+        
+    }
+
+    public void DropItems(int numToDrop) {
+        this.quantity -= numToDrop;
+        quantityText.text = this.quantity.ToString();
+        if (this.quantity <= 0) {
+            EmptySlot();
+        }
+    }
+
+    public void EmptySlot() {
+        quantityText.enabled = false;
+        itemImage.sprite = emptySprite;
+        itemDescriptionNameText.text = "";
+        itemDescriptionText.text = "";
+        itemDescriptionImage.sprite = emptySprite;
     }
 }
