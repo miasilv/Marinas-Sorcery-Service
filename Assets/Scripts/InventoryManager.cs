@@ -2,37 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryManager : MonoBehaviour
-{
-    public GameObject InventoryMenu;
+public class InventoryManager : MonoBehaviour {
+    public GameObject inventoryMenu;
     private bool menuActivated;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public ItemSlot[] itemSlot;
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() { 
         // toggle inventory
-        if (Input.GetButtonDown("Menu") && menuActivated) 
-        {
-            Time.timeScale = 1;
-            InventoryMenu.SetActive(false);
-            menuActivated = false;
-        }
-        else if (Input.GetButtonDown("Menu") && !menuActivated) 
-        {
+        if (Input.GetButtonDown("Menu") && !menuActivated) {
             Time.timeScale = 0;
-            InventoryMenu.SetActive(true);
+            inventoryMenu.SetActive(true);
             menuActivated = true;
+            itemSlot[0].OnLeftClick();
+        } else if (Input.GetButtonDown("Menu") && menuActivated) {
+            Time.timeScale = 1;
+            DeselectAllSlots();
+            inventoryMenu.SetActive(false);
+            menuActivated = false;
         }
     }
 
-    public void AddItem(string itemName, int quantity, Sprite itemSprite)
-    {
-        Debug.Log("itemName = " + itemName + " quantity = " + quantity + " itemSprite = " + itemSprite);
+    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription) {
+        for (int i = 0; i < itemSlot.Length; i++) {
+            if(itemSlot[i].isFull == false) {
+                itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
+                return;
+            }
+        }
+    }
+
+    public void DeselectAllSlots() {
+        for (int i = 0; i < itemSlot.Length; i++) {
+            itemSlot[i].selectedShader.SetActive(false);
+            itemSlot[i].thisItemSelected = false;
+        }
     }
 }
