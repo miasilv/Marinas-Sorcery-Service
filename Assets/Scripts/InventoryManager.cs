@@ -13,7 +13,12 @@ public class InventoryManager : MonoBehaviour {
     public TMP_Text NumOfItemsToDrop;
     public TMP_Text InvalidInputText;
 
-    // Update is called once per frame
+    public void Awake() {
+        DeselectAllSlots();
+        inventoryMenu.SetActive(false);
+        menuActivated = false;
+    }
+    
     void Update() { 
         // toggle inventory
         if (Input.GetButtonDown("Menu") && !menuActivated) {
@@ -43,10 +48,15 @@ public class InventoryManager : MonoBehaviour {
     }
 
     public void DropItems() {
-        string numToDropStr = NumOfItemsToDrop.text;
-        Debug.Log(numToDropStr);
-        int numToDrop = 3;
-        if (numToDrop > 0) {
+        string str = NumOfItemsToDrop.text;
+        string numToDropStr = "";    
+        for (int i = 0; i < str.Length; i++) {
+            if (char.IsDigit(str[i])) {
+                numToDropStr += str[i];
+            }
+        }
+        
+        if (int.TryParse(numToDropStr, out int numToDrop) && numToDrop > 0 && numToDrop < 10) {
             for (int i = 0; i < itemSlot.Length; i++) {
                 if (itemSlot[i].thisItemSelected) {
                     itemSlot[i].DropItems(numToDrop);
@@ -72,5 +82,7 @@ public class InventoryManager : MonoBehaviour {
             itemSlot[i].thisItemSelected = false;
         }
         InvalidInputText.enabled = false;
+        NumOfItemsToDrop.text = "";
+
     }
 }
