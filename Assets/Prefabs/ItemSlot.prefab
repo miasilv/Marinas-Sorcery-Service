@@ -96,14 +96,14 @@ MonoBehaviour:
   itemSprite: {fileID: 0}
   itemDescription: 
   isFull: 0
-  emptySprite: {fileID: 21300000, guid: 791277001b033db48afbff05ea2c2b63, type: 3}
-  quantityText: {fileID: 4368773725879898604}
-  itemImage: {fileID: 5867297283213715740}
+  slotQuantityText: {fileID: 4368773725879898604}
+  slotImage: {fileID: 5867297283213715740}
   itemDescriptionImage: {fileID: 0}
   itemDescriptionNameText: {fileID: 0}
   itemDescriptionText: {fileID: 0}
   selectedShader: {fileID: 5911136809829519852}
   thisItemSelected: 0
+  emptySprite: {fileID: 21300000, guid: 791277001b033db48afbff05ea2c2b63, type: 3}
   maxNumberOfItems: 9
 --- !u!1 &2853141058738841075
 GameObject:

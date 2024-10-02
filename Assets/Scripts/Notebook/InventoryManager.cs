@@ -5,38 +5,19 @@ using TMPro;
 using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour {
-    public GameObject inventoryMenu;
-    private bool menuActivated;
     public ItemSlot[] itemSlot;
 
-    // Drop and Equip Capability
-    public TMP_Text NumOfItemsToDrop;
-    public TMP_Text InvalidInputText;
+    public TMP_Text inputNumOfItemsToDrop;
+    public TMP_Text invalidInputText;
 
     public void Awake() {
         DeselectAllSlots();
-        inventoryMenu.SetActive(false);
-        menuActivated = false;
-    }
-    
-    void Update() { 
-        // toggle inventory
-        if (Input.GetButtonDown("Menu") && !menuActivated) {
-            Time.timeScale = 0;
-            inventoryMenu.SetActive(true);
-            menuActivated = true;
-            itemSlot[0].OnLeftClick();
-        } else if (Input.GetButtonDown("Menu") && menuActivated) {
-            Time.timeScale = 1;
-            DeselectAllSlots();
-            inventoryMenu.SetActive(false);
-            menuActivated = false;
-        }
     }
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription) {
+        // look for an unfilled slot
         for (int i = 0; i < itemSlot.Length; i++) {
-            if(itemSlot[i].isFull == false && itemSlot[i].name == name || itemSlot[i].quantity == 0) {
+            if(!itemSlot[i].isFull && itemSlot[i].name == name || itemSlot[i].quantity == 0) {
                 int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
                 if (leftOverItems > 0) {
                     leftOverItems = AddItem(itemName, leftOverItems, itemSprite, itemDescription);
@@ -47,24 +28,25 @@ public class InventoryManager : MonoBehaviour {
         return quantity;
     }
 
-    public void DropItems() {
-        string str = NumOfItemsToDrop.text;
+    public void DropItem() {
+        string str = inputNumOfItemsToDrop.text;
         string numToDropStr = "";    
         for (int i = 0; i < str.Length; i++) {
             if (char.IsDigit(str[i])) {
                 numToDropStr += str[i];
             }
         }
+        Debug.Log(numToDropStr);
         
         if (int.TryParse(numToDropStr, out int numToDrop) && numToDrop > 0 && numToDrop < 10) {
             for (int i = 0; i < itemSlot.Length; i++) {
                 if (itemSlot[i].thisItemSelected) {
-                    itemSlot[i].DropItems(numToDrop);
+                    itemSlot[i].DropItem(numToDrop);
                 }
             }
         }
         else {
-            InvalidInputText.enabled = true;
+            invalidInputText.enabled = true;
         }
     }
 
@@ -81,8 +63,8 @@ public class InventoryManager : MonoBehaviour {
             itemSlot[i].selectedShader.SetActive(false);
             itemSlot[i].thisItemSelected = false;
         }
-        InvalidInputText.enabled = false;
-        NumOfItemsToDrop.text = "";
+        invalidInputText.enabled = false;
+        inputNumOfItemsToDrop.text = "";
 
     }
 }

@@ -12,13 +12,12 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
     public Sprite itemSprite;
     public string itemDescription;
     public bool isFull;
-    public Sprite emptySprite;
-
     
     //===========ITEM SLOT===========//
-    [SerializeField] private TMP_Text quantityText;
-    [SerializeField] private Image itemImage;
+    [SerializeField] private TMP_Text slotQuantityText;
+    [SerializeField] private Image slotImage;
 
+    
     //===========ITEM DESCRIPTION SLOT==========//
     public Image itemDescriptionImage;
     public TMP_Text itemDescriptionNameText;
@@ -27,6 +26,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
 
     public GameObject selectedShader;
     public bool thisItemSelected;
+    public Sprite emptySprite;
     private InventoryManager inventoryManager;
     [SerializeField] public int maxNumberOfItems;
     
@@ -42,10 +42,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
 
         // Update Name, Image, and Description
         this.itemName = itemName;
-        
         this.itemSprite = itemSprite;
-        itemImage.sprite = itemSprite;
-        
+        slotImage.sprite = itemSprite;  
         this.itemDescription = itemDescription;
 
         // Update Quantity
@@ -53,8 +51,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
 
         // if quantity is greater than max number of items
         if (this.quantity >= maxNumberOfItems) {
-            quantityText.text = maxNumberOfItems.ToString();
-            quantityText.enabled = true;
+            slotQuantityText.text = maxNumberOfItems.ToString();
+            slotQuantityText.enabled = true;
             isFull = true;
 
             int extraItems = this.quantity - maxNumberOfItems;
@@ -63,53 +61,45 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
         }
 
         // if quantity is less than max number of items     
-        quantityText.text = this.quantity.ToString();
-        quantityText.enabled = true;
+        slotQuantityText.text = this.quantity.ToString();
+        slotQuantityText.enabled = true;
         return 0;        
     }
 
-    public void OnPointerClick(PointerEventData eventData) {
-        if (eventData.button == PointerEventData.InputButton.Left) {
-            OnLeftClick();
-        }
-        
-        if (eventData.button == PointerEventData.InputButton.Right) {
-            OnRightClick();
-        }
-    }
-
-    public void OnLeftClick() {
-        inventoryManager.DeselectAllSlots();
-        selectedShader.SetActive(true);
-        thisItemSelected = true;
-        itemDescriptionNameText.text = itemName;
-        itemDescriptionText.text = itemDescription;
-        itemDescriptionImage.sprite = itemSprite;
-
-        if (itemDescriptionImage.sprite == null) {
-            itemDescriptionImage.sprite = emptySprite;
-        }
-    }
-
-    public void OnRightClick() {
-
-    }
-  
-    public void EquipItem() {
-        
-    }
-
-    public void DropItems(int numToDrop) {
+    public void DropItem(int numToDrop) {
         this.quantity -= numToDrop;
-        quantityText.text = this.quantity.ToString();
+        slotQuantityText.text = this.quantity.ToString();
         if (this.quantity <= 0) {
             EmptySlot();
         }
     }
 
+    public void OnPointerClick(PointerEventData eventData) {
+        // select an item and update the item description
+        if (eventData.button == PointerEventData.InputButton.Left) {
+            inventoryManager.DeselectAllSlots();
+            selectedShader.SetActive(true);
+            thisItemSelected = true;
+            
+            itemDescriptionNameText.text = itemName;
+            itemDescriptionText.text = itemDescription;
+            itemDescriptionImage.sprite = itemSprite;
+
+            if (itemDescriptionImage.sprite == null) {
+                itemDescriptionImage.sprite = emptySprite;
+            }
+        }
+    } 
+    public void EquipItem() {
+        
+    }
+
     public void EmptySlot() {
-        quantityText.enabled = false;
-        itemImage.sprite = emptySprite;
+        // Make the slot empty
+        slotQuantityText.enabled = false;
+        slotImage.sprite = emptySprite;
+        
+        // Change the Item Description
         itemDescriptionNameText.text = "";
         itemDescriptionText.text = "";
         itemDescriptionImage.sprite = emptySprite;

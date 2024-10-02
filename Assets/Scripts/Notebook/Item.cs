@@ -14,8 +14,8 @@ public class Item : MonoBehaviour {
         inventoryManager = GameObject.Find("NotebookCanvas").GetComponent<InventoryManager>();
     }
 
-    void OnTriggerEnter2D(Collider2D col) {
-        if (col.gameObject.tag == "Player") {
+    void OnTriggerStay2D(Collider2D col) {
+        if (col.gameObject.tag == "Player" && Input.GetButton("Interact")) {
             int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
             if (leftOverItems <= 0) {
                 Destroy(gameObject);
