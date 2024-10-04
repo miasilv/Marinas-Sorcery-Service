@@ -6,18 +6,22 @@ public class DialogueTrigger : MonoBehaviour {
     [SerializeField] private GameObject visualCue;
     [SerializeField] private TextAsset inkJSON;
 
-    private bool playerInRange;
+    private DialogueManager dialogueManager;
+
+    public bool playerInRange;
 
     private void Awake() {
         playerInRange = false;
         visualCue.SetActive(false);
+
+        dialogueManager = GameObject.Find("DialogueCanvas").GetComponent<DialogueManager>();
     }
 
     private void Update() {
-        if (playerInRange) {
+        if (playerInRange && !dialogueManager.dialogueIsPlaying) {
             visualCue.SetActive(true);
             if (Input.GetButtonDown("Interact"))  {
-                Debug.Log(inkJSON);
+                dialogueManager.EnterDialogueMode(inkJSON);
             }
         }
         else {

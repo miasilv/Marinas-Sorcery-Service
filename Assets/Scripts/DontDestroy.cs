@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
-    private static GameObject[] persistentObjects = new GameObject[2];
+    // 0 - Player; 1 - NotebookManager; 2 - DialogueManager
+    private static GameObject[] persistentObjects = new GameObject[3];
     public int objectIndex;
 
     void Awake() {

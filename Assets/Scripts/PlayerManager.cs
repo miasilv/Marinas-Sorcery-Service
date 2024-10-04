@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -26,5 +27,13 @@ public class PlayerManager : MonoBehaviour
 
         float vert = Input.GetAxis("Vertical");
         transform.Translate(Vector3.up * vert * moveSpeed * Time.deltaTime);
+    }
+
+    void OnTriggerEnter2D(Collider2D col) {
+        if (col.gameObject.tag == "SceneChanger") {
+            Debug.Log("Changing Scene to Forest");
+            SceneManager.LoadScene("Forest");
+            this.transform.position = new Vector3(0,0,0);
+        }
     }
 }
