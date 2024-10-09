@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Short Description
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -220,7 +220,6 @@ GameObject:
   - component: {fileID: 7048407292663098672}
   - component: {fileID: 4424291810248118640}
   - component: {fileID: 215078491201830077}
-  - component: {fileID: 462869658170800620}
   - component: {fileID: 1895683342622050493}
   m_Layer: 5
   m_Name: TaskSlot
@@ -289,32 +288,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &462869658170800620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5416481726296665727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2b26ea24b66f91418cc4c53bfdbb07c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  quantity: 0
-  itemSprite: {fileID: 0}
-  itemDescription: 
-  isFull: 0
-  slotQuantityText: {fileID: 0}
-  slotImage: {fileID: 0}
-  itemDescriptionImage: {fileID: 0}
-  itemDescriptionNameText: {fileID: 0}
-  itemDescriptionText: {fileID: 0}
-  selectedShader: {fileID: 1362420963352105169}
-  thisItemSelected: 0
-  emptySprite: {fileID: 21300000, guid: 791277001b033db48afbff05ea2c2b63, type: 3}
-  maxNumberOfItems: 9
 --- !u!114 &1895683342622050493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +300,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61349c1332b1194384540de96690e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskName: 
+  taskGiver: 
+  taskDescription: 
+  taskIngredients: 
+  isFull: 0
+  taskSlotNameText: {fileID: 7450324935311802095}
+  taskSlotGiverText: {fileID: 8932522727659956429}
+  taskNameDescriptionText: {fileID: 0}
+  taskDescriptionText: {fileID: 0}
+  taskIngredientsDescriptionText: {fileID: 0}
+  selectedShader: {fileID: 1362420963352105169}
+  taskSlot: {fileID: 5416481726296665727}
+  thisItemSelected: 0
 --- !u!1 &8942696835096415175
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +378,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Task Name
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

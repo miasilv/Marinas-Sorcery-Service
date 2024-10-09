@@ -43,8 +43,10 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
         // Update Name, Image, and Description
         this.itemName = itemName;
         this.itemSprite = itemSprite;
-        slotImage.sprite = itemSprite;  
         this.itemDescription = itemDescription;
+
+        // update slot image
+        slotImage.sprite = itemSprite;  
 
         // Update Quantity
         this.quantity += quantity;
@@ -90,9 +92,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
             }
         }
     } 
-    public void EquipItem() {
-        
-    }
 
     public void EmptySlot() {
         // Make the slot empty

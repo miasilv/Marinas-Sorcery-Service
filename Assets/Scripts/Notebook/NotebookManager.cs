@@ -49,12 +49,16 @@ public class NotebookManager : MonoBehaviour {
             ToggleNotebookOff();
         }
 
-        // switch Between the two
+        // switch Between the two using arrow keys
         if (notebookActivated) {
             if (inventoryActivated && Input.GetKeyDown(KeyCode.RightArrow)) {
                 OpenTask();
             } else if (taskActivated && Input.GetKeyDown(KeyCode.LeftArrow)) {
                 OpenInventory();
+            }
+
+            if (Input.GetButtonDown("Cancel")) {
+                ToggleNotebookOff();
             }
         }
     }
