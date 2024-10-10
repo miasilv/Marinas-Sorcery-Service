@@ -90,8 +90,6 @@ public class DialogueManager : MonoBehaviour {
 
         continueIcon.SetActive(true);
 
-
-
     }
 
     public void MakeChoice(int choiceIndex) {

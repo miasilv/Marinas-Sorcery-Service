@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PotionManager : MonoBehaviour {
+public class PotionMaker : MonoBehaviour {
     [SerializeField] private GameObject potionCanvas;
     [SerializeField] private ItemSlotPM[] itemSlot;
     [SerializeField] private GameObject visualCue;

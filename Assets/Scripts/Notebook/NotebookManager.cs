@@ -16,6 +16,11 @@ public class NotebookManager : MonoBehaviour {
     private TaskManager taskManager;
     [SerializeField] GameObject taskMenu;
     private bool taskActivated;
+    
+    //===========POTION==========//
+    private PotionManager potionManager;
+    [SerializeField] GameObject potionMenu;
+    private bool potionActivated;
 
     void Awake() {
         // the notebook is closed
@@ -30,23 +35,26 @@ public class NotebookManager : MonoBehaviour {
         taskActivated = false;
         taskManager = GameObject.Find("NotebookCanvas").GetComponent<TaskManager>();
 
+        // the potion is closed
+        potionActivated = false;
+        potionManager = GameObject.Find("NotebookCanvas").GetComponent<PotionManager>();
     }
 
     void Update() {
-        // toggle inventory
+        // turn on notebooks
         if (Input.GetButtonDown("Inventory") && !inventoryActivated) {
             ToggleNotebookOn();
             OpenInventory();
-        } else if (Input.GetButtonDown("Inventory") && inventoryActivated) {
-            ToggleNotebookOff();
         }
 
-        // toggle task
         if (Input.GetButtonDown("Task") && !taskActivated) {
             ToggleNotebookOn();
             OpenTask();
-        } else if (Input.GetButtonDown("Task") && taskActivated) {
-            ToggleNotebookOff();
+        }
+
+        if (Input.GetButtonDown("Potion") && !potionActivated) {
+            ToggleNotebookOn();
+            OpenPotion();
         }
 
         // switch Between the two using arrow keys
@@ -55,6 +63,8 @@ public class NotebookManager : MonoBehaviour {
                 OpenTask();
             } else if (taskActivated && Input.GetKeyDown(KeyCode.LeftArrow)) {
                 OpenInventory();
+            } else if (taskActivated && Input.GetKeyDown(KeyCode.RightArrow)) {
+                OpenPotion();
             }
 
             if (Input.GetButtonDown("Cancel")) {
@@ -75,6 +85,7 @@ public class NotebookManager : MonoBehaviour {
         notebookActivated = false;
         inventoryActivated = false;
         taskActivated = false;
+        potionActivated = false;
     }
 
     public void OpenInventory() {
@@ -82,6 +93,8 @@ public class NotebookManager : MonoBehaviour {
         // close other pages
         taskMenu.SetActive(false);
         taskActivated = false;
+        potionMenu.SetActive(false);
+        potionActivated = false;
 
         // open inventory
         inventoryMenu.SetActive(true);
@@ -94,9 +107,27 @@ public class NotebookManager : MonoBehaviour {
         // close other pages
         inventoryMenu.SetActive(false);
         inventoryActivated = false;
+        potionMenu.SetActive(false);
+        potionActivated = false;
 
         // open task
         taskMenu.SetActive(true);
         taskActivated = true;
+        taskManager.DeselectAllSlots();
+    }
+
+    public void OpenPotion() {
+        Debug.Log("Opening Potion");
+        // close other pages
+        inventoryMenu.SetActive(false);
+        inventoryActivated = false;
+        taskMenu.SetActive(false);
+        taskActivated = false;
+
+
+        // open potion
+        potionMenu.SetActive(true);
+        potionActivated = true;
+        potionManager.DeselectAllSlots();
     }
 }

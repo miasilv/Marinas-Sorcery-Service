@@ -9,11 +9,13 @@ public class TaskManager : MonoBehaviour {
         DeselectAllSlots();
     }
     
-    public void AddTask(string taskName, string taskGiver, string taskDescription, string taskIngredients) {
+    public void AddTask(string taskName, string taskGiver, string taskDescription) {
         // look for an unfilled slot
         for (int i = 0; i < taskSlot.Length; i++) {
             if(!taskSlot[i].isFull) {
-                taskSlot[i].AddTask(taskName, taskGiver, taskDescription, taskIngredients);
+                taskSlot[i].AddTask(taskName, taskGiver, taskDescription);
+                taskSlot[i].gameObject.SetActive(true);
+                return;
             }
         }
     }
