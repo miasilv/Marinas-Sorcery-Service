@@ -1,34 +1,38 @@
-Serena: Oh, Marina! It's good to see you!
+Oh, Marina! It's good to see you! #speaker:Serena #portrait: serena_icon #layout:left
 
- Marina: Serena? It's good to see you too but... what are you doing all the way out here?
+Serena? It's good to see you too but... what are you doing all the way out here? #speaker: Marina #portrait: marina_icon #layout:right
  
- Serena: It's a nice day for a walk. The trees are less ominous this afternoon and there aren't many animals on the road here....
+It's a nice day for a walk. The trees are less ominous this afternoon and there aren't many animals on the road here.... #speaker:Serena #portrait: serena_icon #layout:left
  
- Serena: Alright, I'll be honest. The season's bad. It's been bad for everyone, but Thomas and I have been hit the hardest it seems. 
+ Alright, I'll be honest. The season's bad. It's been bad for everyone, but Thomas and I have been hit the hardest it seems. 
  
- Serena: Thomas is too strong to be seen coming to your Mother for help. Even if it's all she's ever done for the village.
+ Thomas is too strong to be seen coming to your Mother for help. Even if it's all she's ever done for the village.
  
- Serena: Not saying we're unappreciative! Her help is always wanted! Even if most won't admit it. Not including me, of course.
+ Not saying we're unappreciative! Her help is always wanted! Even if most won't admit it. Not including me, of course.
  
- Serena: I know I could've waited till she came to the village but.... I didn't want anyone to see me asking. Especially Thomas.
+ I know I could've waited till she came to the village but.... I didn't want anyone to see me asking. Especially Thomas.
+ 
+ #speaker: Marina #portrait: marina_icon #layout:right
  
  + [I'm sorry to hear that.] 
-    Marina: I know Mother would be happy to hear your support of her. I'm really sorry it's been hard on everyone.
+    I'm sorry to hear that. I know Mother would be happy to hear your support of her. #speaker: Marina #portrait: marina_icon #layout:right
  
- - Serena: Would? Is she not here?
+ - Would? Is she not here? #speaker:Serena #portrait: serena_icon #layout:left
  
- Marina: Unfortunately Mother's been ill as of late. She doesn't make the village worry so until she's better I'll be taking her place.
+ Unfortunately Mother's been ill as of late. She doesn't make the village worry so until she's better I'll be taking her place. #speaker: Marina #portrait: marina_icon #layout:right
  
- Serena: Oh! That's wonderful to hear! About you handling the potions, not her sickness. Terrible news.
+ Oh! That's wonderful to hear! About you handling the potions, not her sickness. Terrible news. #speaker:Serena #portrait: serena_icon #layout:left
  
- Serena: So... will you be able to help out Thomas and I?
+ So... will you be able to help out Thomas and I?
+ 
+ #speaker: Marina #portrait: marina_icon #layout:right
  
  + [Yes! I'll get on it right away.]
-    Marina: Of course! I don't want you two to worry any longer.
+    Yes! I'll get on it right away. I don't want you two to worry any longer. #speaker: Marina #portrait: marina_icon #layout:right
  + [I will, after I get back from the village.]
-    Marina: Sure, but first, I have some things to take care of before I can start.
+    I will, after I get back from the village. I have some things to take care of before I can start. #speaker: Marina #portrait: marina_icon #layout:right
     
-- Serena: Thank you! You have no idea how much this means to the both of us!
+- Thank you! You have no idea how much this means to the both of us! #speaker:Serena #portrait: serena_icon #layout:left
 
-Serena: I'll hurry back now, don't worry I know my way around the forest. Send you mother my regards!
+I'll hurry back now, don't worry I know my way around the forest. Send you mother my regards!
     -> END
