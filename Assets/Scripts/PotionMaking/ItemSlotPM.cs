@@ -73,6 +73,10 @@ public class ItemSlotPM : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
     public void DropItem(int numToDrop) {
         inventoryItemSlotReference.DropItem(numToDrop);
         this.UpdateSlot();
+        if(this.quantity <= 0) {
+            this.slotImage.sprite = emptySprite;
+            isUsable = false;
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData) {

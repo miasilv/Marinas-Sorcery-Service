@@ -13,6 +13,10 @@ PrefabInstance:
       value: Moss
       objectReference: {fileID: 0}
     - target: {fileID: 3170716592801522492, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 77863d45cde177340a13f8f53f13fe20, type: 3}
+    - target: {fileID: 3170716592801522492, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: itemName
       value: Moss
       objectReference: {fileID: 0}
@@ -20,6 +24,14 @@ PrefabInstance:
       propertyPath: quantity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3170716592801522492, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: itemDescription
+      value: Dark green clumps covering trees and stones.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6090151917760579457, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 77863d45cde177340a13f8f53f13fe20, type: 3}
     - target: {fileID: 7466284817191757954, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.05

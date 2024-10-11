@@ -26,9 +26,7 @@ public class TaskSlot : MonoBehaviour, IPointerClickHandler {
 
     private void Awake() {
         taskManager = GameObject.Find("NotebookCanvas").GetComponent<TaskManager>();
-        gameObject.SetActive(false);
     }
-
     public void AddTask(string taskName, string taskGiver, string taskDescription) {        
         // updating task information
         this.taskName = taskName;
@@ -38,6 +36,7 @@ public class TaskSlot : MonoBehaviour, IPointerClickHandler {
         // updating task slot
         this.taskSlotNameText.text = this.taskName;
         this.taskSlotGiverText.text = "Task was given by " + taskGiver;
+        isFull = true;
     }
     
     public void OnPointerClick(PointerEventData eventData) {
@@ -64,6 +63,13 @@ public class TaskSlot : MonoBehaviour, IPointerClickHandler {
         this.taskNameDescriptionText.text = "";
         this.taskDescriptionText.text = "";
         gameObject.SetActive(false);
+
+        isFull = false;
+    }
+
+    public void DeselctSlot() {
+        taskNameDescriptionText.text = "";
+        taskDescriptionText.text = "";
     }
 
 }

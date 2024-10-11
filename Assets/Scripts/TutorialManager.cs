@@ -5,10 +5,15 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour {
     private TaskManager taskManager;
     private PotionManager potionManager;
+
+    [SerializeField] GameObject serena;
+    public bool motherConvoDone;
     
     void Start() {
         potionManager = GameObject.Find("NotebookCanvas").GetComponent<PotionManager>();  
         taskManager = GameObject.Find("NotebookCanvas").GetComponent<TaskManager>();
+
+        motherConvoDone = false;
 
         // Hardcoding adding potion and task
         potionManager.AddPotion("Victamis", "A common plant growth potion.", " - Robin’s feather x1\n - Moon frog x1\n - Primrose x1\n - Moss x1");
@@ -16,8 +21,13 @@ public class TutorialManager : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+        if (motherConvoDone && serena.activeSelf == false) {
+            serena.SetActive(true);
+        }
+    }
+
+    public void motherConvoIsDone() {
+        motherConvoDone = true;
     }
 }

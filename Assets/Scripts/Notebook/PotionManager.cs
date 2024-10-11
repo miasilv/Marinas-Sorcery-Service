@@ -16,7 +16,6 @@ public class PotionManager : MonoBehaviour {
         for (int i = 0; i < potionSlot.Length; i++) {
             if(!potionSlot[i].isFull) {
                 potionSlot[i].AddPotion(potionName, potionDescription, potionIngredients);
-                potionSlot[i].gameObject.SetActive(true);
                 return;
             }
         }
@@ -26,6 +25,7 @@ public class PotionManager : MonoBehaviour {
         for (int i = 0; i < potionSlot.Length; i++) {
             potionSlot[i].selectedShader.SetActive(false);
             potionSlot[i].thisItemSelected = false;
+            potionSlot[i].DeselctSlot();
         }
         potionIngredientsHeaderText.enabled = false;
     }

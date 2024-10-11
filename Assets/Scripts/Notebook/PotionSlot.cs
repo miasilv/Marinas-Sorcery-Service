@@ -27,7 +27,6 @@ public class PotionSlot : MonoBehaviour, IPointerClickHandler {
 
     private void Awake() {
         potionManager = GameObject.Find("NotebookCanvas").GetComponent<PotionManager>();
-        gameObject.SetActive(false);
     }
 
     public void AddPotion(string potionName, string potionDescription, string potionIngredients) {        
@@ -38,6 +37,7 @@ public class PotionSlot : MonoBehaviour, IPointerClickHandler {
 
         // updating potion slot
         this.potionSlotNameText.text = this.potionName;
+        isFull = true;
     }
     
     public void OnPointerClick(PointerEventData eventData) {
@@ -53,6 +53,13 @@ public class PotionSlot : MonoBehaviour, IPointerClickHandler {
         potionDescriptionText.text = this.potionDescription;
         potionIngredientsText.text = this.potionIngredients;
         potionIngredientsHeaderText.enabled = true;
+    }
+
+    public void DeselctSlot() {
+        potionNameDescriptionText.text = "";
+        potionDescriptionText.text = "";
+        potionIngredientsText.text = "";
+        potionIngredientsHeaderText.enabled = false;
     }
 
 }
