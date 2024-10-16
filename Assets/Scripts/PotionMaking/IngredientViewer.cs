@@ -7,6 +7,7 @@ using TMPro;
 public class IngredientViewer : MonoBehaviour {
     [SerializeField] private TMP_Dropdown ingreidentDropdown;
     [SerializeField] private PotionSlot[] potions;
+    [SerializeField] private GameObject[] recipeIngredients;
     void Start() {
         potions = GameObject.FindWithTag("NotebookCanvas").GetComponentsInChildren<PotionSlot>(true);
         List<string> options = new List<string>();
@@ -17,5 +18,16 @@ public class IngredientViewer : MonoBehaviour {
         }
         ingreidentDropdown.ClearOptions();
         ingreidentDropdown.AddOptions(options);
+        UpdateIngredients(0);
+    }
+
+    public void UpdateIngredients(int index) {
+        int i = 0;
+        Debug.Log(potions[index].potionName);
+        foreach(KeyValuePair<Item, int> ingredient in potions[index].potionIngredients) {
+            recipeIngredients[i].GetComponentInChildren<Image>().sprite = ingredient.Key.sprite;
+            recipeIngredients[i].GetComponentInChildren<TextMeshProUGUI>().text = "x " + ingredient.Value;
+            i++;
+        }
     }
 }

@@ -9,7 +9,7 @@ public class PotionSlot : MonoBehaviour, IPointerClickHandler {
     //===========POTION DATA===========//
     public string potionName;
     public string potionDescription;
-    public string potionIngredients;
+    public Dictionary<Item, int> potionIngredients;
     public bool isFull;
 
     //===========POTION SLOT===========//
@@ -29,7 +29,7 @@ public class PotionSlot : MonoBehaviour, IPointerClickHandler {
         potionManager = GameObject.Find("NotebookCanvas").GetComponent<PotionManager>();
     }
 
-    public void AddPotion(string potionName, string potionDescription, string potionIngredients) {        
+    public void AddPotion(string potionName, string potionDescription, Dictionary<Item, int> potionIngredients) {        
         // updating potion information
         this.potionName = potionName;
         this.potionDescription = potionDescription;
@@ -51,7 +51,9 @@ public class PotionSlot : MonoBehaviour, IPointerClickHandler {
 
         potionNameDescriptionText.text = this.potionName;
         potionDescriptionText.text = this.potionDescription;
-        potionIngredientsText.text = this.potionIngredients;
+        foreach(KeyValuePair<Item, int> ingredient in potionIngredients) {
+            potionIngredientsText.text += " - " + ingredient.Key.itemName + " x" + ingredient.Value + "\n";
+        }
         potionIngredientsHeaderText.enabled = true;
     }
 

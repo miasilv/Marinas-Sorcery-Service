@@ -11,7 +11,7 @@ public class PotionManager : MonoBehaviour {
         DeselectAllSlots();
     }
     
-    public void AddPotion(string potionName, string potionDescription, string potionIngredients) {
+    public void AddPotion(string potionName, string potionDescription, Dictionary<Item, int> potionIngredients) {
         // look for an unfilled slot
         for (int i = 0; i < potionSlot.Length; i++) {
             if(!potionSlot[i].isFull) {

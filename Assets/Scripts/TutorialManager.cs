@@ -7,6 +7,7 @@ public class TutorialManager : MonoBehaviour {
     private PotionManager potionManager;
 
     [SerializeField] GameObject serena;
+    [SerializeField] Item[] items;
     public bool motherConvoDone;
     
     void Start() {
@@ -16,7 +17,21 @@ public class TutorialManager : MonoBehaviour {
         motherConvoDone = false;
 
         // Hardcoding adding potion and task
-        potionManager.AddPotion("Victamis", "A common plant growth potion.", " - Robin’s feather x1\n - Moon frog x1\n - Primrose x1\n - Moss x1");
+        Dictionary<Item, int> myDictionary = new Dictionary<Item, int>();
+        myDictionary.Add(items[0], 1);
+        myDictionary.Add(items[1], 1);  
+        myDictionary.Add(items[2], 1);
+        myDictionary.Add(items[3], 1);
+
+        Dictionary<Item, int> myDictionary2 = new Dictionary<Item, int>();
+        myDictionary2.Add(items[3], 2);
+        myDictionary2.Add(items[2], 2);  
+        myDictionary2.Add(items[1], 2);
+        myDictionary2.Add(items[0], 2);       
+
+        potionManager.AddPotion("Victamis", "A common plant growth potion.", myDictionary);
+        potionManager.AddPotion("Victamis 2", "A common plant growth potion pt.2.", myDictionary2);
+
         taskManager.AddTask("My First Task", "Serena", "Poor Serena, this season has hit everyone in the village hard, them especially. Maybe I can make things a bit easier for them." );  
     }
 
