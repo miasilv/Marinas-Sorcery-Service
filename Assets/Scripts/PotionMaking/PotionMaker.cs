@@ -9,20 +9,28 @@ public class PotionMaker : MonoBehaviour {
     public bool playerInRange;
     public bool potionCanvasActive;
 
-    private void Awake() {
+    private void Start() {
         playerInRange = false;
         potionCanvasActive = false;
         visualCue.SetActive(false);
         potionCanvas.SetActive(false);
+
+
+        ItemSlot[] itemSlotReferences = GameObject.FindWithTag("NotebookCanvas").GetComponentsInChildren<ItemSlot>(true);
+        for (int i = 0; i < itemSlot.Length && i < itemSlotReferences.Length; i++) {
+            itemSlot[i].inventoryItemSlotReference = itemSlotReferences[i];
+        }
+
+        UpdateAllSlots();
     }
 
     private void Update() {
         if (playerInRange) {
             visualCue.SetActive(true);
             if (Input.GetButtonDown("Interact"))  {
-                UpdateAllSlots();
                 potionCanvas.SetActive(true);
                 potionCanvasActive = true;
+                UpdateAllSlots();
                 // Have to disable character movement
             }
         }

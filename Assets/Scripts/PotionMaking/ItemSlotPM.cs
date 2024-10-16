@@ -24,7 +24,7 @@ public class ItemSlotPM : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
     [SerializeField] private Image slotImage;
     [SerializeField] private GameObject moveableSprite;
 
-    [SerializeField] private ItemSlot inventoryItemSlotReference;
+    public ItemSlot inventoryItemSlotReference;
 
     
     void Start() {
@@ -75,6 +75,7 @@ public class ItemSlotPM : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
         this.UpdateSlot();
         if(this.quantity <= 0) {
             this.slotImage.sprite = emptySprite;
+            this.moveableSprite.SetActive(false);
             isUsable = false;
         }
     }

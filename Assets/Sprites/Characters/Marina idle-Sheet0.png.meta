@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dc43d889d8149b4458088d2930a1c5a5
+guid: deaa3639c123bdf45bfb939307a8c4cd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,11 +93,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Main 1 Game _0
+      name: Marina idle-Sheet0_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d11980426c8a5d43b50792e3e0773c7
-      internalID: 637081020
+      spriteID: fde10a8b1da39f2469a7a7770f2c71c7
+      internalID: 1646681580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main 1 Game _1
+      name: Marina idle-Sheet0_1
       rect:
         serializedVersion: 2
         x: 64
@@ -132,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33f21b885a8b5984abca918a8681a33a
-      internalID: -1854498152
+      spriteID: 2a5c583758979e644978c16fb74d5cc6
+      internalID: 1736199296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main 1 Game _2
+      name: Marina idle-Sheet0_2
       rect:
         serializedVersion: 2
         x: 128
@@ -153,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adcf07976606cd949ab3e811bf490822
-      internalID: 747873682
+      spriteID: e6f3fa391ee647844a5f6c458f71267b
+      internalID: 213789979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main 1 Game _3
+      name: Marina idle-Sheet0_3
       rect:
         serializedVersion: 2
         x: 192
@@ -174,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0b43773882cc3d4a8c93f36dbbb3265
-      internalID: -1352470852
+      spriteID: 98555574cf3b6864582ff0510e86052c
+      internalID: -938533680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main 1 Game _4
+      name: Marina idle-Sheet0_4
       rect:
         serializedVersion: 2
         x: 256
@@ -195,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 582b3c1cef9b74c4caf68727b3d3641f
-      internalID: 2036700584
+      spriteID: 2cded57e3a01153459911b52147903f1
+      internalID: -1303176143
       vertices: []
       indices: 
       edges: []
@@ -212,11 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Main 1 Game _0: 637081020
-      Main 1 Game _1: -1854498152
-      Main 1 Game _2: 747873682
-      Main 1 Game _3: -1352470852
-      Main 1 Game _4: 2036700584
+      Marina idle-Sheet0_0: 1646681580
+      Marina idle-Sheet0_1: 1736199296
+      Marina idle-Sheet0_2: 213789979
+      Marina idle-Sheet0_3: -938533680
+      Marina idle-Sheet0_4: -1303176143
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

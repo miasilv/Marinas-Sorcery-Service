@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SceneChanger
   - Mother
+  - NotebookCanvas
   layers:
   - Default
   - TransparentFX

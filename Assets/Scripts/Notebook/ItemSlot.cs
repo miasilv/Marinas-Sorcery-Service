@@ -94,11 +94,18 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
     } 
 
     public void EmptySlot() {
-        // Make the slot empty
+        // Remove the item data
+        itemName = "";
+        itemSprite = emptySprite;
+        quantity = 0;
+        itemDescription = "";
+        isFull = false;
+
+        // Remove the slot data
         slotQuantityText.enabled = false;
         slotImage.sprite = emptySprite;
         
-        // Change the Item Description
+        // Remove the description information
         itemDescriptionNameText.text = "";
         itemDescriptionText.text = "";
         itemDescriptionImage.sprite = emptySprite;
