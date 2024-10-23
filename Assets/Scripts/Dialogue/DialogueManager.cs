@@ -95,15 +95,17 @@ public class DialogueManager : MonoBehaviour {
         canContinueToNextLine = false;
 
         // display each letter one at a time
+        int i = 0;
         foreach (char letter in line.ToCharArray()) {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+
             // finish writing the line right away
-            if (Input.GetKeyDown(KeyCode.Space)) {
+            if (Input.GetKey(KeyCode.Space) && i > 3) {
                 dialogueText.text = line;
                 break;
             }
-
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            i++;
         }
         // display choices, if any, for this dialogue line
         DisplayChoices();
