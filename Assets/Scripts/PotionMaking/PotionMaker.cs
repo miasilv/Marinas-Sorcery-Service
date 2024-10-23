@@ -6,6 +6,8 @@ public class PotionMaker : MonoBehaviour {
     [SerializeField] private GameObject potionCanvas;
     [SerializeField] private ItemSlotPM[] itemSlot;
     [SerializeField] private GameObject visualCue;
+    [SerializeField] private List<string> itemsInCauldron;
+    [SerializeField] private PotionSlot[] potions;
     public bool playerInRange;
     public bool potionCanvasActive;
 
@@ -15,12 +17,15 @@ public class PotionMaker : MonoBehaviour {
         visualCue.SetActive(false);
         potionCanvas.SetActive(false);
 
+        // Get a list of all potions
+        itemsInCauldron = new List<string>();
+        potions = GameObject.FindWithTag("NotebookCanvas").GetComponentsInChildren<PotionSlot>(true);
 
+        // Find all item slot references from the notebook
         ItemSlot[] itemSlotReferences = GameObject.FindWithTag("NotebookCanvas").GetComponentsInChildren<ItemSlot>(true);
         for (int i = 0; i < itemSlot.Length && i < itemSlotReferences.Length; i++) {
             itemSlot[i].inventoryItemSlotReference = itemSlotReferences[i];
         }
-
         UpdateAllSlots();
     }
 
@@ -60,6 +65,22 @@ public class PotionMaker : MonoBehaviour {
     public void UpdateAllSlots() {
         for (int i = 0; i < itemSlot.Length; i++) {
             itemSlot[i].UpdateSlot();
+        }
+    }
+
+    public void AddItemToCauldron(string itemName) {
+        itemsInCauldron.Add(itemName);
+    }
+
+    public void EmptyCauldron() {
+        itemsInCauldron.Clear();
+    }
+
+    public void FinishPotion() {
+        foreach (var potion in potions) {
+            foreach (var potionIngredient in potion.potionIngredients) {
+                // put functionality here
+            }
         }
     }
 }

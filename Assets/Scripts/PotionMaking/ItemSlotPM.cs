@@ -96,7 +96,8 @@ public class ItemSlotPM : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
         if(moveableSprite.transform.position.x > xMin && moveableSprite.transform.position.x < xMax &&
            moveableSprite.transform.position.y > yMin && moveableSprite.transform.position.y < yMax) {
             Debug.Log("Dropping " + itemName + " in cauldron");
-            this.DropItem(1);
+            GameObject.FindWithTag("PotionMaker").GetComponent<PotionMaker>().AddItemToCauldron(this.itemName);
+            this.DropItem(1);   
         }
         
         // reset moveable sprite position and visiblity

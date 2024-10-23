@@ -6,13 +6,15 @@ using UnityEngine.SceneManagement;
 public class PlayerManager : MonoBehaviour
 {
     public float moveSpeed = 4.0f;
-
     private Animator anim;
     private SpriteRenderer sprite;
 
-    public Vector3 enterHousePos;
+    [Header("New Scene Positions")]
+    [SerializeField] private Vector3 enterHousePos;
+    [SerializeField] private Vector3 enterWoodsFromHousePos;
+    [SerializeField] private Vector3 enterWoodsFromVillagePos;
+    [SerializeField] private Vector3 enterVillagePos;
 
-    public Vector3 enterWoodsPos;
 
     void Start() {
         anim = gameObject.GetComponentInChildren<Animator>();
@@ -46,19 +48,32 @@ public class PlayerManager : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D col) {
-        if (col.gameObject.tag == "SceneChanger" && SceneManager.GetActiveScene().name == "House") {
-            Debug.Log("Changing Scene to Forest");
-            SceneManager.LoadScene("Forest");
-            this.transform.position = enterWoodsPos;
-        }
-    }
+        if (col.gameObject.tag == "SceneChanger") {
+            if (SceneManager.GetActiveScene().name == "House") {
+                Debug.Log("Changing Scene from House to Forest");
+                SceneManager.LoadScene("Forest");
+                this.transform.position = enterWoodsFromHousePos;
+            }
+            
+            if (SceneManager.GetActiveScene().name == "Forest") {
+                if (col.gameObject.name == "HouseTrigger") {
+                    Debug.Log("Changing Scene from Forest to House");
+                    SceneManager.LoadScene("House");
+                    this.transform.position = enterHousePos;
+                }
 
-    void OnTriggerStay2D(Collider2D col) {
-        // should change this mechanic
-        if (col.gameObject.tag == "SceneChanger" && SceneManager.GetActiveScene().name == "Forest" && Input.GetButtonDown("Jump")) {
-            Debug.Log("Changing Scene to House");
-            SceneManager.LoadScene("House");
-            this.transform.position = enterHousePos;
+                if (col.gameObject.name == "VillageTrigger") {
+                    Debug.Log("Changing Scene from Forest to Village");
+                    SceneManager.LoadScene("Village");
+                    this.transform.position = enterVillagePos;
+                }
+            }
+
+            if (SceneManager.GetActiveScene().name == "Village") {
+                Debug.Log("Changing Scene from Village to Forest");
+                SceneManager.LoadScene("Forest");
+                this.transform.position = enterWoodsFromVillagePos;
+            }
         }
     }
 }
