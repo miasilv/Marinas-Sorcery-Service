@@ -6,7 +6,7 @@ public class Item : MonoBehaviour {
     [SerializeField] public string itemName;
     [SerializeField] private int quantity;
     [SerializeField] public Sprite sprite;
-    [TextArea][SerializeField] private string itemDescription;
+    [TextArea][SerializeField] public string itemDescription;
 
     [SerializeField] private GameObject visualCue;
     private bool playerInRange;

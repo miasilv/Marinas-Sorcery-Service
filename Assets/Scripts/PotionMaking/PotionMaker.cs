@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PotionMaker : MonoBehaviour {
     [SerializeField] private GameObject potionCanvas;
     [SerializeField] private ItemSlotPM[] itemSlot;
     [SerializeField] private GameObject visualCue;
-    [SerializeField] private List<string> itemsInCauldron;
+    [SerializeField] private Dictionary<string, int> itemsInCauldron;
     [SerializeField] private PotionSlot[] potions;
+    [SerializeField] private GameObject[] potionPrefabs;
+
+    [SerializeField] private GameObject potionCompletePanel;
+    [SerializeField] private TMP_Text potionCompleteText;
+    private InventoryManager inventoryManager;
     public bool playerInRange;
     public bool potionCanvasActive;
 
@@ -18,10 +25,11 @@ public class PotionMaker : MonoBehaviour {
         potionCanvas.SetActive(false);
 
         // Get a list of all potions
-        itemsInCauldron = new List<string>();
-        potions = GameObject.FindWithTag("NotebookCanvas").GetComponentsInChildren<PotionSlot>(true);
+        itemsInCauldron = new Dictionary<string, int>();
+        potions = GameObject.Find("NotebookCanvas").GetComponentsInChildren<PotionSlot>(true);
 
         // Find all item slot references from the notebook
+        inventoryManager = GameObject.Find("NotebookCanvas").GetComponent<InventoryManager>();
         ItemSlot[] itemSlotReferences = GameObject.FindWithTag("NotebookCanvas").GetComponentsInChildren<ItemSlot>(true);
         for (int i = 0; i < itemSlot.Length && i < itemSlotReferences.Length; i++) {
             itemSlot[i].inventoryItemSlotReference = itemSlotReferences[i];
@@ -69,7 +77,14 @@ public class PotionMaker : MonoBehaviour {
     }
 
     public void AddItemToCauldron(string itemName) {
-        itemsInCauldron.Add(itemName);
+        // If the item already exists in the cauldron, increment its quantity
+        if (itemsInCauldron.ContainsKey(itemName)) {
+            itemsInCauldron[itemName]++;
+        }
+        // if its a new item, add it to the dictionary
+        else {
+            itemsInCauldron.Add(itemName, 1);
+        }
     }
 
     public void EmptyCauldron() {
@@ -77,10 +92,38 @@ public class PotionMaker : MonoBehaviour {
     }
 
     public void FinishPotion() {
-        foreach (var potion in potions) {
-            foreach (var potionIngredient in potion.potionIngredients) {
-                // put functionality here
+        string potionText = "...something?";
+        if (itemsInCauldron.Count > 0) {
+            foreach (var potion in potions) {
+                if (potion.isFull && CheckPotion(potion)) {
+                    potionText = " " + potion.potionName;
+                    break;
+                }
             }
         }
+        potionCompleteText.text = "You made" + potionText;
+        potionCompletePanel.SetActive(true);
+        EmptyCauldron();
+
+    }
+
+    private bool CheckPotion(PotionSlot potion) {
+        // Check if the number of ingredients matches
+        if (itemsInCauldron.Count != potion.potionIngredients.Count) {
+            return false;
+        }
+
+        // Check each ingredient in the potion
+        foreach (var potionIngredient in potion.potionIngredients) {
+            string itemName = potionIngredient.Key.itemName;
+            int requiredAmount = potionIngredient.Value;
+
+            // Check if the cauldron has the ingredient and the correct amount
+            if (!itemsInCauldron.ContainsKey(itemName) || itemsInCauldron[itemName] != requiredAmount) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

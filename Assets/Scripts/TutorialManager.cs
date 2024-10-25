@@ -5,12 +5,14 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour {
     private TaskManager taskManager;
     private PotionManager potionManager;
+    private InventoryManager inventoryManager;
 
     [SerializeField] Item[] items;
     
     void Start() {
         potionManager = GameObject.Find("NotebookCanvas").GetComponent<PotionManager>();  
         taskManager = GameObject.Find("NotebookCanvas").GetComponent<TaskManager>();
+        inventoryManager = GameObject.Find("NotebookCanvas").GetComponent<InventoryManager>();
 
         // Hardcoding adding potion and task
         Dictionary<Item, int> myDictionary = new Dictionary<Item, int>();
@@ -28,6 +30,11 @@ public class TutorialManager : MonoBehaviour {
         potionManager.AddPotion("Victamis", "A common plant growth potion.", myDictionary);
         potionManager.AddPotion("Victamis 2", "A common plant growth potion pt.2.", myDictionary2);
 
-        taskManager.AddTask("My First Task", "Serena", "Poor Serena, this season has hit everyone in the village hard, them especially. Maybe I can make things a bit easier for them." );  
+        taskManager.AddTask("My First Task", "Serena", "Poor Serena, this season has hit everyone in the village hard, them especially. Maybe I can make things a bit easier for them.");
+
+        inventoryManager.AddItem(items[0].itemName, 3, items[0].sprite, items[0].itemDescription); 
+        inventoryManager.AddItem(items[1].itemName, 3, items[1].sprite, items[1].itemDescription); 
+        inventoryManager.AddItem(items[2].itemName, 3, items[2].sprite, items[2].itemDescription); 
+        inventoryManager.AddItem(items[3].itemName, 3, items[3].sprite, items[3].itemDescription);  
     }
 }
