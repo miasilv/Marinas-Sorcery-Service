@@ -17,6 +17,7 @@ public class PotionMaker : MonoBehaviour {
     private InventoryManager inventoryManager;
     public bool playerInRange;
     public bool potionCanvasActive;
+    [SerializeField] public Sprite potionSprite;
 
     private void Start() {
         playerInRange = false;
@@ -97,6 +98,7 @@ public class PotionMaker : MonoBehaviour {
             foreach (var potion in potions) {
                 if (potion.isFull && CheckPotion(potion)) {
                     potionText = " " + potion.potionName;
+                    inventoryManager.AddItem(potion.potionName, 1, potionSprite, potion.potionDescription);
                     break;
                 }
             }

@@ -7193,6 +7193,7 @@ MonoBehaviour:
   potionCompleteText: {fileID: 433357299}
   playerInRange: 0
   potionCanvasActive: 0
+  potionSprite: {fileID: 21300000, guid: 38234023449ff5a4a9899f4dfba30a05, type: 3}
 --- !u!1 &2013552617
 GameObject:
   m_ObjectHideFlags: 0
