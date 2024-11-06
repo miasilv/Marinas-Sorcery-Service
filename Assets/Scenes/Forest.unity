@@ -832,7 +832,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualCue: {fileID: 1166820553}
-  inkJSON: {fileID: 4900000, guid: 74403d3a0b3de3f4ebc1f6d5963a8a19, type: 3}
+  inkJSON:
+  - {fileID: 4900000, guid: 74403d3a0b3de3f4ebc1f6d5963a8a19, type: 3}
+  dialogueIndex: 0
   playerInRange: 0
 --- !u!70 &815901805
 CapsuleCollider2D:

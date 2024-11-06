@@ -186,7 +186,7 @@ public class DialogueManager : MonoBehaviour {
                     break;
                 
                 case TASK_TAG:
-                    string[] taskInfo = tagValue.Split(",");
+                    string[] taskInfo = tagValue.Split("$");
                     if (taskInfo.Length != 3) {
                         Debug.Log("Task is formatted wrong");
                         break;
