@@ -192,7 +192,7 @@ public class DialogueManager : MonoBehaviour {
                         break;
                     }
                     Debug.Log("Adding task " + taskInfo[0]);
-                    taskManager.AddTask(taskInfo[0], taskInfo[1], taskInfo[2]);
+                    taskManager.AddTask(taskInfo[0].Trim(), taskInfo[1].Trim(), taskInfo[2].Trim());
                     break;
                 
                 default:
