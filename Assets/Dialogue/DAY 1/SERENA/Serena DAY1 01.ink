@@ -35,4 +35,6 @@ It's a nice day for a walk. The trees are less ominous this afternoon and there 
 - Thank you! You have no idea how much this means to the both of us! #speaker:Serena #portrait: serena_icon #layout:left
 
 I'll hurry back now, don't worry I know my way around the forest. Send you mother my regards!
+
+#task: My First Task,Serena,Poor Serena, this season has hit everyone in the village hard, them especially. Maybe I can make things a bit easier for them.
     -> END
