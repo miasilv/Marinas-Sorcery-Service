@@ -22,12 +22,14 @@ public class IngredientViewer : MonoBehaviour {
     }
 
     public void UpdateIngredients(int index) {
-        int i = 0;
-        Debug.Log(potions[index].potionName);
-        foreach(KeyValuePair<Item, int> ingredient in potions[index].potionIngredients) {
-            recipeIngredients[i].GetComponentInChildren<Image>().sprite = ingredient.Key.sprite;
-            recipeIngredients[i].GetComponentInChildren<TextMeshProUGUI>().text = "x " + ingredient.Value;
-            i++;
+        if(potions[index].isFull) {
+            Debug.Log(potions[index].potionName);
+            int i = 0;
+            foreach(KeyValuePair<Item, int> ingredient in potions[index].potionIngredients) {
+                recipeIngredients[i].GetComponentInChildren<Image>().sprite = ingredient.Key.sprite;
+                recipeIngredients[i].GetComponentInChildren<TextMeshProUGUI>().text = "x " + ingredient.Value;
+                i++;
+            }
         }
     }
 }

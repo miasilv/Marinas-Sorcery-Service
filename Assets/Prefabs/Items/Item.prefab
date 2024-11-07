@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
-  quantity: 0
+  quantity: 1
   sprite: {fileID: 21300000, guid: 791277001b033db48afbff05ea2c2b63, type: 3}
   itemDescription: 
   visualCue: {fileID: 7872885739531306927}

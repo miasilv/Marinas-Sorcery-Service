@@ -513,7 +513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5649593031221144701
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1935,6 +1935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c78df0a850b6c4e965be7dc0c69d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typingSpeed: 0.04
   dialoguePanel: {fileID: 4280758658736366886}
   dialogueText: {fileID: 5877466204782401296}
   displayNameText: {fileID: 7618474483939508103}

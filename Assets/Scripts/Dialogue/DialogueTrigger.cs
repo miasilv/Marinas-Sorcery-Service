@@ -15,7 +15,7 @@ public class DialogueTrigger : MonoBehaviour {
 
     public bool playerInRange;
 
-    private void Awake() {
+    private void Start() {
         playerInRange = false;
         visualCue.SetActive(false);
         waitingForPotion = false;
@@ -32,16 +32,18 @@ public class DialogueTrigger : MonoBehaviour {
             if (Input.GetButtonDown("Interact"))  {
                 // if character is currently waiting for a potion, and the player has the potion, add one to dialogueIndex
                 // if character is currently waiting for a potion, the player had the potion, but doesn't anymore, remove one from dialogue index
+                waitingForPotion = gameManager.waitingForPotions[characterIndex];
                 if (waitingForPotion) {
                     if (!hasPotion && gameManager.CheckPotion(characterIndex)) {
-                        dialogueIndex++;
+                        gameManager.AddtoDialogueIndex(characterIndex, 1);
                         hasPotion = true;
                     } else if (hasPotion && !gameManager.CheckPotion(characterIndex)) {
-                        dialogueIndex--;
+                        gameManager.AddtoDialogueIndex(characterIndex, -1);
                         hasPotion = false;
                     }
                 }
 
+                dialogueIndex = gameManager.dialogueIndicies[characterIndex];
                 dialogueManager.EnterDialogueMode(inkJSON[dialogueIndex]);
             }
         }

@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour {
     // ============ Game Status ================
     public int currentDay;
     public bool[] completedTasks;
+    public int[] dialogueIndicies;
+    public bool[] waitingForPotions;
+    private string[] potionsForTasks = {"MotherPotion", "Victamis"};
 
     // ============ Constants ================
     // character indicies
@@ -26,11 +29,6 @@ public class GameManager : MonoBehaviour {
     private const int NANCY = 10;
     private const int KIERAN = 11;
     private const int JESSAMINE = 12;
-    private string[] potionsForTasks = {"MotherPotion", "Victamis"};
-
-    // ======= Dialogue Triggers ================
-    [Header("NPC Dialogue Triggers")]
-    [SerializeField] private DialogueTrigger[] dialogueTriggers;
     
 
     void Start() {
@@ -42,11 +40,16 @@ public class GameManager : MonoBehaviour {
         for (int i = 0; i < completedTasks.Length; i++) {
             completedTasks[i] = false;
         }
-    }
 
-    // Update is called once per frame
-    void Update() {
-                
+        waitingForPotions = new bool[12];
+        for (int i = 0; i < waitingForPotions.Length; i++) {
+            waitingForPotions[i] = false;
+        }
+
+        dialogueIndicies = new int[12];
+        for (int i = 0; i < dialogueIndicies.Length; i++) {
+            dialogueIndicies[i] = 0;
+        }
     }
 
     public bool CheckPotion(int characterIndex) {
@@ -60,19 +63,20 @@ public class GameManager : MonoBehaviour {
     }
 
     public void AddTask(string taskName, string taskGiver, string taskDescription) {
-        taskManager.AddTask(taskName, taskGiver, taskDescription);
+        GameObject.Find("NotebookCanvas").GetComponent<TaskManager>().AddTask(taskName, taskGiver, taskDescription);
         
         if (taskGiver.ToLower() == "mother") {
-            dialogueTriggers[MOTHER].dialogueIndex++;
+            dialogueIndicies[MOTHER] += 1;
         }
         else if (taskGiver.ToLower() == "serena") {
-            dialogueTriggers[SERENA].dialogueIndex++;
+            dialogueIndicies[SERENA] += 1;
+            waitingForPotions[SERENA] = true;
         }
     }
 
-    public void AddDialogueIndex(int characterIndex) {
-        if (characterIndex > 0 && characterIndex < completedTasks.Length) {
-            dialogueTriggers[characterIndex].dialogueIndex++;
+    public void AddtoDialogueIndex(int characterIndex, int numToAdd) {
+        if (characterIndex > 0 && characterIndex < dialogueIndicies.Length) {
+            dialogueIndicies[characterIndex] += numToAdd;
         }
         else {
             Debug.LogWarning("Character index is wrong");
@@ -82,7 +86,7 @@ public class GameManager : MonoBehaviour {
     public void CompleteTask(int characterIndex) {
         if (characterIndex > 0 && characterIndex < completedTasks.Length) {
             completedTasks[characterIndex] = true;
-            AddDialogueIndex(characterIndex);
+            AddtoDialogueIndex(characterIndex, 1);
         }
         else {
             Debug.LogWarning("Character index is wrong");
@@ -156,8 +160,8 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Starting day " + dayNum);
         currentDay = dayNum;
         taskManager.EmptyAllSlots();
-        foreach(var trigger in dialogueTriggers) {
-            trigger.dialogueIndex++;
+        for (int i = 0; i < dialogueIndicies.Length; i++) {
+            AddtoDialogueIndex(i, 1);
         }
     }
 }

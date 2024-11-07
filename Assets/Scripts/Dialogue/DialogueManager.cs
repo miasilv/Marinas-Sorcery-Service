@@ -181,7 +181,7 @@ public class DialogueManager : MonoBehaviour {
                     break;
                 
                 case PORTRAIT_TAG:
-                    Debug.Log("portrait = " + tagValue);
+                    // place portrait here
                     break;
                 
                 case LAYOUT_TAG:

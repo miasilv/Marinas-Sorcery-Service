@@ -47,9 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDay: 0
   completedTasks: 
-  taskPotionNames:
-  - Victamis
-  dialogueTriggers: []
+  dialogueTriggers:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &6382645987425894686
 MonoBehaviour:
   m_ObjectHideFlags: 0

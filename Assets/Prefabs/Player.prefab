@@ -112,7 +112,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   enterHousePos: {x: 0, y: -3.85, z: 0}
-  enterWoodsPos: {x: -7, y: 0, z: 0}
+  enterWoodsFromHousePos: {x: -12.5, y: 0, z: 0}
+  enterWoodsFromVillagePos: {x: 13, y: 0, z: 0}
+  enterVillagePos: {x: 0, y: 0, z: 0}
 --- !u!114 &3286685882588613327
 MonoBehaviour:
   m_ObjectHideFlags: 0
