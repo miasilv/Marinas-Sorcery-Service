@@ -59,8 +59,34 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void CompleteTask(int taskGiver) {
-        completedTasks[taskGiver] = true;
+    public void AddTask(string taskName, string taskGiver, string taskDescription) {
+        taskManager.AddTask(taskName, taskGiver, taskDescription);
+        
+        if (taskGiver.ToLower() == "mother") {
+            dialogueTriggers[MOTHER].dialogueIndex++;
+        }
+        else if (taskGiver.ToLower() == "serena") {
+            dialogueTriggers[SERENA].dialogueIndex++;
+        }
+    }
+
+    public void AddDialogueIndex(int characterIndex) {
+        if (characterIndex > 0 && characterIndex < completedTasks.Length) {
+            dialogueTriggers[characterIndex].dialogueIndex++;
+        }
+        else {
+            Debug.LogWarning("Character index is wrong");
+        }
+    }
+    
+    public void CompleteTask(int characterIndex) {
+        if (characterIndex > 0 && characterIndex < completedTasks.Length) {
+            completedTasks[characterIndex] = true;
+            AddDialogueIndex(characterIndex);
+        }
+        else {
+            Debug.LogWarning("Character index is wrong");
+        }
     }
 
     public void NewDay() {

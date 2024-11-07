@@ -195,7 +195,7 @@ public class DialogueManager : MonoBehaviour {
                         break;
                     }
                     Debug.Log("Adding task " + taskInfo[0]);
-                    taskManager.AddTask(taskInfo[0].Trim(), taskInfo[1].Trim(), taskInfo[2].Trim());
+                    gameManager.AddTask(taskInfo[0].Trim(), taskInfo[1].Trim(), taskInfo[2].Trim());
                     break;
 
                 case FINISH_TASK_TAG:

@@ -630,6 +630,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5675007589881978397, guid: 400cc6d12465c4640ab4653f847724fc, type: 3}
+      propertyPath: dialogueTriggers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675007589881978397, guid: 400cc6d12465c4640ab4653f847724fc, type: 3}
+      propertyPath: dialogueTriggers.Array.data[1]
+      value: 
+      objectReference: {fileID: 815901804}
     - target: {fileID: 8441635176984002270, guid: 400cc6d12465c4640ab4653f847724fc, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -834,6 +842,9 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 74403d3a0b3de3f4ebc1f6d5963a8a19, type: 3}
   - {fileID: 4900000, guid: 744ffe5bf5518b341bf5e0d8081fbede, type: 3}
   dialogueIndex: 0
+  characterIndex: 0
+  waitingForPotion: 0
+  hasPotion: 0
   playerInRange: 0
 --- !u!70 &815901805
 CapsuleCollider2D:
