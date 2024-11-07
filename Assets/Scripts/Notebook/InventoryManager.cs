@@ -50,7 +50,7 @@ public class InventoryManager : MonoBehaviour {
         }
     }
 
-    public bool hasPotion(string potionName) {
+    public bool HasPotion(string potionName) {
         for (int i = 0; i < itemSlot.Length; i++) {
             if(itemSlot[i].itemName == potionName) {
                 return true;

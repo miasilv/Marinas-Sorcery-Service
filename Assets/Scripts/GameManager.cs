@@ -26,12 +26,11 @@ public class GameManager : MonoBehaviour {
     private const int NANCY = 10;
     private const int KIERAN = 11;
     private const int JESSAMINE = 12;
+    private const string[] potionsForTasks = {"MotherPotion", "Victamis"};
 
     // ======= Dialogue Triggers ================
     [Header("NPC Dialogue Triggers")]
     [SerializeField] private DialogueTrigger[] dialogueTriggers;
-
-    
     
 
     void Start() {
@@ -42,12 +41,22 @@ public class GameManager : MonoBehaviour {
         completedTasks = new bool[12];
         for (int i = 0; i < completedTasks.Length; i++) {
             completedTasks[i] = false;
-        } 
+        }
     }
 
     // Update is called once per frame
     void Update() {
                 
+    }
+
+    public void CheckPotion(int characterIndex) {
+        if (characterIndex < hasPotion.Length && characterIndex > 0) {
+            return inventoryManager.HasPotion(potionsForTasks[i]);
+        }
+        else {
+            Debug.LogWarning("Character index is wrong");
+            return false;
+        }
     }
 
     public void CompleteTask(int taskGiver) {
