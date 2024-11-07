@@ -11,6 +11,7 @@ public class DialogueTrigger : MonoBehaviour {
     public bool hasPotion;
 
     private DialogueManager dialogueManager;
+    private GameManager gameManager;
 
     public bool playerInRange;
 
@@ -21,6 +22,7 @@ public class DialogueTrigger : MonoBehaviour {
         dialogueIndex = 0;
 
         dialogueManager = GameObject.Find("DialogueCanvas").GetComponent<DialogueManager>();
+        gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
     }
 
     private void Update() {

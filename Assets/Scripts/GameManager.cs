@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour {
     private const int NANCY = 10;
     private const int KIERAN = 11;
     private const int JESSAMINE = 12;
-    private const string[] potionsForTasks = {"MotherPotion", "Victamis"};
+    private string[] potionsForTasks = {"MotherPotion", "Victamis"};
 
     // ======= Dialogue Triggers ================
     [Header("NPC Dialogue Triggers")]
@@ -49,9 +49,9 @@ public class GameManager : MonoBehaviour {
                 
     }
 
-    public void CheckPotion(int characterIndex) {
-        if (characterIndex < hasPotion.Length && characterIndex > 0) {
-            return inventoryManager.HasPotion(potionsForTasks[i]);
+    public bool CheckPotion(int characterIndex) {
+        if (characterIndex > 0 && characterIndex < potionsForTasks.Length) {
+            return inventoryManager.HasPotion(potionsForTasks[characterIndex]);
         }
         else {
             Debug.LogWarning("Character index is wrong");
