@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour {
     private TaskManager taskManager;
+    private GameManager gameManager;
 
     [Header("Params")]
     [SerializeField] private float typingSpeed = 0.04f;
@@ -30,10 +31,12 @@ public class DialogueManager : MonoBehaviour {
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
-    private const string TASK_TAG = "task";
+    private const string GIVE_TASK_TAG = "task";
+    private const string FINISH_TASK_TAG = "taskComplete";
 
     void Start() {
         taskManager = GameObject.Find("NotebookCanvas").GetComponent<TaskManager>();
+        gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
 
@@ -185,7 +188,7 @@ public class DialogueManager : MonoBehaviour {
                     layoutAnimator.Play(tagValue);
                     break;
                 
-                case TASK_TAG:
+                case GIVE_TASK_TAG:
                     string[] taskInfo = tagValue.Split("$");
                     if (taskInfo.Length != 3) {
                         Debug.Log("Task is formatted wrong");
@@ -193,6 +196,10 @@ public class DialogueManager : MonoBehaviour {
                     }
                     Debug.Log("Adding task " + taskInfo[0]);
                     taskManager.AddTask(taskInfo[0].Trim(), taskInfo[1].Trim(), taskInfo[2].Trim());
+                    break;
+
+                case FINISH_TASK_TAG:
+                    gameManager.CompleteTask(int.Parse(tagValue));
                     break;
                 
                 default:

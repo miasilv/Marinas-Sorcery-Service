@@ -5,67 +5,124 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
     // ============ Managers ================
     private TaskManager taskManager;
+    private InventoryManager inventoryManager;
 
     // ============ Game Status ================
     public int currentDay;
-    public int tasksComplete;
+    public bool[] completedTasks;
 
     // ============ Constants ================
-    private const int NUM_OF_DAY1_TASKS = 1;
-    private const int NUM_OF_DAY2_TASKS = 3;
+    // character indicies
+    private const int MOTHER = 0;
+    private const int SERENA = 1;
+    private const int ASA = 2;
+    private const int EWALD = 3;
+    private const int DASHA = 4;
+    private const int JOSAN = 5;
+    private const int BESS = 6;
+    private const int ISAAC = 7;
+    private const int CLARICE = 8;
+    private const int ROYCE = 9;
+    private const int NANCY = 10;
+    private const int KIERAN = 11;
+    private const int JESSAMINE = 12;
 
     // ======= Dialogue Triggers ================
     [Header("NPC Dialogue Triggers")]
-    [SerializeField] private DialogueTrigger motherDT;
+    [SerializeField] private DialogueTrigger[] dialogueTriggers;
+
     
     
 
     void Start() {
         taskManager = GameObject.Find("NotebookCanvas").GetComponent<TaskManager>();
+        inventoryManager = GameObject.Find("NotebookCanvas").GetComponent<InventoryManager>();
         currentDay = 1;
-        tasksComplete = 0;
         
-        StartDay1();
+        completedTasks = new bool[12];
+        for (int i = 0; i < completedTasks.Length; i++) {
+            completedTasks[i] = false;
+        } 
     }
 
     // Update is called once per frame
     void Update() {
-        switch (currentDay) {
+                
+    }
+
+    public void CompleteTask(int taskGiver) {
+        completedTasks[taskGiver] = true;
+    }
+
+    public void NewDay() {
+        switch(currentDay) {
             case 1:
-                // Insert stuff here 
+                if (completedTasks[SERENA]) {
+                    UpdateDay(2);
+                }
+                else {
+                    // not ready dialogue
+                }
                 break;
+            
             case 2:
-                // Insert stuff here
+                if (completedTasks[ASA] && completedTasks[EWALD]) {
+                    UpdateDay(3);
+                }
+                else {
+                    // not ready dialogue
+                }
                 break;
+            
+            case 3:
+                if (completedTasks[DASHA] && completedTasks[JOSAN]) {
+                    UpdateDay(4);
+                }
+                else {
+                    // not ready dialogue
+                }
+                break;
+
+            case 4:
+                if (completedTasks[BESS] && completedTasks[ISAAC] && completedTasks[CLARICE]) {
+                    UpdateDay(5);
+                }
+                else {
+                    // not ready dialogue
+                }
+                break;
+
+            case 5:
+                if (completedTasks[ROYCE] && completedTasks[NANCY]) {
+                    UpdateDay(6);
+                }
+                else {
+                    // not ready dialogue
+                }
+                break;
+            
+            case 6:
+                if (completedTasks[KIERAN] && completedTasks[JESSAMINE]) {
+                    UpdateDay(7);
+                }
+                else {
+                    // not ready dialogue
+                }
+                break;
+            
             default:
-                Debug.LogWarning("No valid day found");
+                Debug.LogWarning("Something's wrong, the day is no longer the day, we must go back to the beginning.");
+                UpdateDay(1);
                 break;
         }
-        
     }
 
-    private void StartDay1() {
-        currentDay = 1;
-        tasksComplete = 0;
-
-    }
-
-    private void StartDay2() {
-        currentDay = 2;
-        tasksComplete = 0;
-        
-    }
-
-    public void finishedTask() {
-        tasksComplete++;
-        if (tasksComplete == NUM_OF_DAY1_TASKS) {
-            StartDay2();
-        } else if (tasksComplete == NUM_OF_DAY2_TASKS) {
-            // start day 3
-        }
-    }
-
-    public void ClearDayTasks() {
+    private void UpdateDay(int dayNum) {
+        Debug.Log("Starting day " + dayNum);
+        currentDay = dayNum;
         taskManager.EmptyAllSlots();
+        foreach(var trigger in dialogueTriggers) {
+            trigger.dialogueIndex++;
+        }
     }
 }
