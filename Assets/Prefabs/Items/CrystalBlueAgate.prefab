@@ -25,6 +25,26 @@ PrefabInstance:
       value: More rock than crystal, this large stone is covered in layers of blue
         and greenish tones. Mainly found near small lakes within the sand and gravel.
       objectReference: {fileID: 0}
+    - target: {fileID: 5568913625992250280, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568913625992250280, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568913625992250280, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568913625992250280, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6090151917760579457, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2c4072985a4dc2548a4d879763d6ec92, type: 3}
     - target: {fileID: 7466284817191757954, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

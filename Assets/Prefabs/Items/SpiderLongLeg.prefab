@@ -25,6 +25,22 @@ PrefabInstance:
       value: Thin, spindly legs are key to identifying these harmless spiders. The
         most common of them are a pale brown color and are typically found near homes.
       objectReference: {fileID: 0}
+    - target: {fileID: 5568913625992250280, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568913625992250280, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568913625992250280, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6090151917760579457, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 93f1c00ea33161e4c836da19b559c85b, type: 3}
     - target: {fileID: 7466284817191757954, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

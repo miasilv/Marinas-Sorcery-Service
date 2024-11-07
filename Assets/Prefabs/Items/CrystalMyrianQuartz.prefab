@@ -25,6 +25,22 @@ PrefabInstance:
       value: A small, cloudy iridescent crystal. Its pale pink color transforms into
         a bright white in the moonlight. It's very fragile and difficult to find.
       objectReference: {fileID: 0}
+    - target: {fileID: 5568913625992250280, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568913625992250280, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568913625992250280, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6090151917760579457, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ecfd6237512c3804da08bbf225b46bb4, type: 3}
     - target: {fileID: 7466284817191757954, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

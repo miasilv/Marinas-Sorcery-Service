@@ -26,6 +26,22 @@ PrefabInstance:
         Although their muddy green coloring might make them hard to discern clearly,
         you can usually find them by their loud croaks.
       objectReference: {fileID: 0}
+    - target: {fileID: 5568913625992250280, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568913625992250280, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568913625992250280, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6090151917760579457, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ec84fca302b104d47905a9af47e0bb0b, type: 3}
     - target: {fileID: 7466284817191757954, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
