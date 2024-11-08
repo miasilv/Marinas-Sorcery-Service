@@ -1486,6 +1486,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1994890192206743308, guid: 31bad27b511932041b57e2e73c846511, type: 3}
+      propertyPath: inkJSON.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994890192206743308, guid: 31bad27b511932041b57e2e73c846511, type: 3}
+      propertyPath: inkJSON.Array.data[1]
+      value: 
+      objectReference: {fileID: 4900000, guid: 600e5c40bf418c748a1826c325f16b9f, type: 3}
+    - target: {fileID: 1994890192206743308, guid: 31bad27b511932041b57e2e73c846511, type: 3}
+      propertyPath: inkJSON.Array.data[2]
+      value: 
+      objectReference: {fileID: 4900000, guid: 930d3a05cd6d0a4439cf3e8269c79539, type: 3}
+    - target: {fileID: 1994890192206743308, guid: 31bad27b511932041b57e2e73c846511, type: 3}
+      propertyPath: inkJSON.Array.data[3]
+      value: 
+      objectReference: {fileID: 4900000, guid: e7a7b4c8a0c8877419ee48674a3b3fbe, type: 3}
     - target: {fileID: 4156290064552327001, guid: 31bad27b511932041b57e2e73c846511, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

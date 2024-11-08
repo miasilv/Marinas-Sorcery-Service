@@ -54,12 +54,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[0]
       value: 
       objectReference: {fileID: 4900000, guid: 74403d3a0b3de3f4ebc1f6d5963a8a19, type: 3}
+    - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: inkJSON.Array.data[1]
+      value: 
+      objectReference: {fileID: 4900000, guid: 600e5c40bf418c748a1826c325f16b9f, type: 3}
+    - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: inkJSON.Array.data[2]
+      value: 
+      objectReference: {fileID: 4900000, guid: 930d3a05cd6d0a4439cf3e8269c79539, type: 3}
+    - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: inkJSON.Array.data[3]
+      value: 
+      objectReference: {fileID: 4900000, guid: e7a7b4c8a0c8877419ee48674a3b3fbe, type: 3}
     - target: {fileID: 7183051887784399672, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_Name
       value: Serena

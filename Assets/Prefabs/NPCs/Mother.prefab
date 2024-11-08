@@ -48,6 +48,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: inkJSON.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: inkJSON.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: a8970179251293c4486f9b29c03bc830, type: 3}
+    - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: inkJSON.Array.data[1]
+      value: 
+      objectReference: {fileID: 4900000, guid: 2e26e4f1572bd3e49a4f6f855777c9bb, type: 3}
+    - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: inkJSON.Array.data[2]
+      value: 
+      objectReference: {fileID: 4900000, guid: 744ffe5bf5518b341bf5e0d8081fbede, type: 3}
     - target: {fileID: 6621586331156456480, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.27
