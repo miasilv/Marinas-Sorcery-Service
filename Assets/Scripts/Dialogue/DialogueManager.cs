@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 public class DialogueManager : MonoBehaviour {
     private TaskManager taskManager;
     private GameManager gameManager;
+    private PlayerManager player;
 
     [Header("Params")]
     [SerializeField] private float typingSpeed = 0.04f;
@@ -37,6 +38,7 @@ public class DialogueManager : MonoBehaviour {
     void Start() {
         taskManager = GameObject.Find("NotebookCanvas").GetComponent<TaskManager>();
         gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
 
@@ -55,7 +57,7 @@ public class DialogueManager : MonoBehaviour {
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) 
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)
                 && canContinueToNextLine
                 && currentStory.currentChoices.Count == 0) {
             ContinuePlaying();
@@ -66,7 +68,7 @@ public class DialogueManager : MonoBehaviour {
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
-        // stop player movement
+        player.canMove = false;
 
         displayNameText.text = "???";
         layoutAnimator.Play("right");
@@ -80,11 +82,18 @@ public class DialogueManager : MonoBehaviour {
             if (displayLineCoroutine != null) {
                 StopCoroutine(displayLineCoroutine);
             }
-            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
+            
+            string nextLine = currentStory.Continue();
+            // handle case where tag is the last line
+            if (nextLine.Equals("") && !currentStory.canContinue) {
+                ExitDialogueMode();
+            }
+            else {
+                displayLineCoroutine = StartCoroutine(DisplayLine(nextLine));
 
-            // handle tags
-            HandleTags(currentStory.currentTags);
-
+                // handle tags
+                HandleTags(currentStory.currentTags);
+            }
         }
         else {
             ExitDialogueMode();
@@ -108,7 +117,7 @@ public class DialogueManager : MonoBehaviour {
             yield return new WaitForSeconds(typingSpeed);
 
             // finish writing the line right away
-            if (Input.GetKey(KeyCode.Space) && i > 3) {
+            if ((Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space)) && i > 3) {
                 dialogueText.text = line;
                 break;
             }
@@ -122,7 +131,7 @@ public class DialogueManager : MonoBehaviour {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
-        // start player movement
+        player.canMove = true;
     }
 
     private void DisplayChoices() {

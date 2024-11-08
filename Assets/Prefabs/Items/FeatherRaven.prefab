@@ -13,6 +13,10 @@ PrefabInstance:
       value: FeatherRaven
       objectReference: {fileID: 0}
     - target: {fileID: 3170716592801522492, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9fdbbdc0d6077254b9561b4645ac3467, type: 3}
+    - target: {fileID: 3170716592801522492, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: itemName
       value: Raven's Feather
       objectReference: {fileID: 0}

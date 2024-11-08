@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 
 public class PotionMaker : MonoBehaviour {
+    private PlayerManager player;
     [SerializeField] private GameObject potionCanvas;
     [SerializeField] private ItemSlotPM[] itemSlot;
     [SerializeField] private GameObject visualCue;
@@ -36,6 +37,7 @@ public class PotionMaker : MonoBehaviour {
             itemSlot[i].inventoryItemSlotReference = itemSlotReferences[i];
         }
         UpdateAllSlots();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
     }
 
     private void Update() {
@@ -45,7 +47,7 @@ public class PotionMaker : MonoBehaviour {
                 potionCanvas.SetActive(true);
                 potionCanvasActive = true;
                 UpdateAllSlots();
-                // Have to disable character movement
+                player.canMove = false;
             }
         }
         else {
@@ -55,7 +57,7 @@ public class PotionMaker : MonoBehaviour {
         if (potionCanvasActive && Input.GetButtonDown("Cancel")) {
             potionCanvas.SetActive(false);
             potionCanvasActive = false;
-            // have to enable character movement
+            player.canMove = true;
         }
     }
 
@@ -93,20 +95,25 @@ public class PotionMaker : MonoBehaviour {
     }
 
     public void FinishPotion() {
-        string potionText = "...something?";
-        if (itemsInCauldron.Count > 0) {
-            foreach (var potion in potions) {
-                if (potion.isFull && CheckPotion(potion)) {
-                    potionText = " " + potion.potionName;
-                    inventoryManager.AddItem(potion.potionName, 1, potionSprite, potion.potionDescription);
-                    break;
+        if (itemsInCauldron.Count <= 0) {
+            potionCompleteText.text = "Goodbye!";
+        }
+        else {
+            string potionText = "...something?";
+            if (itemsInCauldron.Count > 0) {
+                foreach (var potion in potions) {
+                    if (potion.isFull && CheckPotion(potion)) {
+                        potionText = " " + potion.potionName;
+                        inventoryManager.AddItem(potion.potionName, 1, potionSprite, potion.potionDescription);
+                        break;
+                    }
                 }
             }
+            potionCompleteText.text = "You made" + potionText;
         }
-        potionCompleteText.text = "You made" + potionText;
         potionCompletePanel.SetActive(true);
         EmptyCauldron();
-
+        player.canMove = true;
     }
 
     private bool CheckPotion(PotionSlot potion) {

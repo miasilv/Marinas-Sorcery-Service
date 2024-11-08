@@ -22,6 +22,8 @@ public class NotebookManager : MonoBehaviour {
     [SerializeField] GameObject potionMenu;
     private bool potionActivated;
 
+    private PlayerManager player;
+
     void Awake() {
         // the notebook is closed
         notebookMenu.SetActive(false);
@@ -38,6 +40,8 @@ public class NotebookManager : MonoBehaviour {
         // the potion is closed
         potionActivated = false;
         potionManager = GameObject.Find("NotebookCanvas").GetComponent<PotionManager>();
+
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
     }
 
     void Update() {
@@ -77,6 +81,7 @@ public class NotebookManager : MonoBehaviour {
         Time.timeScale = 0;
         notebookMenu.SetActive(true);
         notebookActivated = true;
+        player.canMove = false;
     }
 
     public void ToggleNotebookOff() {
@@ -86,6 +91,7 @@ public class NotebookManager : MonoBehaviour {
         inventoryActivated = false;
         taskActivated = false;
         potionActivated = false;
+        player.canMove = true;
     }
 
     public void OpenInventory() {

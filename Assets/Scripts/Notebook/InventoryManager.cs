@@ -59,6 +59,16 @@ public class InventoryManager : MonoBehaviour {
         return false;
     }
 
+    public void GivePotion(string potionName) {
+        for (int i = 0; i < itemSlot.Length; i++) {
+            if(itemSlot[i].itemName == potionName) {
+                itemSlot[i].DropItem(1);
+                return;
+            }
+        }
+        Debug.LogWarning("No potion to give");
+    }
+
     public void DeselectAllSlots() {
         for (int i = 0; i < itemSlot.Length; i++) {
             itemSlot[i].selectedShader.SetActive(false);

@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
     public float moveSpeed = 4.0f;
     private Animator anim;
     private SpriteRenderer sprite;
+    public bool canMove;
 
     [Header("New Scene Positions")]
     [SerializeField] private Vector3 enterHousePos;
@@ -19,11 +20,14 @@ public class PlayerManager : MonoBehaviour
     void Start() {
         anim = gameObject.GetComponentInChildren<Animator>();
         sprite = gameObject.GetComponentInChildren<SpriteRenderer>();
+        canMove = true;
     }
 
     // Update is called once per frame
     void Update() {
-        Move();
+        if (canMove) {
+            Move();
+        }
     }
 
     public void Move() {

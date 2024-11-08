@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
     public bool[] completedTasks;
     public int[] dialogueIndicies;
     public bool[] waitingForPotions;
-    private string[] potionsForTasks = {"MotherPotion", "Victamis"};
+    private string[] potionsForTasks = {"MotherPotion", "Victamis", "Courinder", "Heillar", "Visamir", "Somnias"};
 
     // ============ Constants ================
     // character indicies
@@ -72,6 +72,22 @@ public class GameManager : MonoBehaviour {
             dialogueIndicies[SERENA] += 1;
             waitingForPotions[SERENA] = true;
         }
+        else if (taskGiver.ToLower() == "asa") {
+            dialogueIndicies[ASA] += 1;
+            waitingForPotions[ASA] = true;
+        }
+        else if (taskGiver.ToLower() == "ewald") {
+            dialogueIndicies[EWALD] += 1;
+            waitingForPotions[EWALD] = true;
+        }
+        else if (taskGiver.ToLower() == "dasha") {
+            dialogueIndicies[DASHA] += 1;
+            waitingForPotions[DASHA] = true;
+        }
+        else if (taskGiver.ToLower() == "josan") {
+            dialogueIndicies[JOSAN] += 1;
+            waitingForPotions[JOSAN] = true;
+        }
     }
 
     public void AddtoDialogueIndex(int characterIndex, int numToAdd) {
@@ -86,6 +102,8 @@ public class GameManager : MonoBehaviour {
     public void CompleteTask(int characterIndex) {
         if (characterIndex > 0 && characterIndex < completedTasks.Length) {
             completedTasks[characterIndex] = true;
+            waitingForPotions[characterIndex] = false;
+            inventoryManager.GivePotion(potionsForTasks[characterIndex]);
             AddtoDialogueIndex(characterIndex, 1);
         }
         else {

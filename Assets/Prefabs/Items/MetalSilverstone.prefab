@@ -13,6 +13,10 @@ PrefabInstance:
       value: MetalSilverstone
       objectReference: {fileID: 0}
     - target: {fileID: 3170716592801522492, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cc9939c3ba6a7d24aa9685e1b3750e04, type: 3}
+    - target: {fileID: 3170716592801522492, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: itemName
       value: Silverstone
       objectReference: {fileID: 0}
