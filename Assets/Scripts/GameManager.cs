@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour {
     private const int NANCY = 10;
     private const int KIERAN = 11;
     private const int JESSAMINE = 12;
+    private const int MAYOR = 13;
     
 
     void Start() {
@@ -62,13 +63,8 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void AddTask(string taskName, string taskGiver, string taskDescription) {
-        GameObject.Find("NotebookCanvas").GetComponent<TaskManager>().AddTask(taskName, taskGiver, taskDescription);
-        
-        if (taskGiver.ToLower() == "mother") {
-            dialogueIndicies[MOTHER] += 1;
-        }
-        else if (taskGiver.ToLower() == "serena") {
+    public void AddTask(string taskName, string taskGiver, string taskDescription) {       
+        if (taskGiver.ToLower() == "serena") {
             dialogueIndicies[SERENA] += 1;
             waitingForPotions[SERENA] = true;
         }
@@ -88,6 +84,39 @@ public class GameManager : MonoBehaviour {
             dialogueIndicies[JOSAN] += 1;
             waitingForPotions[JOSAN] = true;
         }
+        else if (taskGiver.ToLower() == "bess") {
+            dialogueIndicies[BESS] += 1;
+            waitingForPotions[BESS] = true;
+        }
+        else if (taskGiver.ToLower() == "isaac") {
+            dialogueIndicies[ISAAC] += 1;
+            waitingForPotions[ISAAC] = true;
+        }
+        else if (taskGiver.ToLower() == "clarice") {
+            dialogueIndicies[CLARICE] += 1;
+            waitingForPotions[CLARICE] = true;
+        }
+        else if (taskGiver.ToLower() == "royce") {
+            dialogueIndicies[ROYCE] += 1;
+            waitingForPotions[ROYCE] = true;
+        }
+        else if (taskGiver.ToLower() == "nancy") {
+            dialogueIndicies[NANCY] += 1;
+            waitingForPotions[NANCY] = true;
+        }
+        else if (taskGiver.ToLower() == "kieran") {
+            dialogueIndicies[KIERAN] += 1;
+            waitingForPotions[KIERAN] = true;
+        }
+        else if (taskGiver.ToLower() == "jessamine") {
+            dialogueIndicies[JESSAMINE] += 1;
+            waitingForPotions[JESSAMINE] = true;
+        }
+        else {
+            Debug.LogWarning("Incorrect task giver");
+            return;
+        }
+        GameObject.Find("NotebookCanvas").GetComponent<TaskManager>().AddTask(taskName, taskGiver, taskDescription);
     }
 
     public void AddtoDialogueIndex(int characterIndex, int numToAdd) {
@@ -143,10 +172,9 @@ public class GameManager : MonoBehaviour {
             
             default:
                 Debug.LogWarning("Something's wrong, the day is no longer the day, we must go back to the beginning.");
-                return false;
+                UpdateDay(1);
                 break;
         }
-        return false;
     }
 
     private void UpdateDay(int newDayNum) {
