@@ -114,69 +114,44 @@ public class GameManager : MonoBehaviour {
     public void NewDay() {
         switch(currentDay) {
             case 1:
-                if (completedTasks[SERENA]) {
-                    UpdateDay(2);
-                }
-                else {
-                    // not ready dialogue
-                }
+                UpdateDay(2);
                 break;
             
             case 2:
-                if (completedTasks[ASA] && completedTasks[EWALD]) {
-                    UpdateDay(3);
-                }
-                else {
-                    // not ready dialogue
-                }
+                UpdateDay(3);
                 break;
             
             case 3:
-                if (completedTasks[DASHA] && completedTasks[JOSAN]) {
-                    UpdateDay(4);
-                }
-                else {
-                    // not ready dialogue
-                }
+                UpdateDay(4);
                 break;
 
             case 4:
-                if (completedTasks[BESS] && completedTasks[ISAAC] && completedTasks[CLARICE]) {
-                    UpdateDay(5);
-                }
-                else {
-                    // not ready dialogue
-                }
+                UpdateDay(5);
                 break;
 
             case 5:
-                if (completedTasks[ROYCE] && completedTasks[NANCY]) {
-                    UpdateDay(6);
-                }
-                else {
-                    // not ready dialogue
-                }
+                UpdateDay(6);
                 break;
             
             case 6:
-                if (completedTasks[KIERAN] && completedTasks[JESSAMINE]) {
-                    UpdateDay(7);
-                }
-                else {
-                    // not ready dialogue
-                }
+                UpdateDay(7);
+                break;
+            
+            case 7:
+                UpdateDay(8);
                 break;
             
             default:
                 Debug.LogWarning("Something's wrong, the day is no longer the day, we must go back to the beginning.");
-                UpdateDay(1);
+                return false;
                 break;
         }
+        return false;
     }
 
-    private void UpdateDay(int dayNum) {
-        Debug.Log("Starting day " + dayNum);
-        currentDay = dayNum;
+    private void UpdateDay(int newDayNum) {
+        Debug.Log("Starting day " + newDayNum);
+        currentDay = newDayNum;
         taskManager.EmptyAllSlots();
         for (int i = 0; i < dialogueIndicies.Length; i++) {
             AddtoDialogueIndex(i, 1);

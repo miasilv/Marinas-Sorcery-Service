@@ -34,6 +34,8 @@ public class DialogueManager : MonoBehaviour {
     private const string LAYOUT_TAG = "layout";
     private const string GIVE_TASK_TAG = "task";
     private const string FINISH_TASK_TAG = "taskComplete";
+    private const string FINISH_DAY_TAG = "dayEnd";
+    private const string ADD_DIALOGUE_TAG = "addDialogueIndex";
 
     void Start() {
         taskManager = GameObject.Find("NotebookCanvas").GetComponent<TaskManager>();
@@ -209,6 +211,14 @@ public class DialogueManager : MonoBehaviour {
 
                 case FINISH_TASK_TAG:
                     gameManager.CompleteTask(int.Parse(tagValue));
+                    break;
+
+                case FINISH_DAY_TAG:
+                    gameManager.NewDay();
+                    break;
+                
+                case ADD_DIALOGUE_TAG:
+                    gameManager.AddtoDialogueIndex(int.Parse(tagValue), 1);
                     break;
                 
                 default:
