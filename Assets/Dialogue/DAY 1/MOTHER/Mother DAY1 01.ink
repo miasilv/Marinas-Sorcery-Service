@@ -67,9 +67,7 @@ Say hello to everyone for me! Tell them I'm doing fine and I'll be up and about 
 
 I will. Take care mother, I'll return soon. #speaker: Marina #portrait: marina_icon #layout:right
 
-
-
-
+#addDialogueIndex:Mother1
 
 
     -> END
