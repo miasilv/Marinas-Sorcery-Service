@@ -8242,6 +8242,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7861071104027914607, guid: a02cb6f612143044cb79ae28ab59e86d, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8190369264753078478, guid: a02cb6f612143044cb79ae28ab59e86d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
