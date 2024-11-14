@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour {
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] TextMeshProUGUI dialogueText;
     [SerializeField] TextMeshProUGUI displayNameText;
+    [SerializeField] Animator portraitAnimator;
     private Animator layoutAnimator;
     [SerializeField] GameObject continueIcon;
     private Story currentStory;
@@ -119,7 +120,7 @@ public class DialogueManager : MonoBehaviour {
             yield return new WaitForSeconds(typingSpeed);
 
             // finish writing the line right away
-            if ((Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space)) && i > 3) {
+            if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && i > 3) {
                 dialogueText.text = line;
                 break;
             }
@@ -192,7 +193,7 @@ public class DialogueManager : MonoBehaviour {
                     break;
                 
                 case PORTRAIT_TAG:
-                    // place portrait here
+                    portraitAnimator.Play(tagValue);
                     break;
                 
                 case LAYOUT_TAG:
