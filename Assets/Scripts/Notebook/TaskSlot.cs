@@ -62,7 +62,6 @@ public class TaskSlot : MonoBehaviour, IPointerClickHandler {
 
         this.taskNameDescriptionText.text = "";
         this.taskDescriptionText.text = "";
-        gameObject.SetActive(false);
 
         isFull = false;
     }

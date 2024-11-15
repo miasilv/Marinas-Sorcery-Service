@@ -9,7 +9,7 @@ Yes, I have. #speaker: Marina #portrait: marina_icon #layout:right
 Good! I hope it wasn't too much trouble. #speaker:Mother #portrait: mother_icon #layout:left
 
 Take you rest, love. I'll have dinner ready soon.
-#dayEnd
+#dayEnd:
 
 + [No]
 Not yet, there's still much to do before the day's over. #speaker: Marina #portrait: marina_icon #layout:right

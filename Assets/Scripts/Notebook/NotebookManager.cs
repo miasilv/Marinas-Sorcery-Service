@@ -5,6 +5,8 @@ using UnityEngine;
 public class NotebookManager : MonoBehaviour {
     //===========NOTEBOOK==========//
     [SerializeField] GameObject notebookMenu;
+    [SerializeField] GameObject notebookIcon;
+    [SerializeField] GameObject closeIcon;
     private bool notebookActivated;
 
     //===========INVENTORY==========//
@@ -82,6 +84,8 @@ public class NotebookManager : MonoBehaviour {
         notebookMenu.SetActive(true);
         notebookActivated = true;
         player.canMove = false;
+        notebookIcon.SetActive(false);
+        closeIcon.SetActive(true);
     }
 
     public void ToggleNotebookOff() {
@@ -92,6 +96,8 @@ public class NotebookManager : MonoBehaviour {
         taskActivated = false;
         potionActivated = false;
         player.canMove = true;
+        notebookIcon.SetActive(true);
+        closeIcon.SetActive(false);
     }
 
     public void OpenInventory() {

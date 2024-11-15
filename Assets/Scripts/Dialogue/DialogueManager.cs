@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour {
     private TaskManager taskManager;
-    private GameManager gameManager;
+    private StoryManager storyManager;
     private PlayerManager player;
 
     [Header("Params")]
@@ -40,7 +40,7 @@ public class DialogueManager : MonoBehaviour {
 
     void Start() {
         taskManager = GameObject.Find("NotebookCanvas").GetComponent<TaskManager>();
-        gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        storyManager = GameObject.FindWithTag("StoryManager").GetComponent<StoryManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -214,19 +214,19 @@ public class DialogueManager : MonoBehaviour {
                         break;
                     }
                     Debug.Log("Adding task " + taskInfo[0]);
-                    gameManager.AddTask(taskInfo[0].Trim(), taskInfo[1].Trim(), taskInfo[2].Trim());
+                    storyManager.AddTask(taskInfo[0].Trim(), taskInfo[1].Trim(), taskInfo[2].Trim());
                     break;
 
                 case FINISH_TASK_TAG:
-                    gameManager.CompleteTask(int.Parse(tagValue));
+                    storyManager.CompleteTask(int.Parse(tagValue));
                     break;
 
                 case FINISH_DAY_TAG:
-                    gameManager.NewDay();
+                    storyManager.NewDay();
                     break;
                 
                 case ADD_DIALOGUE_TAG:
-                    gameManager.AddtoDialogueIndex(int.Parse(tagValue), 1);
+                    storyManager.AddtoDialogueIndex(int.Parse(tagValue), 1);
                     break;
                 
                 default:

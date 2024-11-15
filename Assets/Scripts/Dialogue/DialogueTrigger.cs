@@ -11,7 +11,7 @@ public class DialogueTrigger : MonoBehaviour {
     public bool hasPotion;
 
     private DialogueManager dialogueManager;
-    private GameManager gameManager;
+    private StoryManager storyManager;
 
     public bool playerInRange;
 
@@ -22,7 +22,7 @@ public class DialogueTrigger : MonoBehaviour {
         dialogueIndex = 0;
 
         dialogueManager = GameObject.Find("DialogueCanvas").GetComponent<DialogueManager>();
-        gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        storyManager = GameObject.FindWithTag("StoryManager").GetComponent<StoryManager>();
     }
 
     private void Update() {
@@ -32,18 +32,18 @@ public class DialogueTrigger : MonoBehaviour {
             if (Input.GetButtonDown("Interact"))  {
                 // if character is currently waiting for a potion, and the player has the potion, add one to dialogueIndex
                 // if character is currently waiting for a potion, the player had the potion, but doesn't anymore, remove one from dialogue index
-                waitingForPotion = gameManager.waitingForPotions[characterIndex];
+                waitingForPotion = storyManager.waitingForPotions[characterIndex];
                 if (waitingForPotion) {
-                    if (!hasPotion && gameManager.CheckPotion(characterIndex)) {
-                        gameManager.AddtoDialogueIndex(characterIndex, 1);
+                    if (!hasPotion && storyManager.CheckPotion(characterIndex)) {
+                        storyManager.AddtoDialogueIndex(characterIndex, 1);
                         hasPotion = true;
-                    } else if (hasPotion && !gameManager.CheckPotion(characterIndex)) {
-                        gameManager.AddtoDialogueIndex(characterIndex, -1);
+                    } else if (hasPotion && !storyManager.CheckPotion(characterIndex)) {
+                        storyManager.AddtoDialogueIndex(characterIndex, -1);
                         hasPotion = false;
                     }
                 }
 
-                dialogueIndex = gameManager.dialogueIndicies[characterIndex];
+                dialogueIndex = storyManager.dialogueIndicies[characterIndex];
                 dialogueManager.EnterDialogueMode(inkJSON[dialogueIndex]);
             }
         }

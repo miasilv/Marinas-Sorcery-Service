@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class PlayerManager : MonoBehaviour
 {
     public float moveSpeed = 4.0f;
-    private Animator anim;
+    public Animator anim;
     private SpriteRenderer sprite;
+    private StoryManager storyManager;
     public bool canMove;
+    private int sceneChange = 0;
 
     [Header("New Scene Positions")]
     [SerializeField] private Vector3 enterHousePos;
@@ -20,6 +22,7 @@ public class PlayerManager : MonoBehaviour
     void Start() {
         anim = gameObject.GetComponentInChildren<Animator>();
         sprite = gameObject.GetComponentInChildren<SpriteRenderer>();
+        storyManager = GameObject.FindWithTag("StoryManager").GetComponent<StoryManager>();
         canMove = true;
     }
 
@@ -55,29 +58,52 @@ public class PlayerManager : MonoBehaviour
         if (col.gameObject.tag == "SceneChanger") {
             if (SceneManager.GetActiveScene().name == "House") {
                 Debug.Log("Changing Scene from House to Forest");
-                SceneManager.LoadScene("Forest");
-                this.transform.position = enterWoodsFromHousePos;
+                StartCoroutine(storyManager.FadeToBlack("Forest"));
+                //this.transform.position = enterWoodsFromHousePos;
+                sceneChange = 0;
             }
             
             if (SceneManager.GetActiveScene().name == "Forest") {
                 if (col.gameObject.name == "HouseTrigger") {
                     Debug.Log("Changing Scene from Forest to House");
-                    SceneManager.LoadScene("House");
-                    this.transform.position = enterHousePos;
+                    StartCoroutine(storyManager.FadeToBlack("House"));
+                    //this.transform.position = enterHousePos;
+                    sceneChange = 1;
                 }
 
                 if (col.gameObject.name == "VillageTrigger") {
                     Debug.Log("Changing Scene from Forest to Village");
-                    SceneManager.LoadScene("Village");
-                    this.transform.position = enterVillagePos;
+                    StartCoroutine(storyManager.FadeToBlack("Village"));
+                    //this.transform.position = enterVillagePos;
+                    sceneChange = 2;
                 }
             }
 
             if (SceneManager.GetActiveScene().name == "Village") {
                 Debug.Log("Changing Scene from Village to Forest");
-                SceneManager.LoadScene("Forest");
-                this.transform.position = enterWoodsFromVillagePos;
+                StartCoroutine(storyManager.FadeToBlack("Forest"));
+                //this.transform.position = enterWoodsFromVillagePos;
+                sceneChange = 3;
             }
+        }
+    }
+    public void changePosition() {
+        switch(sceneChange) {
+            case 0: 
+                this.transform.position = enterWoodsFromHousePos;
+                break;
+            case 1:
+                this.transform.position = enterHousePos;
+                break;
+            case 2:
+                this.transform.position = enterVillagePos;
+                break;
+            case 3:
+                this.transform.position = enterWoodsFromVillagePos;
+                break;
+            default:
+                this.transform.position = enterHousePos;
+                break;
         }
     }
 }
