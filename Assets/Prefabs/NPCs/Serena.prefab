@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[0]
@@ -72,24 +72,65 @@ PrefabInstance:
       propertyPath: inkJSON.Array.data[3]
       value: 
       objectReference: {fileID: 4900000, guid: e7a7b4c8a0c8877419ee48674a3b3fbe, type: 3}
+    - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: inkJSON.Array.data[4]
+      value: 
+      objectReference: {fileID: 4900000, guid: c631a34755f1e0b458684d948f516085, type: 3}
+    - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: inkJSON.Array.data[5]
+      value: 
+      objectReference: {fileID: 4900000, guid: c631a34755f1e0b458684d948f516085, type: 3}
     - target: {fileID: 7183051887784399672, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_Name
       value: Serena
       objectReference: {fileID: 0}
     - target: {fileID: 7300091382718368513, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -25191100, guid: fb172956a63bef44ab0b161dc59f4a84, type: 3}
+    - target: {fileID: 7300091382718368513, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_Color.b
-      value: 0.15105736
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300091382718368513, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_Color.g
-      value: 0.35251302
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300091382718368513, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_Color.r
-      value: 0.7849056
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6391310641745307735, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7624742873299506040}
   m_SourcePrefab: {fileID: 100100000, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+--- !u!1 &6942572838907693542 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6391310641745307735, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+  m_PrefabInstance: {fileID: 4101237866300531121}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7624742873299506040
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6942572838907693542}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7df20824504a9ce4b9369e3641b3dbee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

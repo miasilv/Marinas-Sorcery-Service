@@ -60,7 +60,7 @@ public class DialogueManager : MonoBehaviour {
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
                 && canContinueToNextLine
                 && currentStory.currentChoices.Count == 0) {
             ContinuePlaying();
@@ -87,6 +87,12 @@ public class DialogueManager : MonoBehaviour {
             }
             
             string nextLine = currentStory.Continue();
+            displayLineCoroutine = StartCoroutine(DisplayLine(nextLine));
+            
+            // handle tags
+            HandleTags(currentStory.currentTags);
+
+            /* this fixes the end dialogue empty one
             // handle case where tag is the last line
             if (nextLine.Equals("") && !currentStory.canContinue) {
                 ExitDialogueMode();
@@ -97,6 +103,7 @@ public class DialogueManager : MonoBehaviour {
                 // handle tags
                 HandleTags(currentStory.currentTags);
             }
+            */
         }
         else {
             ExitDialogueMode();
@@ -120,7 +127,7 @@ public class DialogueManager : MonoBehaviour {
             yield return new WaitForSeconds(typingSpeed);
 
             // finish writing the line right away
-            if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && i > 3) {
+            if ((Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space)) && i > 3) {
                 dialogueText.text = line;
                 break;
             }

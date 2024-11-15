@@ -58,42 +58,87 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[0]
       value: 
-      objectReference: {fileID: 4900000, guid: 2780ad5a99b89824ea68b1134386087d, type: 3}
+      objectReference: {fileID: 4900000, guid: c631a34755f1e0b458684d948f516085, type: 3}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[1]
       value: 
-      objectReference: {fileID: 4900000, guid: 5722b0751d7f7a94b9eb165aa139d141, type: 3}
+      objectReference: {fileID: 4900000, guid: 2780ad5a99b89824ea68b1134386087d, type: 3}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[2]
       value: 
-      objectReference: {fileID: 4900000, guid: e07fd2ce32123194aa8247db0e7d49ac, type: 3}
+      objectReference: {fileID: 4900000, guid: 5722b0751d7f7a94b9eb165aa139d141, type: 3}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[3]
       value: 
+      objectReference: {fileID: 4900000, guid: e07fd2ce32123194aa8247db0e7d49ac, type: 3}
+    - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: inkJSON.Array.data[4]
+      value: 
       objectReference: {fileID: 4900000, guid: a7505e00186bd9741b6219f44c6aa4e4, type: 3}
+    - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: inkJSON.Array.data[5]
+      value: 
+      objectReference: {fileID: 4900000, guid: c631a34755f1e0b458684d948f516085, type: 3}
+    - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: inkJSON.Array.data[6]
+      value: 
+      objectReference: {fileID: 4900000, guid: c631a34755f1e0b458684d948f516085, type: 3}
     - target: {fileID: 7183051887784399672, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_Name
       value: Asa
       objectReference: {fileID: 0}
     - target: {fileID: 7300091382718368513, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1927718606, guid: 3ffecda5012350f4da890a71230e351b, type: 3}
+    - target: {fileID: 7300091382718368513, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_Color.b
-      value: 0.0032040759
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300091382718368513, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_Color.g
-      value: 0.5729284
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300091382718368513, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_Color.r
-      value: 0.8490566
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6391310641745307735, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6582376951608102950}
   m_SourcePrefab: {fileID: 100100000, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+--- !u!1 &3177142780315839268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6391310641745307735, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+  m_PrefabInstance: {fileID: 8405130515967574899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6582376951608102950
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177142780315839268}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 908072b7a978e8448850450e0260b792, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
