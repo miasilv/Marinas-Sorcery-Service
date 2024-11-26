@@ -11,6 +11,8 @@ public class PlayerManager : MonoBehaviour
     private StoryManager storyManager;
     public bool canMove;
     private int sceneChange = 0;
+    private AudioManager audioManager;
+    public AudioClip[] songs;
 
     [Header("New Scene Positions")]
     [SerializeField] private Vector3 enterHousePos;
@@ -21,6 +23,7 @@ public class PlayerManager : MonoBehaviour
 
     void Start() {
         anim = gameObject.GetComponentInChildren<Animator>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         sprite = gameObject.GetComponentInChildren<SpriteRenderer>();
         storyManager = GameObject.FindWithTag("StoryManager").GetComponent<StoryManager>();
         canMove = true;
@@ -97,9 +100,11 @@ public class PlayerManager : MonoBehaviour
                 break;
             case 2:
                 this.transform.position = enterVillagePos;
+                audioManager.ChangeBackgroundMusic(songs[1]);
                 break;
             case 3:
                 this.transform.position = enterWoodsFromVillagePos;
+                audioManager.ChangeBackgroundMusic(songs[0]);
                 break;
             default:
                 this.transform.position = enterHousePos;
