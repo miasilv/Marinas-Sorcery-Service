@@ -13,6 +13,8 @@ public class PlayerManager : MonoBehaviour
     private int sceneChange = 0;
     private AudioManager audioManager;
     public AudioClip[] songs;
+    public AudioClip[] walkingSounds;
+    public bool inHouse;
 
     [Header("New Scene Positions")]
     [SerializeField] private Vector3 enterHousePos;
@@ -27,6 +29,7 @@ public class PlayerManager : MonoBehaviour
         sprite = gameObject.GetComponentInChildren<SpriteRenderer>();
         storyManager = GameObject.FindWithTag("StoryManager").GetComponent<StoryManager>();
         canMove = true;
+        inHouse = true;
     }
 
     // Update is called once per frame
@@ -52,8 +55,15 @@ public class PlayerManager : MonoBehaviour
 
         if (vert == 0 && hori == 0) {
             anim.SetBool("Walking", false);
+            audioManager.StopWalking();
         } else {
             anim.SetBool("Walking", true);
+            if (inHouse) {
+                audioManager.PlayWalking(walkingSounds[0]);
+            } 
+            else {
+                audioManager.PlayWalking(walkingSounds[1]);
+            }
         }
     }
 
@@ -63,6 +73,7 @@ public class PlayerManager : MonoBehaviour
                 Debug.Log("Changing Scene from House to Forest");
                 StartCoroutine(storyManager.FadeToBlack("Forest"));
                 //this.transform.position = enterWoodsFromHousePos;
+                inHouse = false;
                 sceneChange = 0;
             }
             
@@ -70,6 +81,7 @@ public class PlayerManager : MonoBehaviour
                 if (col.gameObject.name == "HouseTrigger") {
                     Debug.Log("Changing Scene from Forest to House");
                     StartCoroutine(storyManager.FadeToBlack("House"));
+                    inHouse = true;
                     //this.transform.position = enterHousePos;
                     sceneChange = 1;
                 }
@@ -78,6 +90,7 @@ public class PlayerManager : MonoBehaviour
                     Debug.Log("Changing Scene from Forest to Village");
                     StartCoroutine(storyManager.FadeToBlack("Village"));
                     //this.transform.position = enterVillagePos;
+                    inHouse = false;
                     sceneChange = 2;
                 }
             }
@@ -86,6 +99,7 @@ public class PlayerManager : MonoBehaviour
                 Debug.Log("Changing Scene from Village to Forest");
                 StartCoroutine(storyManager.FadeToBlack("Forest"));
                 //this.transform.position = enterWoodsFromVillagePos;
+                inHouse = false;
                 sceneChange = 3;
             }
         }

@@ -31,6 +31,10 @@ PrefabInstance:
         but numerous in population. When there is one, a whole family can be found
         nearby.
       objectReference: {fileID: 0}
+    - target: {fileID: 3170716592801522492, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: soundWhenPicked
+      value: 
+      objectReference: {fileID: 8300000, guid: c94c80c191888f84daf9993d24d0fa8f, type: 3}
     - target: {fileID: 5568913625992250280, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.35

@@ -2016,10 +2016,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2848249051403071151, guid: b2945b60ffd99cc4b9f562f42d1bf3c5, type: 3}
-      propertyPath: MinDistance
-      value: 18.658167
-      objectReference: {fileID: 0}
     - target: {fileID: 4190645801855393000, guid: b2945b60ffd99cc4b9f562f42d1bf3c5, type: 3}
       propertyPath: m_Name
       value: AudioManager

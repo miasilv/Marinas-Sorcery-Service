@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000428849038235032, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: m_Name
-      value: RobinsFeather
+      value: FeatherRobin
       objectReference: {fileID: 0}
     - target: {fileID: 3170716592801522492, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: sprite
@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: itemDescription
       value: A small ginger red father, light to the touch.
       objectReference: {fileID: 0}
+    - target: {fileID: 3170716592801522492, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: soundWhenPicked
+      value: 
+      objectReference: {fileID: 8300000, guid: 6fb2d73e3c2e6664dbc4a51838035ce4, type: 3}
     - target: {fileID: 6090151917760579457, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: m_Sprite
       value: 

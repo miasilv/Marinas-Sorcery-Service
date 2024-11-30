@@ -30,6 +30,10 @@ PrefabInstance:
         poisonous and rare to find. Once dead, it secretes a brown slime that can
         be used for health purposes.
       objectReference: {fileID: 0}
+    - target: {fileID: 3170716592801522492, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: soundWhenPicked
+      value: 
+      objectReference: {fileID: 8300000, guid: ea8be1e1c82e8394d9f975d23377d2a5, type: 3}
     - target: {fileID: 5568913625992250280, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5

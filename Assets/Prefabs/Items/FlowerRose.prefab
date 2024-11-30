@@ -25,6 +25,10 @@ PrefabInstance:
       value: Dark red with five petals surrounding a bulb, these flowers often symbolize
         expressions of love.
       objectReference: {fileID: 0}
+    - target: {fileID: 3170716592801522492, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: soundWhenPicked
+      value: 
+      objectReference: {fileID: 8300000, guid: cd91c6451dcb9534784e7d01f65bbbd5, type: 3}
     - target: {fileID: 5568913625992250280, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.15

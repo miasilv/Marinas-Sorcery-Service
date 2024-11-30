@@ -702,7 +702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4768739254482431761, guid: 6f583403f0a14634999cd35fbd808441, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4768739254482431761, guid: 6f583403f0a14634999cd35fbd808441, type: 3}
       propertyPath: m_LocalRotation.x
@@ -710,7 +710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4768739254482431761, guid: 6f583403f0a14634999cd35fbd808441, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4768739254482431761, guid: 6f583403f0a14634999cd35fbd808441, type: 3}
       propertyPath: m_LocalRotation.z
@@ -722,7 +722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4768739254482431761, guid: 6f583403f0a14634999cd35fbd808441, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4768739254482431761, guid: 6f583403f0a14634999cd35fbd808441, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1209,12 +1209,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2848249051403071151, guid: b2945b60ffd99cc4b9f562f42d1bf3c5, type: 3}
+      propertyPath: Priority
+      value: 228
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848249051403071151, guid: b2945b60ffd99cc4b9f562f42d1bf3c5, type: 3}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848249051403071151, guid: b2945b60ffd99cc4b9f562f42d1bf3c5, type: 3}
       propertyPath: MinDistance
       value: 17.584501
       objectReference: {fileID: 0}
     - target: {fileID: 4190645801855393000, guid: b2945b60ffd99cc4b9f562f42d1bf3c5, type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6240564822988841759, guid: b2945b60ffd99cc4b9f562f42d1bf3c5, type: 3}
+      propertyPath: Priority
+      value: 54
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -116,6 +116,10 @@ MonoBehaviour:
   songs:
   - {fileID: 8300000, guid: 992d978ae7bc234479b3d8d18d215953, type: 3}
   - {fileID: 8300000, guid: 900c0e0cafe29344fa1aab7cb048b8ec, type: 3}
+  walkingSounds:
+  - {fileID: 8300000, guid: 074858ebae2bed444a60c9d7dd9d62be, type: 3}
+  - {fileID: 8300000, guid: ab75eb5fe160bff4f9be74c08321d369, type: 3}
+  inHouse: 0
   enterHousePos: {x: 0, y: -3.85, z: 0}
   enterWoodsFromHousePos: {x: -12.5, y: 0, z: 0}
   enterWoodsFromVillagePos: {x: 13, y: 0, z: 0}

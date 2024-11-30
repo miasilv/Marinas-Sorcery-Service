@@ -17,7 +17,7 @@ public class InventoryManager : MonoBehaviour {
     public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription) {
         // look for an unfilled slot
         for (int i = 0; i < itemSlot.Length; i++) {
-            if(!itemSlot[i].isFull && itemSlot[i].name == name || itemSlot[i].quantity == 0) {
+            if(!itemSlot[i].isFull && (itemSlot[i].name == name || itemSlot[i].quantity == 0)) {
                 int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
                 if (leftOverItems > 0) {
                     leftOverItems = AddItem(itemName, leftOverItems, itemSprite, itemDescription);

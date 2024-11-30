@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000428849038235032, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: m_Name
-      value: Moss
+      value: EtcMoss
       objectReference: {fileID: 0}
     - target: {fileID: 3170716592801522492, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: sprite
@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: itemDescription
       value: Dark green clumps covering trees and stones.
       objectReference: {fileID: 0}
+    - target: {fileID: 3170716592801522492, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
+      propertyPath: soundWhenPicked
+      value: 
+      objectReference: {fileID: 8300000, guid: 36a0df36686b4e94c8afee56016ccc9a, type: 3}
     - target: {fileID: 6090151917760579457, guid: 9b29ee50cdd77854eb8d2c83db1d5866, type: 3}
       propertyPath: m_Sprite
       value: 
