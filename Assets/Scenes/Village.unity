@@ -170,6 +170,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2573281875490480063, guid: ec6782291685c90478c0e6a8196d5d77, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2573281875490480063, guid: ec6782291685c90478c0e6a8196d5d77, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2573281875490480063, guid: ec6782291685c90478c0e6a8196d5d77, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2573281875490480063, guid: ec6782291685c90478c0e6a8196d5d77, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030611273915127565, guid: ec6782291685c90478c0e6a8196d5d77, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1828917872, guid: 7288dff31c1fd3c4d81a65e1143a3fc8, type: 3}
+    - target: {fileID: 7030611273915127565, guid: ec6782291685c90478c0e6a8196d5d77, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030611273915127565, guid: ec6782291685c90478c0e6a8196d5d77, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030611273915127565, guid: ec6782291685c90478c0e6a8196d5d77, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7453965877895384884, guid: ec6782291685c90478c0e6a8196d5d77, type: 3}
       propertyPath: m_Name
       value: Dasha
@@ -2515,6 +2547,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 165605182597301314, guid: 64009afe6b22dca40874312afbf3890c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 165605182597301314, guid: 64009afe6b22dca40874312afbf3890c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 165605182597301314, guid: 64009afe6b22dca40874312afbf3890c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 165605182597301314, guid: 64009afe6b22dca40874312afbf3890c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2621230496570102041, guid: 64009afe6b22dca40874312afbf3890c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.32
@@ -2554,6 +2602,22 @@ PrefabInstance:
     - target: {fileID: 2621230496570102041, guid: 64009afe6b22dca40874312afbf3890c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642019921573956848, guid: 64009afe6b22dca40874312afbf3890c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1127127887, guid: 2bdcec9062d5e8c46a84761412f6f3d6, type: 3}
+    - target: {fileID: 4642019921573956848, guid: 64009afe6b22dca40874312afbf3890c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642019921573956848, guid: 64009afe6b22dca40874312afbf3890c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642019921573956848, guid: 64009afe6b22dca40874312afbf3890c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5083355938177733833, guid: 64009afe6b22dca40874312afbf3890c, type: 3}
       propertyPath: m_Name
