@@ -39,7 +39,6 @@ public class StoryManager : MonoBehaviour {
         taskManager = GameObject.Find("NotebookCanvas").GetComponent<TaskManager>();
         inventoryManager = GameObject.Find("NotebookCanvas").GetComponent<InventoryManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
-        currentDay = 1;
         
         completedTasks = new bool[12];
         for (int i = 0; i < completedTasks.Length; i++) {
@@ -55,6 +54,11 @@ public class StoryManager : MonoBehaviour {
         for (int i = 0; i < dialogueIndicies.Length; i++) {
             dialogueIndicies[i] = 0;
         }
+
+        // Setup day 1
+        currentDay = 1;
+        dialogueIndicies[SERENA] = 1;
+        dialogueIndicies[MOTHER] = 1;
     }
 
     public bool CheckPotion(int characterIndex) {
@@ -137,33 +141,57 @@ public class StoryManager : MonoBehaviour {
             completedTasks[characterIndex] = true;
             waitingForPotions[characterIndex] = false;
             inventoryManager.GivePotion(potionsForTasks[characterIndex]);
-            AddtoDialogueIndex(characterIndex, 1);
+            dialogueIndicies[characterIndex] = 4;
         }
         else {
             Debug.LogWarning("Character index is wrong");
         }
     }
+    private void resetCharacterDialogueIndicies() {
+        for (int i = 0; i < dialogueIndicies.length; i++) {
+            dialogueIndicies[i] = 0;       
+        }
+    }
+
+    private void resetWaitingForPotion() {
+        for (int i = 0; i < waitingForPotions.length; i++) {
+            waitingForPotions[i] = 0;       
+        }
+    }
 
     public void NewDay() {
         switch(currentDay) {
-            case 1:
+            case 1:                
                 UpdateDay(2);
+                dialogueIndicies[ASA] = 1;
+                dialogueIndicies[EWALD] = 1;
                 break;
             
             case 2:
                 UpdateDay(3);
+                dialogueIndicies[MAYOR] = 1;
+                dialogueIndicies[DASHA] = 1;
+                dialogueIndicies[JOSAN] = 1;
                 break;
             
             case 3:
                 UpdateDay(4);
+                dialogueIndicies[BESS] = 1;
+                dialogueIndicies[ISAAC] = 1;
+                dialogueIndicies[CLARICE] = 1;
                 break;
 
             case 4:
                 UpdateDay(5);
+                dialogueIndicies[ROYCE] = 1;
+                dialogueIndicies[NANCY] = 1;
                 break;
 
             case 5:
                 UpdateDay(6);
+                dialogueIndicies[MAYOR] = 1;
+                dialogueIndicies[KIERAN] = 1;
+                dialogueIndicies[JESSAMINE] = 1;
                 break;
             
             case 6:
@@ -172,6 +200,10 @@ public class StoryManager : MonoBehaviour {
             
             case 7:
                 UpdateDay(8);
+                for (int i = 0; i < dialogueIndicies.Length; i++) {
+                    dialogueIndicies[i] = 5;
+                }
+                dialogueIndicies[MAYOR] = 2;
                 break;
             
             default:
@@ -185,11 +217,9 @@ public class StoryManager : MonoBehaviour {
         Debug.Log("Starting day " + newDayNum);
         currentDay = newDayNum;
         taskManager.EmptyAllSlots();
-        for (int i = 0; i < dialogueIndicies.Length; i++) {
-            AddtoDialogueIndex(i, 1);
-        }
+        resetCharacterDialogueIndicies();
+        resetWaitingForPotion();
         StartCoroutine(FadeToBlack("House"));
-
     }
     public IEnumerator FadeToBlack(string newScene) {
         fadeToBlack.Play("FadeIn");

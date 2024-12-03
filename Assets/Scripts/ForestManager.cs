@@ -4,22 +4,64 @@ using UnityEngine;
 
 public class ForestManager : MonoBehaviour
 {
+    [Header("NPCs")]
+    [SerializeField] GameObject asa;
+    [SerializeField] GameObject bess;
+    [SerializeField] GameObject clarice;
+    [SerializeField] GameObject dasha;
+    [SerializeField] GameObject ewald;
+    [SerializeField] GameObject isaac;
+    [SerializeField] GameObject jessamine;
+    [SerializeField] GameObject josan;
+    [SerializeField] GameObject kieran;
+    [SerializeField] GameObject mayor;
+    [SerializeField] GameObject nancy;
+    [SerializeField] GameObject royce;
     [SerializeField] GameObject serena;
+
+    [Header("Crystals")]
+    [SerializeField] GameObject amethyst;
+    [SerializeField] GameObject blueAgate;
+    [SerializeField] GameObject myrianQuartz;
+    [SerializeField] GameObject pinkTopaz;
+
+    [Header("Other")]
+    [SerializeField] GameObject moss;
     [SerializeField] GameObject willardRoot;
-    [SerializeField] GameObject moonFrog;
+
+    [Header("Feathers")]
+    [SerializeField] GameObject hummingbirdFeather;
+    [SerializeField] GameObject owlFeather;
+    [SerializeField] GameObject ravenFeather;
+    [SerializeField] GameObject robinFeather;
+
+    [Header("Flowers")]
+    [SerializeField] GameObject carnation;
+    [SerializeField] GameObject daisy;
+    [SerializeField] GameObject lavender;
     [SerializeField] GameObject lilyOfTheLake;
-    [SerializeField] GameObject primrose;
+    [SerializeField] GameObject marigold;
     [SerializeField] GameObject orchid;
     [SerializeField] GameObject peony;
-    [SerializeField] GameObject marigold;
-    [SerializeField] GameObject moss;
+    [SerializeField] GameObject primrose;
+    [SerializeField] GameObject rose;
+
+    [Header("Frogs")]
+    [SerializeField] GameObject highlandBellFrog;
+    [SerializeField] GameObject moonFrog;
+    [SerializeField] GameObject seerianFrog;
+
+    [Header("Metals")]
+    [SerializeField] GameObject gold;
+    [SerializeField] GameObject iridium;
+    [SerializeField] GameObject silverstone;
     [SerializeField] GameObject starlite;
-    [SerializeField] GameObject myrianQuartz;
-    [SerializeField] GameObject amethyst;
+
+    [Header("Spiders")]
+    [SerializeField] GameObject devilsBiteSpider;
     [SerializeField] GameObject longLegSpider;
-    [SerializeField] GameObject ravenFeather;
-    [SerializeField] GameObject owlFeather;
-    [SerializeField] GameObject robinFeather;
+    [SerializeField] GameObject tarantula;
+    
     private StoryManager storyManager;
     void Start() {
         storyManager = GameObject.FindWithTag("StoryManager").GetComponent<StoryManager>();
@@ -27,6 +69,8 @@ public class ForestManager : MonoBehaviour
 
         switch(currentDay) {
             case 1:
+                TurnOffEverything();
+
                 serena.SetActive(true);
 
                 moss.SetActive(true);
@@ -34,22 +78,11 @@ public class ForestManager : MonoBehaviour
                 robinFeather.SetActive(true);
                 moonFrog.SetActive(true);
 
-                willardRoot.SetActive(false);
-                peony.SetActive(false);
-                longLegSpider.SetActive(false);
-                orchid.SetActive(false);
-                marigold.SetActive(false);
-                starlite.SetActive(false);
-                ravenFeather.SetActive(false);
-                lilyOfTheLake.SetActive(false);
-                myrianQuartz.SetActive(false);
-                owlFeather.SetActive(false);
-                starlite.SetActive(false);
-                amethyst.SetActive(false);
                 break;
+                
             case 2:
-                serena.SetActive(false);
-
+                TurnOffEverything();
+    
                 primrose.SetActive(true);
                 willardRoot.SetActive(true);
                 peony.SetActive(true);
@@ -60,16 +93,10 @@ public class ForestManager : MonoBehaviour
                 starlite.SetActive(true);
                 moss.SetActive(true);
 
-                robinFeather.SetActive(false);
-                moonFrog.SetActive(false);
-                ravenFeather.SetActive(false);
-                lilyOfTheLake.SetActive(false);
-                myrianQuartz.SetActive(false);
-                owlFeather.SetActive(false);
-                amethyst.SetActive(false);
                 break;
+
             case 3:
-                serena.SetActive(false);
+                TurnOffEverything();
                 
                 starlite.SetActive(true);
                 ravenFeather.SetActive(true);
@@ -81,34 +108,102 @@ public class ForestManager : MonoBehaviour
                 amethyst.SetActive(true);
                 moonFrog.SetActive(true);
 
-                moss.SetActive(false);
-                primrose.SetActive(false);
-                robinFeather.SetActive(false);
-                willardRoot.SetActive(false);
-                peony.SetActive(false);
-                longLegSpider.SetActive(false);
-                orchid.SetActive(false);
-                marigold.SetActive(false);
                 break;
-            default:
-                serena.SetActive(false);
+            
+            case 4:
+                TurnOffEverything();
 
-                ravenFeather.SetActive(true);
-                lilyOfTheLake.SetActive(true);
-                myrianQuartz.SetActive(true);
-                owlFeather.SetActive(true);
-                amethyst.SetActive(true);
-                willardRoot.SetActive(true);
-                peony.SetActive(true);
-                longLegSpider.SetActive(true);
-                orchid.SetActive(true);
-                marigold.SetActive(true);
-                starlite.SetActive(true);
-                moss.SetActive(true);
-                primrose.SetActive(true);
-                robinFeather.SetActive(true);
-                moonFrog.SetActive(true);
+                break;
+
+            case 5:
+                TurnOffEverything();
+
+                break;
+
+            case 6:
+                TurnOffEverything();
+
+                break;
+
+            case 7:
+                TurnOffEverything();
+
+                break;
+
+            case 8:
+                TurnOffEverything();
+
+                asa.SetActive(true);
+                bess.SetActive(true);
+                clarice.SetActive(true);
+                dasha.SetActive(true);
+                ewald.SetActive(true);
+                isaac.SetActive(true);
+                jessamine.SetActive(true);
+                josan.SetActive(true);
+                kieran.SetActive(true);
+                mayor.SetActive(true);
+                nancy.SetActive(true);
+                royce.SetActive(true);
+                serena.SetActive(true);
+
+                break;
+            
+            default:
+                TurnOffEverything();
                 break;
         }
+    }
+
+    private void TurnOffEverything() {
+        asa.SetActive(false);
+        bess.SetActive(false);
+        clarice.SetActive(false);
+        dasha.SetActive(false);
+        ewald.SetActive(false);
+        isaac.SetActive(false);
+        jessamine.SetActive(false);
+        josan.SetActive(false);
+        kieran.SetActive(false);
+        mayor.SetActive(false);
+        nancy.SetActive(false);
+        royce.SetActive(false);
+        serena.SetActive(false);
+
+        amethyst.SetActive(false);
+        blueAgate.SetActive(false);
+        myrianQuartz.SetActive(false);
+        pinkTopaz.SetActive(false);
+        
+        moss.SetActive(false);
+        willardRoot.SetActive(false);
+
+        hummingbirdFeather.SetActive(false);
+        owlFeather.SetActive(false);
+        ravenFeather.SetActive(false);
+        robinFeather.SetActive(false);
+
+        carnation.SetActive(false);
+        daisy.SetActive(false);
+        lavender.SetActive(false);
+        lilyOfTheLake.SetActive(false);
+        marigold.SetActive(false);
+        orchid.SetActive(false);
+        peony.SetActive(false);
+        primrose.SetActive(false);
+        rose.SetActive(false);
+
+        highlandBellFrog.SetActive(false);
+        moonFrog.SetActive(false);
+        seerianFrog.SetActive(false);
+
+        gold.SetActive(false);
+        iridium.SetActive(false);
+        silverstone.SetActive(false);
+        starlite.SetActive(false);
+
+        devilsBiteSpider.SetActive(false);
+        longLegSpider.SetActive(false);
+        tarantula.SetActive(false);
     }
 }
