@@ -16,6 +16,10 @@ public class PotionMaker : MonoBehaviour {
     [SerializeField] private GameObject potionCompletePanel;
     [SerializeField] private TMP_Text potionCompleteText;
     private InventoryManager inventoryManager;
+    private AudioManager audioManager;
+    public AudioClip cauldronBubble;
+    public AudioClip emptyPotion;
+    public AudioClip dropIngredient;
     public bool playerInRange;
     public bool potionCanvasActive;
     [SerializeField] public Sprite potionSprite;
@@ -38,12 +42,14 @@ public class PotionMaker : MonoBehaviour {
         }
         UpdateAllSlots();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     private void Update() {
         if (playerInRange) {
             visualCue.SetActive(true);
             if (Input.GetButtonDown("Interact"))  {
+                audioManager.PlayCauldronBubble(cauldronBubble);
                 potionCanvas.SetActive(true);
                 potionCanvasActive = true;
                 UpdateAllSlots();
@@ -58,6 +64,7 @@ public class PotionMaker : MonoBehaviour {
             potionCanvas.SetActive(false);
             potionCanvasActive = false;
             player.canMove = true;
+            audioManager.StopCauldronBubble();
         }
     }
 
@@ -88,10 +95,16 @@ public class PotionMaker : MonoBehaviour {
         else {
             itemsInCauldron.Add(itemName, 1);
         }
+        audioManager.PlayUI2(dropIngredient);
     }
 
     public void EmptyCauldron() {
         itemsInCauldron.Clear();
+    }
+
+    public void EmptyCauldronWithSound() {
+        itemsInCauldron.Clear();
+        audioManager.PlayUI2(emptyPotion);
     }
 
     public void FinishPotion() {
@@ -112,7 +125,7 @@ public class PotionMaker : MonoBehaviour {
             potionCompleteText.text = "You made" + potionText;
         }
         potionCompletePanel.SetActive(true);
-        EmptyCauldron();
+        itemsInCauldron.Clear();
         player.canMove = true;
     }
 

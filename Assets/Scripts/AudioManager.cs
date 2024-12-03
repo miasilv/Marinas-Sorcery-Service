@@ -5,9 +5,8 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour {
     
     public AudioSource backgroundMusic;
-    public AudioSource ui1;
-    public AudioSource ui2;
-    public AudioSource ui3;
+    public AudioSource cauldron;
+    public AudioSource src;
     public AudioSource pickUpItem;
     public AudioSource walking;
 
@@ -28,30 +27,18 @@ public class AudioManager : MonoBehaviour {
         backgroundMusic.Play();
     }
 
-    public void PlayUI1(AudioClip clip, bool on = true, bool loop = false) {
-        if (on && loop) {
-            ui1.clip = clip;
-            ui1.Play();
-            ui1.loop = true;
-        }
-        else if (!on && loop) {
-            ui1.Stop();
-            ui1.loop = false;
-        } 
-        else if (on && !loop) {
-            ui1.PlayOneShot(clip);
-        }
-        else if (!on && !loop) {
-            ui1.Stop();
-        }
+    public void PlayCauldronBubble(AudioClip clip) {
+        cauldron.Stop();
+        cauldron.clip = clip;
+        cauldron.Play();
     }
 
-    public void PlayUI2(AudioClip clip, bool on = true, bool loop = false) {
-        
+    public void StopCauldronBubble() {
+        cauldron.Stop();
     }
 
-    public void PlayUI3(AudioClip clip, bool on = true, bool loop = false) {
-        
+    public void PlayUI2(AudioClip clip) {
+        src.PlayOneShot(clip);
     }
 
     public void PlayPickUpItem(AudioClip clip) {

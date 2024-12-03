@@ -25,6 +25,9 @@ public class NotebookManager : MonoBehaviour {
     private bool potionActivated;
 
     private PlayerManager player;
+    private AudioManager audioManager;
+    [SerializeField] AudioClip singlePage;
+    [SerializeField] AudioClip multiPage;
 
     void Awake() {
         // the notebook is closed
@@ -44,6 +47,7 @@ public class NotebookManager : MonoBehaviour {
         potionManager = GameObject.Find("NotebookCanvas").GetComponent<PotionManager>();
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     void Update() {
@@ -80,15 +84,19 @@ public class NotebookManager : MonoBehaviour {
     }
 
     public void ToggleNotebookOn() {
+        if (!notebookActivated) {
+            audioManager.PlayUI2(multiPage);
+        }
         Time.timeScale = 0;
         notebookMenu.SetActive(true);
-        notebookActivated = true;
         player.canMove = false;
         notebookIcon.SetActive(false);
         closeIcon.SetActive(true);
+        notebookActivated = true;
     }
 
     public void ToggleNotebookOff() {
+        audioManager.PlayUI2(multiPage);
         Time.timeScale = 1;
         notebookMenu.SetActive(false);
         notebookActivated = false;
@@ -112,6 +120,10 @@ public class NotebookManager : MonoBehaviour {
         inventoryMenu.SetActive(true);
         inventoryActivated = true;
         inventoryManager.DeselectAllSlots();
+        
+        if (notebookActivated) {
+            audioManager.PlayUI2(singlePage);
+        }
     }
 
     public void OpenTask() {
@@ -126,6 +138,10 @@ public class NotebookManager : MonoBehaviour {
         taskMenu.SetActive(true);
         taskActivated = true;
         taskManager.DeselectAllSlots();
+
+        if (notebookActivated) {
+            audioManager.PlayUI2(singlePage);
+        }
     }
 
     public void OpenPotion() {
@@ -141,5 +157,9 @@ public class NotebookManager : MonoBehaviour {
         potionMenu.SetActive(true);
         potionActivated = true;
         potionManager.DeselectAllSlots();
+
+        if (notebookActivated) {
+            audioManager.PlayUI2(singlePage);
+        }
     }
 }

@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemSlot Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4368773725879898604, guid: 46c4cc6444fd9384581dbd0c4348bc53, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7040498321986350470, guid: 46c4cc6444fd9384581dbd0c4348bc53, type: 3}
       propertyPath: itemDescriptionText
       value: 
