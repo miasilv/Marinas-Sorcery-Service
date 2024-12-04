@@ -1,8 +1,8 @@
-Welcome back Marina. #speaker:Ewald #portrait: ewald_icon #layout:left
+Welcome back Marina. #speaker:Ewald  #layout:left
 
 You've got the potion yet?
   
-Not just yet. I'll be back. #speaker:Marina #portrait: marina_icon #layout:right
+Not just yet. I'll be back. #speaker:Marina #layout:right
     
-Take care 'til then. #speaker:Ewald #portrait: ewald_icon #layout:left
+Take care 'til then. #speaker:Ewald  #layout:left
     -> END

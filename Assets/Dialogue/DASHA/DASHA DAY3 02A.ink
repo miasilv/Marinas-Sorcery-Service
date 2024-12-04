@@ -1,8 +1,8 @@
-Hello Marina. #speaker:Dasha #portrait: dasha_icon #layout:left
+Hello Marina. #speaker:Dasha  #layout:left
 
 Have you gotten something to help yet?
 
-Not just yet, I'll return later. #speaker: Marina #portrait: marina_icon #layout:right
+Not just yet, I'll return later. #speaker: Marina #layout:right
 
-Alright, don't tarry for too long. School will start soon. #speaker:Dasha #portrait: dasha_icon #layout:left
+Alright, don't tarry for too long. School will start soon. #speaker:Dasha #layout:left
     -> END

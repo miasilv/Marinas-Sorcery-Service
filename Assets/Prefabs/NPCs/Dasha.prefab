@@ -54,12 +54,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[0]
       value: 
-      objectReference: {fileID: 4900000, guid: c631a34755f1e0b458684d948f516085, type: 3}
+      objectReference: {fileID: 4900000, guid: 8ecad70006cd959489f9654c237ca17a, type: 3}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[1]
       value: 
@@ -79,7 +79,11 @@ PrefabInstance:
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[5]
       value: 
-      objectReference: {fileID: 4900000, guid: c631a34755f1e0b458684d948f516085, type: 3}
+      objectReference: {fileID: 4900000, guid: 9b34a56908ab44d4b813c2e7f224a211, type: 3}
+    - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: inkJSON.Array.data[6]
+      value: 
+      objectReference: {fileID: 4900000, guid: 83c6e14a51dc5f943b5045b8f3e718d6, type: 3}
     - target: {fileID: 2839730534636012467, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4

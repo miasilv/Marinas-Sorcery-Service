@@ -1,10 +1,10 @@
-Marina! #speaker:Asa #portrait: asa_icon #layout:left
+Marina! #speaker:Asa  #layout:left
 
 What's the word? Got that potion I asked for?
 
-I have it right here for you. #speaker: Marina #portrait: marina_icon #layout:right
+I have it right here for you. #speaker: Marina #layout:right
     
-Yes! Oh, thank you so much Marina! Knew I could count on you! #speaker:Asa #portrait: asa_icon #layout:left
+Yes! Oh, thank you so much Marina! Knew I could count on you! #speaker:Asa  #layout:left
     
 Those chicks won't ever get the better of me again. Thanks a lot!
     
