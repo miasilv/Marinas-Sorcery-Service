@@ -55,4 +55,10 @@ public class InventoryManager : MonoBehaviour {
         }
 
     }
+
+    public void Clear() {
+        for (int i = 0; i < itemSlot.Length; i++) {
+            itemSlot[i].EmptySlot();
+        }
+    }
 }

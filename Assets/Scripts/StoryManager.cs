@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class StoryManager : MonoBehaviour {
     private PlayerManager player;
     [SerializeField] Animator fadeToBlack;
+    [SerializeField] Animator rollCredits;
     // ============ Managers ================
     private TaskManager taskManager;
     private InventoryManager inventoryManager;
@@ -155,6 +156,12 @@ public class StoryManager : MonoBehaviour {
             Debug.LogWarning("Character index is wrong");
         }
     }
+    
+    private void resetCompletedPotions() {
+        for (int i = 0; i < waitingForPotions.Length; i++) {
+            completedTasks[i] = false;       
+        }
+    }
     private void resetCharacterDialogueIndicies() {
         for (int i = 0; i < dialogueIndicies.Length; i++) {
             dialogueIndicies[i] = 0;       
@@ -214,6 +221,10 @@ public class StoryManager : MonoBehaviour {
                 dialogueIndicies[MAYOR] = 3;
                 break;
             
+            case 8:
+                UpdateDay(0);
+                break;
+
             default:
                 Debug.LogWarning("Something's wrong, the day is no longer the day, we must go back to the beginning.");
                 UpdateDay(1);
@@ -235,7 +246,12 @@ public class StoryManager : MonoBehaviour {
         player.anim.SetBool("Walking", false);
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(newScene);
-        StartCoroutine(FadeFromBlack());
+        if (currentDay != 0) {
+            StartCoroutine(FadeFromBlack());
+        }
+        else {
+            rollCredits.Play("Credits");
+        }
     }
 
     private IEnumerator FadeFromBlack() {
@@ -243,5 +259,14 @@ public class StoryManager : MonoBehaviour {
         player.changePosition();
         yield return new WaitForSeconds(1);
         player.canMove = true;
+    }
+
+    public void Restart() {
+        resetCompletedPotions();
+        inventoryManager.Clear();
+        currentDay = 1;
+        dialogueIndicies[SERENA] = 1;
+        dialogueIndicies[MOTHER] = 1;
+        StartCoroutine(FadeToBlack("House"));
     }
 }
