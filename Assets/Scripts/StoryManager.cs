@@ -34,7 +34,6 @@ public class StoryManager : MonoBehaviour {
     private const int JESSAMINE = 12;
     private const int MAYOR = 13;
     
-
     void Start() {
         taskManager = GameObject.Find("NotebookCanvas").GetComponent<TaskManager>();
         inventoryManager = GameObject.Find("NotebookCanvas").GetComponent<InventoryManager>();

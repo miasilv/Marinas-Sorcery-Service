@@ -35,7 +35,6 @@ public class DialogueManager : MonoBehaviour {
     private const string FINISH_TASK_TAG = "taskComplete";
     private const string FINISH_DAY_TAG = "dayEnd";
     private const string CHANGE_DIALOGUE_TAG = "changeIndex";
-    private const string TRIGGER_CHARACTER_DIALOGUE = "triggerDialogue";
 
     void Start() {
         taskManager = GameObject.Find("NotebookCanvas").GetComponent<TaskManager>();
@@ -225,10 +224,6 @@ public class DialogueManager : MonoBehaviour {
                         break;
                     }
                     storyManager.ChangeDialogueIndex(int.Parse(values[0]), int.Parse(values[1]));
-                    break;
-                
-                case TRIGGER_CHARACTER_DIALOGUE:
-                    // Insert functionality here
                     break;
                 
                 default:
