@@ -10,13 +10,10 @@ public class ForestManager : MonoBehaviour
     [SerializeField] GameObject clarice;
     [SerializeField] GameObject dasha;
     [SerializeField] GameObject ewald;
-    [SerializeField] GameObject isaac;
     [SerializeField] GameObject jessamine;
     [SerializeField] GameObject josan;
     [SerializeField] GameObject kieran;
     [SerializeField] GameObject mayor;
-    [SerializeField] GameObject nancy;
-    [SerializeField] GameObject royce;
     [SerializeField] GameObject serena;
 
     [Header("Crystals")]
@@ -172,13 +169,10 @@ public class ForestManager : MonoBehaviour
                 clarice.SetActive(true);
                 dasha.SetActive(true);
                 ewald.SetActive(true);
-                isaac.SetActive(true);
                 jessamine.SetActive(true);
                 josan.SetActive(true);
                 kieran.SetActive(true);
                 mayor.SetActive(true);
-                nancy.SetActive(true);
-                royce.SetActive(true);
                 serena.SetActive(true);
 
                 break;
@@ -195,13 +189,10 @@ public class ForestManager : MonoBehaviour
         clarice.SetActive(false);
         dasha.SetActive(false);
         ewald.SetActive(false);
-        isaac.SetActive(false);
         jessamine.SetActive(false);
         josan.SetActive(false);
         kieran.SetActive(false);
         mayor.SetActive(false);
-        nancy.SetActive(false);
-        royce.SetActive(false);
         serena.SetActive(false);
 
         amethyst.SetActive(false);
