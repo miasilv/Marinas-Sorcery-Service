@@ -7,9 +7,6 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour {
     public ItemSlot[] itemSlot;
 
-    public TMP_Text inputNumOfItemsToDrop;
-    public TMP_Text invalidInputText;
-
     public void Awake() {
         DeselectAllSlots();
     }
