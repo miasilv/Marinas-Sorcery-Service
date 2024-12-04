@@ -117,7 +117,7 @@ public class PotionMaker : MonoBehaviour {
                 foreach (var potion in potions) {
                     if (potion.isFull && CheckPotion(potion)) {
                         potionText = " " + potion.potionName;
-                        inventoryManager.AddItem(potion.potionName, 1, potionSprite, potion.potionDescription);
+                        inventoryManager.AddItem(potion.potionName, potionSprite, potion.potionDescription);
                         break;
                     }
                 }

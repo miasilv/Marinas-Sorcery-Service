@@ -112,21 +112,54 @@ public class ForestManager : MonoBehaviour
             
             case 4:
                 TurnOffEverything();
+                hummingbirdFeather.SetActive(true);
+                rose.SetActive(true);
+                silverstone.SetActive(true);
+
+                // honey
+
+                blueAgate.SetActive(true);
+                willardRoot.SetActive(true);
+                lavender.SetActive(true);
+                carnation.SetActive(true);
 
                 break;
 
             case 5:
                 TurnOffEverything();
 
+                silverstone.SetActive(true);
+                robinFeather.SetActive(true);
+                highlandBellFrog.SetActive(true);
+                seerianFrog.SetActive(true);
+
+                gold.SetActive(true);
+                tarantula.SetActive(true);
+                peony.SetActive(true);
+                daisy.SetActive(true);
+
                 break;
 
             case 6:
                 TurnOffEverything();
 
+                rose.SetActive(true);
+                // blueberry
+
+                iridium.SetActive(true);
+                pinkTopaz.SetActive(true);
+                ravenFeather.SetActive(true);
+                moss.SetActive(true);
+
                 break;
 
             case 7:
                 TurnOffEverything();
+
+                devilsBiteSpider.SetActive(true);
+                ravenFeather.SetActive(true);
+                blueAgate.SetActive(true);
+                // Torian dust
 
                 break;
 

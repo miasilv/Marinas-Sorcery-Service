@@ -14,39 +14,21 @@ public class InventoryManager : MonoBehaviour {
         DeselectAllSlots();
     }
 
-    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription) {
+    public void AddItem(string itemName, Sprite itemSprite, string itemDescription) {
         // look for an unfilled slot
         for (int i = 0; i < itemSlot.Length; i++) {
-            if(!itemSlot[i].isFull && (itemSlot[i].name == name || itemSlot[i].quantity == 0)) {
-                int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
-                if (leftOverItems > 0) {
-                    leftOverItems = AddItem(itemName, leftOverItems, itemSprite, itemDescription);
-                }
-                return leftOverItems;
+            if(!itemSlot[i].isFull) {
+                itemSlot[i].AddItem(itemName, itemSprite, itemDescription);
+                return;
             }
         }
-        return quantity;
     }
 
-    public void DropItem() {
-        string str = inputNumOfItemsToDrop.text;
-        string numToDropStr = "";    
-        for (int i = 0; i < str.Length; i++) {
-            if (char.IsDigit(str[i])) {
-                numToDropStr += str[i];
+    public void DropItem() {        
+        for (int i = 0; i < itemSlot.Length; i++) {
+            if (itemSlot[i].thisItemSelected) {
+                itemSlot[i].DropItem();
             }
-        }
-        Debug.Log(numToDropStr);
-        
-        if (int.TryParse(numToDropStr, out int numToDrop) && numToDrop > 0 && numToDrop < 10) {
-            for (int i = 0; i < itemSlot.Length; i++) {
-                if (itemSlot[i].thisItemSelected) {
-                    itemSlot[i].DropItem(numToDrop);
-                }
-            }
-        }
-        else {
-            invalidInputText.enabled = true;
         }
     }
 
@@ -62,7 +44,7 @@ public class InventoryManager : MonoBehaviour {
     public void GivePotion(string potionName) {
         for (int i = 0; i < itemSlot.Length; i++) {
             if(itemSlot[i].itemName == potionName) {
-                itemSlot[i].DropItem(1);
+                itemSlot[i].DropItem();
                 return;
             }
         }
@@ -74,8 +56,6 @@ public class InventoryManager : MonoBehaviour {
             itemSlot[i].selectedShader.SetActive(false);
             itemSlot[i].thisItemSelected = false;
         }
-        invalidInputText.enabled = false;
-        inputNumOfItemsToDrop.text = "";
 
     }
 }

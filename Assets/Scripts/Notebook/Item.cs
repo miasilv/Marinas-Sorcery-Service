@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Item : MonoBehaviour {
     [SerializeField] public string itemName;
-    [SerializeField] private int quantity;
     [SerializeField] public Sprite sprite;
     [SerializeField] public AudioClip soundWhenPicked;
     [TextArea][SerializeField] public string itemDescription;
@@ -27,12 +26,8 @@ public class Item : MonoBehaviour {
             visualCue.SetActive(true);
             if (Input.GetButton("Interact")) {
                 audioManager.PlayPickUpItem(soundWhenPicked);
-                int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-                if (leftOverItems <= 0) {
-                    Destroy(gameObject);
-                } else {
-                    quantity = leftOverItems;
-                }
+                inventoryManager.AddItem(itemName, sprite, itemDescription);
+                Destroy(gameObject);
             }
         }
         else {

@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     private SpriteRenderer sprite;
     private StoryManager storyManager;
     public bool canMove;
-    private int sceneChange = 0;
+    private int sceneChange = 1;
     private AudioManager audioManager;
     public AudioClip[] songs;
     public AudioClip[] walkingSounds;

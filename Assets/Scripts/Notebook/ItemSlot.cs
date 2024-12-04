@@ -8,13 +8,11 @@ using UnityEngine.EventSystems;
 public class ItemSlot : MonoBehaviour, IPointerClickHandler {
     //===========ITEM DATA===========//
     public string itemName;
-    public int quantity;
     public Sprite itemSprite;
     public string itemDescription;
     public bool isFull;
     
     //===========ITEM SLOT===========//
-    [SerializeField] private TMP_Text slotQuantityText;
     [SerializeField] private Image slotImage;
 
     
@@ -28,16 +26,15 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
     public bool thisItemSelected;
     public Sprite emptySprite;
     private InventoryManager inventoryManager;
-    [SerializeField] public int maxNumberOfItems;
     
     private void Awake() {
         inventoryManager = GameObject.Find("NotebookCanvas").GetComponent<InventoryManager>();
     }
 
-    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)  {
+    public void AddItem(string itemName, Sprite itemSprite, string itemDescription)  {
         //check to see if the slot is already full
         if (isFull) {
-            return quantity;
+            return;
         }
 
         // Update Name, Image, and Description
@@ -48,32 +45,11 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
         // update slot image
         slotImage.sprite = itemSprite;  
 
-        // Update Quantity
-        this.quantity += quantity;
-
-        // if quantity is greater than max number of items
-        if (this.quantity >= maxNumberOfItems) {
-            slotQuantityText.text = maxNumberOfItems.ToString();
-            slotQuantityText.enabled = true;
-            isFull = true;
-
-            int extraItems = this.quantity - maxNumberOfItems;
-            this.quantity = maxNumberOfItems;
-            return extraItems;
-        }
-
-        // if quantity is less than max number of items     
-        slotQuantityText.text = this.quantity.ToString();
-        slotQuantityText.enabled = true;
-        return 0;        
+        isFull = true;      
     }
 
-    public void DropItem(int numToDrop) {
-        this.quantity -= numToDrop;
-        slotQuantityText.text = this.quantity.ToString();
-        if (this.quantity <= 0) {
-            EmptySlot();
-        }
+    public void DropItem() {
+        EmptySlot();
     }
 
     public void OnPointerClick(PointerEventData eventData) {
@@ -97,12 +73,10 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
         // Remove the item data
         itemName = "";
         itemSprite = emptySprite;
-        quantity = 0;
         itemDescription = "";
         isFull = false;
 
         // Remove the slot data
-        slotQuantityText.enabled = false;
         slotImage.sprite = emptySprite;
         
         // Remove the description information

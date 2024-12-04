@@ -40,17 +40,17 @@ public class StoryManager : MonoBehaviour {
         inventoryManager = GameObject.Find("NotebookCanvas").GetComponent<InventoryManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
         
-        completedTasks = new bool[12];
+        completedTasks = new bool[13];
         for (int i = 0; i < completedTasks.Length; i++) {
             completedTasks[i] = false;
         }
 
-        waitingForPotions = new bool[12];
+        waitingForPotions = new bool[13];
         for (int i = 0; i < waitingForPotions.Length; i++) {
             waitingForPotions[i] = false;
         }
 
-        dialogueIndicies = new int[12];
+        dialogueIndicies = new int[13];
         for (int i = 0; i < dialogueIndicies.Length; i++) {
             dialogueIndicies[i] = 0;
         }
@@ -148,14 +148,14 @@ public class StoryManager : MonoBehaviour {
         }
     }
     private void resetCharacterDialogueIndicies() {
-        for (int i = 0; i < dialogueIndicies.length; i++) {
+        for (int i = 0; i < dialogueIndicies.Length; i++) {
             dialogueIndicies[i] = 0;       
         }
     }
 
     private void resetWaitingForPotion() {
-        for (int i = 0; i < waitingForPotions.length; i++) {
-            waitingForPotions[i] = 0;       
+        for (int i = 0; i < waitingForPotions.Length; i++) {
+            waitingForPotions[i] = false;       
         }
     }
 
@@ -189,7 +189,7 @@ public class StoryManager : MonoBehaviour {
 
             case 5:
                 UpdateDay(6);
-                dialogueIndicies[MAYOR] = 1;
+                dialogueIndicies[MAYOR] = 2;
                 dialogueIndicies[KIERAN] = 1;
                 dialogueIndicies[JESSAMINE] = 1;
                 break;
@@ -203,7 +203,7 @@ public class StoryManager : MonoBehaviour {
                 for (int i = 0; i < dialogueIndicies.Length; i++) {
                     dialogueIndicies[i] = 5;
                 }
-                dialogueIndicies[MAYOR] = 2;
+                dialogueIndicies[MAYOR] = 3;
                 break;
             
             default:

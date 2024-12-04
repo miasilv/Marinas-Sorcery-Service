@@ -18,7 +18,6 @@ public class DialogueManager : MonoBehaviour {
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] TextMeshProUGUI dialogueText;
     [SerializeField] TextMeshProUGUI displayNameText;
-    [SerializeField] Animator portraitAnimator;
     private Animator layoutAnimator;
     [SerializeField] GameObject continueIcon;
     private Story currentStory;
@@ -87,12 +86,11 @@ public class DialogueManager : MonoBehaviour {
             }
             
             string nextLine = currentStory.Continue();
-            displayLineCoroutine = StartCoroutine(DisplayLine(nextLine));
+            //displayLineCoroutine = StartCoroutine(DisplayLine(nextLine));
             
             // handle tags
             HandleTags(currentStory.currentTags);
 
-            /* this fixes the end dialogue empty one
             // handle case where tag is the last line
             if (nextLine.Equals("") && !currentStory.canContinue) {
                 ExitDialogueMode();
@@ -103,7 +101,6 @@ public class DialogueManager : MonoBehaviour {
                 // handle tags
                 HandleTags(currentStory.currentTags);
             }
-            */
         }
         else {
             ExitDialogueMode();
@@ -200,7 +197,7 @@ public class DialogueManager : MonoBehaviour {
                     break;
                 
                 case PORTRAIT_TAG:
-                    portraitAnimator.Play(tagValue);
+                    // insert portrait capability
                     break;
                 
                 case LAYOUT_TAG:

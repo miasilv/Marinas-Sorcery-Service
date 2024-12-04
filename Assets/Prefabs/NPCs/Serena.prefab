@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 91371438142461672, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -11.58
       objectReference: {fileID: 0}
     - target: {fileID: 91371438142461672, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.73
       objectReference: {fileID: 0}
     - target: {fileID: 91371438142461672, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -59,23 +59,23 @@ PrefabInstance:
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[0]
       value: 
-      objectReference: {fileID: 4900000, guid: 74403d3a0b3de3f4ebc1f6d5963a8a19, type: 3}
+      objectReference: {fileID: 4900000, guid: c631a34755f1e0b458684d948f516085, type: 3}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[1]
       value: 
-      objectReference: {fileID: 4900000, guid: 600e5c40bf418c748a1826c325f16b9f, type: 3}
+      objectReference: {fileID: 4900000, guid: d56b368878344e34aaf5948b82f9e8b3, type: 3}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[2]
       value: 
-      objectReference: {fileID: 4900000, guid: 930d3a05cd6d0a4439cf3e8269c79539, type: 3}
+      objectReference: {fileID: 4900000, guid: 7bb061cabba48d64c8d3bc5db1653db5, type: 3}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[3]
       value: 
-      objectReference: {fileID: 4900000, guid: e7a7b4c8a0c8877419ee48674a3b3fbe, type: 3}
+      objectReference: {fileID: 4900000, guid: d9b1d11fbfd048a44a9067ef91222a3a, type: 3}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[4]
       value: 
-      objectReference: {fileID: 4900000, guid: c631a34755f1e0b458684d948f516085, type: 3}
+      objectReference: {fileID: 4900000, guid: bd77f01d7618acb4e9539b1cec0527ff, type: 3}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[5]
       value: 

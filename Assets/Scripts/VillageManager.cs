@@ -15,7 +15,6 @@ public class VillageManager : MonoBehaviour {
     [SerializeField] GameObject mayor;
     [SerializeField] GameObject nancy;
     [SerializeField] GameObject royce;
-    [SerializeField] GameObject serena;
     private StoryManager storyManager;
     void Start() {
         storyManager = GameObject.FindWithTag("StoryManager").GetComponent<StoryManager>();
@@ -23,7 +22,7 @@ public class VillageManager : MonoBehaviour {
 
         switch(currentDay) {
             case 1:
-                TurnOffEverything()
+                TurnOffEverything();
                 break;
             case 2:
                 TurnOffEverything();
@@ -78,6 +77,5 @@ public class VillageManager : MonoBehaviour {
         mayor.SetActive(false);
         nancy.SetActive(false);
         royce.SetActive(false);
-        serena.SetActive(false);
     }
 }

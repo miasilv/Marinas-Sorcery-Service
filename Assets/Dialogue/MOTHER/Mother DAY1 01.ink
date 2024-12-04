@@ -40,9 +40,9 @@ They've grown to be kinder since then. I like to think of us as a sort of partne
 
 We need them as much as they need us.
 
-
+... #speaker: Marina #portrait: marina_icon #layout:right
 + [ I don't think that's true.]
-    I... don't think that's ever been true... #speaker: Marina #portrait: marina_icon #layout:right
+    I... don't think that's ever been true...
     
     Hmmm... maybe you're right. #speaker:Mother #portrait: mother_icon #layout:left
     

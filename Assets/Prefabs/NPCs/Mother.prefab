@@ -50,16 +50,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.size
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[0]
       value: 
-      objectReference: {fileID: 4900000, guid: 744ffe5bf5518b341bf5e0d8081fbede, type: 3}
+      objectReference: {fileID: 4900000, guid: a84ac9bc762e15d498700b4085eed4f8, type: 3}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[1]
       value: 
-      objectReference: {fileID: 4900000, guid: a8970179251293c4486f9b29c03bc830, type: 3}
+      objectReference: {fileID: 4900000, guid: 5a3b02780fd1ae14a820c66470cb383c, type: 3}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[2]
       value: 
