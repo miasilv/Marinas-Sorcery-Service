@@ -2988,9 +2988,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2597812193115349820, guid: e3b68bbfe4992ef498812c0285ddbdc8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597812193115349820, guid: e3b68bbfe4992ef498812c0285ddbdc8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597812193115349820, guid: e3b68bbfe4992ef498812c0285ddbdc8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597812193115349820, guid: e3b68bbfe4992ef498812c0285ddbdc8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6974567495840068535, guid: e3b68bbfe4992ef498812c0285ddbdc8, type: 3}
       propertyPath: m_Name
       value: Jessamine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7361931709472795534, guid: e3b68bbfe4992ef498812c0285ddbdc8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 916627190, guid: fbecfbfb1c66b93479c063b26dcca9d0, type: 3}
+    - target: {fileID: 7361931709472795534, guid: e3b68bbfe4992ef498812c0285ddbdc8, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7361931709472795534, guid: e3b68bbfe4992ef498812c0285ddbdc8, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7361931709472795534, guid: e3b68bbfe4992ef498812c0285ddbdc8, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
