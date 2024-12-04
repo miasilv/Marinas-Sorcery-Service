@@ -135,6 +135,15 @@ public class StoryManager : MonoBehaviour {
             Debug.LogWarning("Character index is wrong");
         }
     }
+
+    public void ChangeDialogueIndex(int characterIndex, int newDialogueIndex) {
+        if (characterIndex >= 0 && characterIndex < dialogueIndicies.Length) {
+            dialogueIndicies[characterIndex] = newDialogueIndex;
+        }
+        else {
+            Debug.LogWarning("Character index is wrong");
+        }        
+    }
     
     public void CompleteTask(int characterIndex) {
         if (characterIndex > 0 && characterIndex < completedTasks.Length) {

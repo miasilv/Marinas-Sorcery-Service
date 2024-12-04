@@ -30,12 +30,12 @@ public class DialogueManager : MonoBehaviour {
     private TextMeshProUGUI[] choicesText;
 
     private const string SPEAKER_TAG = "speaker";
-    private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
     private const string GIVE_TASK_TAG = "task";
     private const string FINISH_TASK_TAG = "taskComplete";
     private const string FINISH_DAY_TAG = "dayEnd";
-    private const string ADD_DIALOGUE_TAG = "addDialogueIndex";
+    private const string CHANGE_DIALOGUE_TAG = "changeIndex";
+    private const string TRIGGER_CHARACTER_DIALOGUE = "triggerDialogue";
 
     void Start() {
         taskManager = GameObject.Find("NotebookCanvas").GetComponent<TaskManager>();
@@ -196,10 +196,6 @@ public class DialogueManager : MonoBehaviour {
                     displayNameText.text = tagValue;
                     break;
                 
-                case PORTRAIT_TAG:
-                    // insert portrait capability
-                    break;
-                
                 case LAYOUT_TAG:
                     layoutAnimator.Play(tagValue);
                     break;
@@ -222,8 +218,17 @@ public class DialogueManager : MonoBehaviour {
                     storyManager.NewDay();
                     break;
                 
-                case ADD_DIALOGUE_TAG:
-                    storyManager.AddtoDialogueIndex(int.Parse(tagValue), 1);
+                case CHANGE_DIALOGUE_TAG:
+                    string[] values = tagValue.Split("$");
+                    if (values.Length != 2) {
+                        Debug.Log("Change Dialogue is formatted wrong");
+                        break;
+                    }
+                    storyManager.ChangeDialogueIndex(int.Parse(values[0]), int.Parse(values[1]));
+                    break;
+                
+                case TRIGGER_CHARACTER_DIALOGUE:
+                    // Insert functionality here
                     break;
                 
                 default:
