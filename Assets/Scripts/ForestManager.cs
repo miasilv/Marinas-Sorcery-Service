@@ -26,6 +26,7 @@ public class ForestManager : MonoBehaviour
     [SerializeField] GameObject pinkTopaz;
 
     [Header("Other")]
+    [SerializeField] GameObject blueberry;
     [SerializeField] GameObject moss;
     [SerializeField] GameObject willardRoot;
 
@@ -144,7 +145,7 @@ public class ForestManager : MonoBehaviour
                 TurnOffEverything();
 
                 rose.SetActive(true);
-                // blueberry
+                blueberry.SetActive(true);
 
                 iridium.SetActive(true);
                 pinkTopaz.SetActive(true);
@@ -208,6 +209,7 @@ public class ForestManager : MonoBehaviour
         myrianQuartz.SetActive(false);
         pinkTopaz.SetActive(false);
         
+        blueberry.SetActive(false);
         moss.SetActive(false);
         willardRoot.SetActive(false);
 
