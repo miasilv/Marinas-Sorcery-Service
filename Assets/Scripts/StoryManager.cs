@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// dialogue Indices for NPCs
+// 0 - default, 1 - give task, 2 - given task, no potion, 3 - given task, yes potion, 4 - finished task, 5- against, 6 - for 
+
 public class StoryManager : MonoBehaviour {
     private PlayerManager player;
     [SerializeField] Animator fadeToBlack;
@@ -216,9 +219,19 @@ public class StoryManager : MonoBehaviour {
             case 7:
                 UpdateDay(8);
                 for (int i = 0; i < dialogueIndicies.Length; i++) {
-                    dialogueIndicies[i] = 5;
+                    if (completedTasks[i]) {
+                        dialogueIndicies[i] = 6;
+                    } else {
+                        dialogueIndicies[i] = 5;
+                    }
                 }
                 dialogueIndicies[MAYOR] = 3;
+                // not in final scene
+                dialogueIndicies[BESS] = 0;
+                dialogueIndicies[ROYCE] = 0;
+                dialogueIndicies[NANCY] = 0;
+                dialogueIndicies[ISAAC] = 0;
+                dialogueIndicies[MOTHER] = 0;
                 break;
             
             case 8:

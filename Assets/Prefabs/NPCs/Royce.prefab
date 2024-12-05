@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 91371438142461672, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 91371438142461672, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 6.21
       objectReference: {fileID: 0}
     - target: {fileID: 91371438142461672, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -72,24 +72,61 @@ PrefabInstance:
       propertyPath: inkJSON.Array.data[3]
       value: 
       objectReference: {fileID: 4900000, guid: b872e72136ad69243a6b20df0c6fe434, type: 3}
+    - target: {fileID: 2839730534636012467, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7183051887784399672, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_Name
       value: Royce
       objectReference: {fileID: 0}
     - target: {fileID: 7300091382718368513, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -305278693, guid: c2acb6dccfb219c458164cfbaf872944, type: 3}
+    - target: {fileID: 7300091382718368513, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_Color.b
-      value: 0.83396226
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300091382718368513, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_Color.g
-      value: 0.62979394
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7300091382718368513, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: m_Color.r
-      value: 0.1667924
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6391310641745307735, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 506624560247868504}
   m_SourcePrefab: {fileID: 100100000, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+--- !u!1 &4141544299198826012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6391310641745307735, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+  m_PrefabInstance: {fileID: 7046945610966855243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &506624560247868504
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4141544299198826012}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f9a1b132f54b2544b185332c3001700, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

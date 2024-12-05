@@ -6,13 +6,10 @@ public class ForestManager : MonoBehaviour
 {
     [Header("NPCs")]
     [SerializeField] GameObject asa;
-    [SerializeField] GameObject bess;
     [SerializeField] GameObject clarice;
     [SerializeField] GameObject dasha;
-    [SerializeField] GameObject ewald;
     [SerializeField] GameObject jessamine;
     [SerializeField] GameObject josan;
-    [SerializeField] GameObject kieran;
     [SerializeField] GameObject mayor;
     [SerializeField] GameObject serena;
 
@@ -113,7 +110,7 @@ public class ForestManager : MonoBehaviour
                 hummingbirdFeather.SetActive(true);
                 rose.SetActive(true);
                 silverstone.SetActive(true);
-
+                
                 // honey
 
                 blueAgate.SetActive(true);
@@ -165,13 +162,10 @@ public class ForestManager : MonoBehaviour
                 TurnOffEverything();
 
                 asa.SetActive(true);
-                bess.SetActive(true);
                 clarice.SetActive(true);
                 dasha.SetActive(true);
-                ewald.SetActive(true);
                 jessamine.SetActive(true);
                 josan.SetActive(true);
-                kieran.SetActive(true);
                 mayor.SetActive(true);
                 serena.SetActive(true);
 
@@ -185,13 +179,10 @@ public class ForestManager : MonoBehaviour
 
     private void TurnOffEverything() {
         asa.SetActive(false);
-        bess.SetActive(false);
         clarice.SetActive(false);
         dasha.SetActive(false);
-        ewald.SetActive(false);
         jessamine.SetActive(false);
         josan.SetActive(false);
-        kieran.SetActive(false);
         mayor.SetActive(false);
         serena.SetActive(false);
 
