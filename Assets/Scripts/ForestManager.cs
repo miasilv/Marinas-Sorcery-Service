@@ -22,6 +22,7 @@ public class ForestManager : MonoBehaviour
     [Header("Other")]
     [SerializeField] GameObject blueberry;
     [SerializeField] GameObject moss;
+    [SerializeField] GameObject torianDust;
     [SerializeField] GameObject willardRoot;
 
     [Header("Feathers")]
@@ -154,7 +155,7 @@ public class ForestManager : MonoBehaviour
                 devilsBiteSpider.SetActive(true);
                 ravenFeather.SetActive(true);
                 blueAgate.SetActive(true);
-                // Torian dust
+                torianDust.SetActive(true);
 
                 break;
 
@@ -193,6 +194,7 @@ public class ForestManager : MonoBehaviour
         
         blueberry.SetActive(false);
         moss.SetActive(false);
+        torianDust.SetActive(false);
         willardRoot.SetActive(false);
 
         hummingbirdFeather.SetActive(false);

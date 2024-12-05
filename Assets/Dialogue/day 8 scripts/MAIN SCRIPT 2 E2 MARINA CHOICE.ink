@@ -46,5 +46,5 @@
     
      Farewell, Marina. I expect to come back to an empty cabin come tomorrow morning.
     
-    #dayEnd
+    #dayEnd:
     -> END

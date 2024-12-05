@@ -15,6 +15,7 @@ public class VillageManager : MonoBehaviour {
     [SerializeField] GameObject mayor;
     [SerializeField] GameObject nancy;
     [SerializeField] GameObject royce;
+    [SerializeField] GameObject serena;
     private StoryManager storyManager;
     void Start() {
         storyManager = GameObject.FindWithTag("StoryManager").GetComponent<StoryManager>();
@@ -23,20 +24,28 @@ public class VillageManager : MonoBehaviour {
         switch(currentDay) {
             case 1:
                 TurnOffEverything();
+                josan.SetActive(true);
+                kieran.SetActive(true);
                 break;
             case 2:
                 TurnOffEverything();
+                jessamine.SetActive(true);
+                bess.SetActive(true);
                 asa.SetActive(true);
                 ewald.SetActive(true);
+                mayor.SetActive(true);
                 break;
             case 3:
                 TurnOffEverything();
-                mayor.SetActive(true);
+                nancy.SetActive(true);
+                asa.SetActive(true);
                 dasha.SetActive(true);
                 josan.SetActive(true);
                 break;
             case 4:
                 TurnOffEverything();
+                serena.SetActive(true);
+                ewald.SetActive(true);
                 bess.SetActive(true);
                 isaac.SetActive(true);
                 clarice.SetActive(true);
@@ -44,10 +53,14 @@ public class VillageManager : MonoBehaviour {
             case 5:
                 TurnOffEverything();
                 royce.SetActive(true);
+                isaac.SetActive(true);
                 nancy.SetActive(true);
+                clarice.SetActive(true);
                 break;
             case 6:
                 TurnOffEverything();
+                clarice.SetActive(true);
+                dasha.SetActive(true);
                 mayor.SetActive(true);
                 kieran.SetActive(true);
                 jessamine.SetActive(true);
@@ -65,6 +78,7 @@ public class VillageManager : MonoBehaviour {
     }
 
     private void TurnOffEverything() {
+        serena.SetActive(false);
         asa.SetActive(false);
         bess.SetActive(false);
         clarice.SetActive(false);

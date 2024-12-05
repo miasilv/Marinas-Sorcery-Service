@@ -17,6 +17,7 @@ public class StoryManager : MonoBehaviour {
     // ============ Game Status ================
     public int currentDay;
     public bool[] completedTasks;
+    public int totalCompletedTasks;
     public int[] dialogueIndicies;
     public bool[] waitingForPotions;
     private string[] potionsForTasks = {"Aegoria", "Victamis", "Courinder", "Heillar", "Visamir", "Somnias", "Cipheriam", "Honey Drink", "Viennallis", "Heillus", "Pervivious", "Blueberry Syrup", "Memoria"};
@@ -60,6 +61,7 @@ public class StoryManager : MonoBehaviour {
 
         // Setup day 1
         currentDay = 1;
+        totalCompletedTasks = 0;
         dialogueIndicies[SERENA] = 1;
         dialogueIndicies[MOTHER] = 1;
     }
@@ -142,6 +144,10 @@ public class StoryManager : MonoBehaviour {
     public void ChangeDialogueIndex(int characterIndex, int newDialogueIndex) {
         if (characterIndex >= 0 && characterIndex < dialogueIndicies.Length) {
             dialogueIndicies[characterIndex] = newDialogueIndex;
+            // if it is the last dialogue of the mayor
+            if (characterIndex == 13 && newDialogueIndex == 3 && totalCompletedTasks >= 7) {
+                dialogueIndicies[characterIndex] = (newDialogueIndex + 1);
+            }
         }
         else {
             Debug.LogWarning("Character index is wrong");
@@ -154,6 +160,7 @@ public class StoryManager : MonoBehaviour {
             waitingForPotions[characterIndex] = false;
             inventoryManager.GivePotion(potionsForTasks[characterIndex]);
             dialogueIndicies[characterIndex] = 4;
+            completedTasks++;
         }
         else {
             Debug.LogWarning("Character index is wrong");
@@ -181,13 +188,14 @@ public class StoryManager : MonoBehaviour {
         switch(currentDay) {
             case 1:                
                 UpdateDay(2);
+                dialogueIndicies[MAYOR] = 0;
                 dialogueIndicies[ASA] = 1;
                 dialogueIndicies[EWALD] = 1;
                 break;
             
             case 2:
                 UpdateDay(3);
-                dialogueIndicies[MAYOR] = 1;
+                dialogueIndicies[MOTHER] = 2;
                 dialogueIndicies[DASHA] = 1;
                 dialogueIndicies[JOSAN] = 1;
                 break;
@@ -201,19 +209,21 @@ public class StoryManager : MonoBehaviour {
 
             case 4:
                 UpdateDay(5);
+                dialogueIndicies[MOTHER] = 3;
                 dialogueIndicies[ROYCE] = 1;
                 dialogueIndicies[NANCY] = 1;
                 break;
 
             case 5:
                 UpdateDay(6);
-                dialogueIndicies[MAYOR] = 2;
+                dialogueIndicies[MAYOR] = 1;
                 dialogueIndicies[KIERAN] = 1;
                 dialogueIndicies[JESSAMINE] = 1;
                 break;
             
             case 6:
                 UpdateDay(7);
+                dialogueIndicies[MOTHER] = 4;
                 break;
             
             case 7:
@@ -225,9 +235,11 @@ public class StoryManager : MonoBehaviour {
                         dialogueIndicies[i] = 5;
                     }
                 }
-                dialogueIndicies[MAYOR] = 3;
+                dialogueIndicies[MAYOR] = 2;
                 // not in final scene
                 dialogueIndicies[BESS] = 0;
+                dialogueIndicies[KIERAN] = 0;
+                dialogueIndicies[EWALD] = 0;
                 dialogueIndicies[ROYCE] = 0;
                 dialogueIndicies[NANCY] = 0;
                 dialogueIndicies[ISAAC] = 0;

@@ -12,7 +12,7 @@ Yes, I have.
 Good! I hope it wasn't too much trouble. #speaker:Mother #layout:left
 
 Take you rest, love. I'll have dinner ready soon.
-#dayEnd
+#dayEnd:
 
 + [No]
 Not yet, there's still much to do before the day's over. #speaker: Marina #layout:right

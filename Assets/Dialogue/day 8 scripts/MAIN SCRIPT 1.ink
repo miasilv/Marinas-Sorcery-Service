@@ -26,4 +26,6 @@
 
  Let our dear residents speak for themselves. #speaker:Mayor #layout:left
 
+ #changeIndex:13$3
+
     -> END
