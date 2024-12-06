@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour {
     private TaskManager taskManager;
     private StoryManager storyManager;
     private PlayerManager player;
+    private GameObject noteBookIcon;
 
     [Header("Params")]
     [SerializeField] private float typingSpeed = 0.04f;
@@ -41,6 +42,7 @@ public class DialogueManager : MonoBehaviour {
         taskManager = GameObject.Find("NotebookCanvas").GetComponent<TaskManager>();
         storyManager = GameObject.FindWithTag("StoryManager").GetComponent<StoryManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
+        noteBookIcon = GameObject.FindGameObjectWithTag("NotebookIcon");
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
 
@@ -71,6 +73,7 @@ public class DialogueManager : MonoBehaviour {
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         player.canMove = false;
+        noteBookIcon.SetActive(false);
 
         displayNameText.text = "???";
         layoutAnimator.Play("right");
@@ -139,6 +142,7 @@ public class DialogueManager : MonoBehaviour {
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
         player.canMove = true;
+        noteBookIcon.SetActive(true);
     }
 
     private void DisplayChoices() {

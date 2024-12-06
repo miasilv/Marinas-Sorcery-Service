@@ -9,6 +9,7 @@ TagManager:
   - NotebookCanvas
   - PotionMaker
   - StoryManager
+  - NotebookIcon
   layers:
   - Default
   - TransparentFX

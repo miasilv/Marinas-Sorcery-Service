@@ -16,6 +16,7 @@ public class PotionMaker : MonoBehaviour {
     [SerializeField] private TMP_Text potionCompleteText;
     private InventoryManager inventoryManager;
     private AudioManager audioManager;
+    private GameObject notebookIcon;
     public AudioClip cauldronBubble;
     public AudioClip emptyPotion;
     public AudioClip dropIngredient;
@@ -48,6 +49,8 @@ public class PotionMaker : MonoBehaviour {
         for(int i = 0; i < potionSprites.Length; i++) {
             potionNametoSprite.Add(storyManager.potionsForTasks[i],potionSprites[i]);
         }
+
+        notebookIcon = GameObject.FindGameObjectWithTag("NotebookIcon");
     }
 
     private void Update() {
@@ -59,6 +62,7 @@ public class PotionMaker : MonoBehaviour {
                 potionCanvasActive = true;
                 UpdateAllSlots();
                 player.canMove = false;
+                notebookIcon.SetActive(false);
             }
         }
         else {
@@ -66,13 +70,19 @@ public class PotionMaker : MonoBehaviour {
         }
 
         if (potionCanvasActive && Input.GetButtonDown("Cancel")) {
-            potionCanvas.SetActive(false);
-            potionCanvasActive = false;
-            player.canMove = true;
-            audioManager.StopCauldronBubble();
+            ExitPotionMaker();
         }
     }
 
+    
+    public void ExitPotionMaker() {
+        potionCanvas.SetActive(false);
+        audioManager.StopCauldronBubble();
+        potionCanvasActive = false;
+        player.canMove = true;
+        notebookIcon.SetActive(true);
+        audioManager.StopCauldronBubble();
+    }
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.tag == "Player") {
             playerInRange = true;
