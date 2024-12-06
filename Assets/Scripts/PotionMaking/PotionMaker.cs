@@ -11,7 +11,6 @@ public class PotionMaker : MonoBehaviour {
     [SerializeField] private GameObject visualCue;
     [SerializeField] private Dictionary<string, int> itemsInCauldron;
     [SerializeField] private PotionSlot[] potions;
-    [SerializeField] private GameObject[] potionPrefabs;
 
     [SerializeField] private GameObject potionCompletePanel;
     [SerializeField] private TMP_Text potionCompleteText;
@@ -22,8 +21,8 @@ public class PotionMaker : MonoBehaviour {
     public AudioClip dropIngredient;
     public bool playerInRange;
     public bool potionCanvasActive;
-    [SerializeField] public Sprite potionSprite;
-
+    [SerializeField] public Sprite[] potionSprites;
+    private Dictionary<string, Sprite> potionNametoSprite = new Dictionary<string, Sprite>();
     private void Start() {
         playerInRange = false;
         potionCanvasActive = false;
@@ -43,6 +42,12 @@ public class PotionMaker : MonoBehaviour {
         UpdateAllSlots();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
+        // add potion sprites to dictionary
+        StoryManager storyManager = storyManager = GameObject.FindWithTag("StoryManager").GetComponent<StoryManager>();
+        for(int i = 0; i < potionSprites.Length; i++) {
+            potionNametoSprite.Add(storyManager.potionsForTasks[i],potionSprites[i]);
+        }
     }
 
     private void Update() {
@@ -117,7 +122,9 @@ public class PotionMaker : MonoBehaviour {
                 foreach (var potion in potions) {
                     if (potion.isFull && CheckPotion(potion)) {
                         potionText = " " + potion.potionName;
-                        inventoryManager.AddItem(potion.potionName, potionSprite, potion.potionDescription);
+                        Sprite thisSprite = potionSprites[0];
+                        potionNametoSprite.TryGetValue(potion.potionName, out thisSprite);
+                        inventoryManager.AddItem(potion.potionName, thisSprite, potion.potionDescription);
                         break;
                     }
                 }

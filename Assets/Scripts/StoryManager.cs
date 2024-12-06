@@ -20,7 +20,9 @@ public class StoryManager : MonoBehaviour {
     public int totalCompletedTasks;
     public int[] dialogueIndicies;
     public bool[] waitingForPotions;
-    private string[] potionsForTasks = {"Aegoria", "Victamis", "Courinder", "Heillar", "Visamir", "Somnias", "Cipheriam", "Honey Drink", "Viennallis", "Heillus", "Pervivious", "Blueberry Syrup", "Memoria"};
+    public string[] potionsForTasks = {"Aegoria", "Victamis", "Courinder", "Heillar", "Visamir", 
+                                        "Somnias", "Cipheriam", "Honey Drink", "Viennallis", "Heillus", 
+                                        "Pervivious", "Blueberry Syrup", "Memoria"};
 
     // ============ Constants ================
     // character indicies

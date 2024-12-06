@@ -104,7 +104,7 @@ public class PotionManager : MonoBehaviour {
         memoria.Add(pinkTopaz, 1);  
         memoria.Add(ravenFeather, 1);
         memoria.Add(moss, 1);
-        AddPotion("Memoria", "A dark brown brew. Gives a brightened, calmer mind and eases the thoughts allowing for increased motor skills, enhanced memory, and improved intelligence.", memoria);
+        AddPotion("Memoria", "A dark pink brew. Gives a brightened, calmer mind and eases the thoughts allowing for increased motor skills, enhanced memory, and improved intelligence.", memoria);
         
         Dictionary<Item, int> pervivious = new Dictionary<Item, int>();
         pervivious.Add(gold, 1);

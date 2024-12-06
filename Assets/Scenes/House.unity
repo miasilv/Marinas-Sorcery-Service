@@ -4183,6 +4183,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1760754530}
   - {fileID: 1225975971}
   - {fileID: 267844503}
   - {fileID: 1996379904}
@@ -6044,6 +6045,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13fa1d9ff7854ab49a433955e5a921d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1760754529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1760754530}
+  - component: {fileID: 1760754531}
+  m_Layer: 0
+  m_Name: Potion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1760754530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760754529}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.89, y: -2.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1312584029}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1760754531
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760754529}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1157313013
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 1ecd6dc734eaced41bf191289623411a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &1774582285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7482,7 +7567,6 @@ MonoBehaviour:
   - {fileID: 1931245277}
   visualCue: {fileID: 1298059215}
   potions: []
-  potionPrefabs: []
   potionCompletePanel: {fileID: 1444010760}
   potionCompleteText: {fileID: 433357299}
   cauldronBubble: {fileID: 8300000, guid: d74fe8e62b64451408f6b7c59b575fc6, type: 3}
@@ -7490,7 +7574,19 @@ MonoBehaviour:
   dropIngredient: {fileID: 8300000, guid: 7550f0817905e054c8bd0a08fc226f2f, type: 3}
   playerInRange: 0
   potionCanvasActive: 0
-  potionSprite: {fileID: 21300000, guid: cc6cacd764cc9dd45a38c681912b8b60, type: 3}
+  potionSprites:
+  - {fileID: 21300000, guid: 8d4312ecf4d221544a303fdb6d5be59b, type: 3}
+  - {fileID: 21300000, guid: fdb10b6cb742100468f93135e7d0b679, type: 3}
+  - {fileID: 21300000, guid: add66a425d2a6a940a4cdbc3d7771eae, type: 3}
+  - {fileID: 21300000, guid: 3b8750f9d91053e478f0a2005e6e2f7e, type: 3}
+  - {fileID: 21300000, guid: 500d7c54c51f3854993223f8557b5065, type: 3}
+  - {fileID: 21300000, guid: 56eb38a371c6a0d46a9910268188603e, type: 3}
+  - {fileID: 21300000, guid: 60b173838bf6fde47b8d61cb50479447, type: 3}
+  - {fileID: 21300000, guid: 0cbcb169d6133b044bb3c9909907384f, type: 3}
+  - {fileID: 21300000, guid: dd9d9398b53110341b3bebdfbd72503e, type: 3}
+  - {fileID: 21300000, guid: da14b211a01f65c458de85c26b70acd4, type: 3}
+  - {fileID: 21300000, guid: c44ef9444e87a0d41b69f7f241aac6aa, type: 3}
+  - {fileID: 21300000, guid: 066edd11a5a6c974a87ad415fc0b7e0d, type: 3}
 --- !u!1 &2013552617
 GameObject:
   m_ObjectHideFlags: 0
