@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     private SpriteRenderer sprite;
     private StoryManager storyManager;
     public bool canMove;
-    private int sceneChange = 1;
+    public int sceneChange = 1;
     private AudioManager audioManager;
     public AudioClip[] songs;
     public AudioClip[] walkingSounds;
@@ -36,6 +36,10 @@ public class PlayerManager : MonoBehaviour
     void Update() {
         if (canMove) {
             Move();
+        }
+        else {
+            audioManager.StopWalking();
+            anim.SetBool("Walking", false);
         }
     }
 

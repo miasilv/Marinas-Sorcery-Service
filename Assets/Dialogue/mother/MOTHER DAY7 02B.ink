@@ -1,4 +1,4 @@
-Mother: Marina..?
+Marina..? #speaker:Mother #layout:left
 
 Mother! #speaker: Marina #layout:right
 

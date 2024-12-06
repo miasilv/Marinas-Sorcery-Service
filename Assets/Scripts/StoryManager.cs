@@ -44,17 +44,17 @@ public class StoryManager : MonoBehaviour {
         inventoryManager = GameObject.Find("NotebookCanvas").GetComponent<InventoryManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
         
-        completedTasks = new bool[13];
+        completedTasks = new bool[14];
         for (int i = 0; i < completedTasks.Length; i++) {
             completedTasks[i] = false;
         }
 
-        waitingForPotions = new bool[13];
+        waitingForPotions = new bool[14];
         for (int i = 0; i < waitingForPotions.Length; i++) {
             waitingForPotions[i] = false;
         }
 
-        dialogueIndicies = new int[13];
+        dialogueIndicies = new int[14];
         for (int i = 0; i < dialogueIndicies.Length; i++) {
             dialogueIndicies[i] = 0;
         }
@@ -67,7 +67,7 @@ public class StoryManager : MonoBehaviour {
     }
 
     public bool CheckPotion(int characterIndex) {
-        if (characterIndex > 0 && characterIndex < potionsForTasks.Length) {
+        if (characterIndex >= 0 && characterIndex < potionsForTasks.Length) {
             return inventoryManager.HasPotion(potionsForTasks[characterIndex]);
         }
         else {
@@ -77,7 +77,11 @@ public class StoryManager : MonoBehaviour {
     }
 
     public void AddTask(string taskName, string taskGiver, string taskDescription) {       
-        if (taskGiver.ToLower() == "serena") {
+        if (taskGiver.ToLower() == "mother") {
+            dialogueIndicies[MOTHER] += 1;
+            waitingForPotions[MOTHER] = true;
+        }
+        else if (taskGiver.ToLower() == "serena") {
             dialogueIndicies[SERENA] += 1;
             waitingForPotions[SERENA] = true;
         }
@@ -155,12 +159,14 @@ public class StoryManager : MonoBehaviour {
     }
     
     public void CompleteTask(int characterIndex) {
-        if (characterIndex > 0 && characterIndex < completedTasks.Length) {
+        if (characterIndex >= 0 && characterIndex < completedTasks.Length) {
             completedTasks[characterIndex] = true;
             waitingForPotions[characterIndex] = false;
             inventoryManager.GivePotion(potionsForTasks[characterIndex]);
-            dialogueIndicies[characterIndex] = 4;
-            completedTasks++;
+            if (characterIndex != 0) {
+                dialogueIndicies[characterIndex] = 4;
+                totalCompletedTasks++;
+            }
         }
         else {
             Debug.LogWarning("Character index is wrong");
@@ -228,7 +234,7 @@ public class StoryManager : MonoBehaviour {
             
             case 7:
                 UpdateDay(8);
-                for (int i = 0; i < dialogueIndicies.Length; i++) {
+                for (int i = 0; i < completedTasks.Length && i < dialogueIndicies.Length; i++) {
                     if (completedTasks[i]) {
                         dialogueIndicies[i] = 6;
                     } else {
@@ -246,10 +252,6 @@ public class StoryManager : MonoBehaviour {
                 dialogueIndicies[MOTHER] = 0;
                 break;
             
-            case 8:
-                UpdateDay(0);
-                break;
-
             default:
                 Debug.LogWarning("Something's wrong, the day is no longer the day, we must go back to the beginning.");
                 UpdateDay(1);
@@ -271,12 +273,7 @@ public class StoryManager : MonoBehaviour {
         player.anim.SetBool("Walking", false);
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(newScene);
-        if (currentDay != 0) {
-            StartCoroutine(FadeFromBlack());
-        }
-        else {
-            rollCredits.Play("Credits");
-        }
+        StartCoroutine(FadeFromBlack());
     }
 
     private IEnumerator FadeFromBlack() {
@@ -286,12 +283,31 @@ public class StoryManager : MonoBehaviour {
         player.canMove = true;
     }
 
+    public IEnumerator EndGame() {
+        fadeToBlack.Play("FadeIn");
+        player.canMove = false;
+        player.anim.SetBool("Walking", false);
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("House");
+        rollCredits.Play("CreditsUp");       
+    }
+
     public void Restart() {
+        rollCredits.Play("CreditsStay");
         resetCompletedPotions();
+        resetCharacterDialogueIndicies();
+        resetWaitingForPotion();
         inventoryManager.Clear();
         currentDay = 1;
         dialogueIndicies[SERENA] = 1;
         dialogueIndicies[MOTHER] = 1;
-        StartCoroutine(FadeToBlack("House"));
+        totalCompletedTasks = 0;
+        SceneManager.LoadScene("House");
+        player.sceneChange = 1;
+        StartCoroutine(FadeFromBlack());
+    }
+
+    public void ExitGame() {
+        Application.Quit();
     }
 }

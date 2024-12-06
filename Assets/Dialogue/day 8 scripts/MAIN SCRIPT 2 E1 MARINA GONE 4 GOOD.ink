@@ -4,5 +4,5 @@
 
  Farewell, Marina. I expect to see this cabin empty and both you witches gone by the morning.
 
-#dayEnd:
+#gameEnd:
     -> END

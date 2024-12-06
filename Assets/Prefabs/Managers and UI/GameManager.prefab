@@ -195,7 +195,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7765567079111273133}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4949857839057332818}
+        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2061175110984381186
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,7 +556,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3352486682437423566
 CanvasRenderer:
@@ -1345,9 +1357,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeToBlack: {fileID: 4494435606721403368}
-  rollCredits: {fileID: 0}
+  rollCredits: {fileID: 930330626964703291}
   currentDay: 0
   completedTasks: 
+  totalCompletedTasks: 0
   dialogueIndicies: 
   waitingForPotions: 
 --- !u!114 &6382645987425894686
