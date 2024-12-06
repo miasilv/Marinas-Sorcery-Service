@@ -41,7 +41,7 @@ public class TaskSlot : MonoBehaviour, IPointerClickHandler {
     
     public void OnPointerClick(PointerEventData eventData) {
         // select an item and update the item description
-        if (eventData.button == PointerEventData.InputButton.Left) {
+        if (eventData.button == PointerEventData.InputButton.Left && this.taskName != "") {
             taskManager.DeselectAllSlots();
             selectedShader.SetActive(true);
             thisItemSelected = true;

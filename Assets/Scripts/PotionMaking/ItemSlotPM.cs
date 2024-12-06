@@ -8,10 +8,10 @@ using UnityEngine.EventSystems;
 public class ItemSlotPM : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
     private bool clicked;
     private bool isUsable;
-    private int xMin;
-    private int xMax;
-    private int yMin;
-    private int yMax;
+    private float xMin;
+    private float xMax;
+    private float yMin;
+    private float yMax;
     
     //===========ITEM DATA===========//
     public string itemName;
@@ -28,10 +28,16 @@ public class ItemSlotPM : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
     void Start() {
         clicked = false;
         isUsable = false;
+        /*
         xMin = 1050;
         xMax = 1750;
         yMin = 450;
         yMax = 700;
+        */
+        xMin = Screen.width * 0.55f;
+        xMax = Screen.width * 0.91f;
+        yMin = Screen.height * 0.41f;
+        yMax = Screen.height * 0.65f;
         UpdateSlot();
     }
 

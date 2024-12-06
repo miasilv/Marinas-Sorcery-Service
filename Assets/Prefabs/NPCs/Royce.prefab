@@ -54,22 +54,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[0]
       value: 
-      objectReference: {fileID: 4900000, guid: 41be328fcc7e45247af14e62e2623beb, type: 3}
+      objectReference: {fileID: 4900000, guid: c631a34755f1e0b458684d948f516085, type: 3}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[1]
       value: 
-      objectReference: {fileID: 4900000, guid: a3c2bde6df9d795468f82ea4ea363512, type: 3}
+      objectReference: {fileID: 4900000, guid: 41be328fcc7e45247af14e62e2623beb, type: 3}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[2]
       value: 
-      objectReference: {fileID: 4900000, guid: ff4bb2ce747d111448b70faa52128a97, type: 3}
+      objectReference: {fileID: 4900000, guid: a3c2bde6df9d795468f82ea4ea363512, type: 3}
     - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
       propertyPath: inkJSON.Array.data[3]
+      value: 
+      objectReference: {fileID: 4900000, guid: ff4bb2ce747d111448b70faa52128a97, type: 3}
+    - target: {fileID: 2541648753771521725, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}
+      propertyPath: inkJSON.Array.data[4]
       value: 
       objectReference: {fileID: 4900000, guid: b872e72136ad69243a6b20df0c6fe434, type: 3}
     - target: {fileID: 2839730534636012467, guid: 4f843d9af3d6f9447be7139e96096d2d, type: 3}

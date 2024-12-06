@@ -18,12 +18,14 @@ public class PotionSlot : MonoBehaviour, IPointerClickHandler {
     //===========POTION DESCRIPTION INFO==========//
     public TMP_Text potionNameDescriptionText;
     public TMP_Text potionDescriptionText;
-    public TMP_Text potionIngredientsText;
+    public TMP_Text[] potionIngredientsText;
+    public Image[] potionIngredientsImage;
     public TMP_Text potionIngredientsHeaderText;
     
     public GameObject selectedShader;
     public bool thisItemSelected;
     private PotionManager potionManager;
+    public Sprite emptySprite;
 
     private void Awake() {
         potionManager = GameObject.Find("NotebookCanvas").GetComponent<PotionManager>();
@@ -51,8 +53,11 @@ public class PotionSlot : MonoBehaviour, IPointerClickHandler {
 
         potionNameDescriptionText.text = this.potionName;
         potionDescriptionText.text = this.potionDescription;
+        int i = 0;
         foreach(KeyValuePair<Item, int> ingredient in potionIngredients) {
-            potionIngredientsText.text += " - " + ingredient.Key.itemName + " x" + ingredient.Value + "\n";
+            potionIngredientsText[i].text = ingredient.Key.itemName + " x" + ingredient.Value;
+            potionIngredientsImage[i].sprite = ingredient.Key.sprite; 
+            i++;
         }
         potionIngredientsHeaderText.enabled = true;
     }
@@ -60,7 +65,11 @@ public class PotionSlot : MonoBehaviour, IPointerClickHandler {
     public void DeselctSlot() {
         potionNameDescriptionText.text = "";
         potionDescriptionText.text = "";
-        potionIngredientsText.text = "";
+        for (int i = 0; i < potionIngredientsText.Length; i++) {
+            potionIngredientsText[i].text = "";
+            potionIngredientsImage[i].sprite = emptySprite;
+        }
+
         potionIngredientsHeaderText.enabled = false;
     }
 

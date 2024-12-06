@@ -5,15 +5,15 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class SpoonMovement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
-    private int lowerXBound;
-    private int upperXBound;
-    private int yPos;
+    private float lowerXBound;
+    private float upperXBound;
+    private float yPos;
     private bool clicked;
     
     void Start() {
-        lowerXBound = 1150;
-        upperXBound = 1655;
-        yPos = 680;
+        lowerXBound = Screen.width * 0.6f;
+        upperXBound = Screen.width * 0.86f;
+        yPos = Screen.height * 0.63f;
 
         clicked = false;
     }
@@ -28,11 +28,9 @@ public class SpoonMovement : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     public void OnPointerDown(PointerEventData eventData) {
         clicked = true;
-        Debug.Log("clicking"); 
     }
 
     public void OnPointerUp(PointerEventData eventData) {
         clicked = false; 
-        Debug.Log("not clicking");
     } 
 }
