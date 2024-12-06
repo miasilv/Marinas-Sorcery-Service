@@ -32,4 +32,4 @@ I'll take care of him, Ewald. #speaker:Marina  #layout:right
 
 Thanks, Marina. Tell your Mother mine says hello, by the way. #speaker:Ewald  #layout:left
 
-#task:My Third Task $Ewald $Ewald and his grandfather Josan are regulars and one of the few nice villagers. Mother has been taking care of Mister Josan for years now.
+#task:An Achey Grandfather $Ewald $Ewald and his grandfather Josan are regulars and one of the few nice villagers. Mother has been taking care of Mister Josan for years now.

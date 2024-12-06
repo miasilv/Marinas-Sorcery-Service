@@ -46,5 +46,5 @@ I understand. I'll return to you later. #speaker: Marina  #layout:right
 
 If you could get here before school starts I'd appreciate it. #speaker:Dasha  #layout:left
 
-#task:My Fourth Task $Dasha $Taking care of all the village children is no easy task! All she needs is a small boost to get her through the day. Seems easy enough.
+#task:A Little Pick-Me-Up $Dasha $Taking care of all the village children is no easy task! All she needs is a small boost to get her through the day. Seems easy enough.
     -> END

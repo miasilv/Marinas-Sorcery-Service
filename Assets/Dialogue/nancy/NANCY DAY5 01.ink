@@ -20,5 +20,5 @@ Oh! Please! #speaker:Nancy #layout:left
 
  Sure thing.  #speaker: Marina #layout:right
  
-  #task:My Tenth Task $Nancy $Nancy's so adorable but she really needs to leave Miss Ann's garden alone. At least with this she won't pick up every she comes across.
+  #task:A Petal Picker $Nancy $Nancy's so adorable but she really needs to leave Miss Ann's garden alone. At least with this she won't pick up every she comes across.
     -> END

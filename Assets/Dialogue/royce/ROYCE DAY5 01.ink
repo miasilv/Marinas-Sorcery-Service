@@ -42,5 +42,5 @@ I was shocked to learn my absence was noticed by anyone. Even Asa mentioned it.
 
  Then that's settled. I'll be here until I have to return to the city. #speaker:Royce #layout:left
  
- #task:My Ninth Task $Royce $Royce hasn't been to the village lately because of his wife's condition. After he takes this back to her I hope to see them both again next visit!
+ #task:A Sickly Wife $Royce $Royce hasn't been to the village lately because of his wife's condition. After he takes this back to her I hope to see them both again next visit!
     -> END

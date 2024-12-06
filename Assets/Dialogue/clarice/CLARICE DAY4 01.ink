@@ -32,6 +32,6 @@
 
  Something simple would do, at least until I can get new glasses.
 
- #task:My Eighth Task $Clarice $Miss Clarice was always so kind to Mother and I over the years. She even taught me how to sew! It's sad watching her struggle to read her favorite books.
+ #task:A Pair of Scratched Glasses $Clarice $Miss Clarice was always so kind to Mother and I over the years. She even taught me how to sew! It's sad watching her struggle to read her favorite books.
 
     -> END

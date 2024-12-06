@@ -38,5 +38,5 @@
 
  I'll just return to you with the potion. #speaker: Marina #layout:right
  
-  #task:My Twelfth Task $Jessamine $Jessamine runs that shop all by herself. Mother always tells her to let her daughter Tara help out more but Jessamine's as stubborn as an old mule.
+  #task:A Forgotten Duty $Jessamine $Jessamine runs that shop all by herself. Mother always tells her to let her daughter Tara help out more but Jessamine's as stubborn as an old mule.
     -> END

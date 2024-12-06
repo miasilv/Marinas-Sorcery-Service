@@ -33,6 +33,6 @@ Oh, that's easy. I think. #speaker: Marina  #layout:right
 So you'll help? Thanks Marina! #speaker:Asa #layout:left
 
 I'll be here when you're finished! Can't wait!
-#task:My Second Task $Asa $While those chickens do give her a hard time, I'm not sure if this would really help her.
+#task:The Speedy Chicks $Asa $While those chickens do give her a hard time, I'm not sure if this would really help her.
 
     -> END

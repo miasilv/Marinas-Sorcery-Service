@@ -32,5 +32,5 @@
 
  I'll wait right here, Marina! I won't move until you come back! #speaker:Isaac #layout:left
 
- #task:My Seventh Task $Isaac $Isaac's a sweet kid but he's so young and still has years to grow! I can't possibly give him anything to help.....
+ #task:A Sweet Kid $Isaac $Isaac's a sweet kid but he's so young and still has years to grow! I can't possibly give him anything to help.....
     -> END

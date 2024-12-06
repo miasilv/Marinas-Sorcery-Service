@@ -244,6 +244,7 @@ public class StoryManager : MonoBehaviour {
                     }
                 }
                 dialogueIndicies[MAYOR] = 2;
+                dialogueIndicies[MOTHER] = 7;
                 // not in final scene
                 dialogueIndicies[BESS] = 0;
                 dialogueIndicies[KIERAN] = 0;

@@ -54,5 +54,5 @@
 
  oh, how cute! Thanks, Marina! #speaker:Bess #layout:left
 
- #task:My Sixth Task $Bess $Bess wants to impress Davis. Luckily, I was able to talk her out of a love potion and towards something a bit more of herself.
+ #task:A Tune to Impress $Bess $Bess wants to impress Davis. Luckily, I was able to talk her out of a love potion and towards something a bit more of herself.
     -> END
