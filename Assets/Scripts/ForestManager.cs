@@ -78,6 +78,9 @@ public class ForestManager : MonoBehaviour
                 
             case 2:
                 TurnOffEverything();
+
+                robinFeather.SetActive(true);
+                moonFrog.SetActive(true);
     
                 primrose.SetActive(true);
                 willardRoot.SetActive(true);
@@ -93,6 +96,13 @@ public class ForestManager : MonoBehaviour
 
             case 3:
                 TurnOffEverything();
+
+                robinFeather.SetActive(true);
+                willardRoot.SetActive(true);
+                peony.SetActive(true);
+                longLegSpider.SetActive(true);
+                orchid.SetActive(true);
+                marigold.SetActive(true);
                 
                 starlite.SetActive(true);
                 ravenFeather.SetActive(true);
@@ -108,6 +118,16 @@ public class ForestManager : MonoBehaviour
             
             case 4:
                 TurnOffEverything();
+
+                longLegSpider.SetActive(true);
+                orchid.SetActive(true);
+                marigold.SetActive(true); 
+                ravenFeather.SetActive(true);
+                lilyOfTheLake.SetActive(true);
+                myrianQuartz.SetActive(true);
+                owlFeather.SetActive(true);
+                amethyst.SetActive(true);
+
                 hummingbirdFeather.SetActive(true);
                 rose.SetActive(true);
                 silverstone.SetActive(true);
@@ -123,6 +143,16 @@ public class ForestManager : MonoBehaviour
 
             case 5:
                 TurnOffEverything();
+                
+                lilyOfTheLake.SetActive(true);
+                myrianQuartz.SetActive(true);
+                owlFeather.SetActive(true);
+                amethyst.SetActive(true);
+                rose.SetActive(true);
+                blueAgate.SetActive(true);
+                willardRoot.SetActive(true);
+                lavender.SetActive(true);
+                carnation.SetActive(true);
 
                 silverstone.SetActive(true);
                 robinFeather.SetActive(true);
@@ -139,6 +169,15 @@ public class ForestManager : MonoBehaviour
             case 6:
                 TurnOffEverything();
 
+                silverstone.SetActive(true);
+                robinFeather.SetActive(true);
+                highlandBellFrog.SetActive(true);
+                seerianFrog.SetActive(true);
+                gold.SetActive(true);
+                tarantula.SetActive(true);
+                peony.SetActive(true);
+                daisy.SetActive(true);
+
                 rose.SetActive(true);
                 blueberry.SetActive(true);
 
@@ -151,6 +190,21 @@ public class ForestManager : MonoBehaviour
 
             case 7:
                 TurnOffEverything();
+
+                silverstone.SetActive(true);
+                robinFeather.SetActive(true);
+                highlandBellFrog.SetActive(true);
+                seerianFrog.SetActive(true);
+                gold.SetActive(true);
+                tarantula.SetActive(true);
+                peony.SetActive(true);
+                daisy.SetActive(true);
+                rose.SetActive(true);
+                blueberry.SetActive(true);
+                iridium.SetActive(true);
+                pinkTopaz.SetActive(true);
+                ravenFeather.SetActive(true);
+                moss.SetActive(true);
 
                 devilsBiteSpider.SetActive(true);
                 ravenFeather.SetActive(true);
